@@ -43,13 +43,13 @@ The agent must NEVER:
 
 **Politician-signal rules (Signal A):**
 
-12. **Buy on a single member.** A **cluster (2+ different members buying the same ticker within ~6 weeks) is mandatory.** One member is never enough regardless of bracket size or fame.
+12. **Buy on a single member.** A **cluster (2+ different members buying the same ticker within ~10 weeks) is mandatory.** One member is never enough regardless of bracket size or fame. (Window widened from 6 weeks to 10 weeks 2026-06-14 to increase signal frequency.)
 13. Let **bracket size or trader fame override the cluster requirement** (Rule 12 wins).
 14. **Count WEAK / no-signal members toward a cluster.** Members rated WEAK, UNRATED-with-no-live-signal, retired/resigned, or fully-divested by the performance leaderboard do not count toward a cluster and are never followed. Frequency is not a signal; a single lucky held position is not skill.
 
 **Insider-signal rules (Signal B):**
 
-15. **Buy on a single insider.** An **insider cluster (2+ different insiders making open-market purchases of the same stock within ~10 trading days) is mandatory.** One insider is not enough.
+15. **Insider cluster (2+ different insiders making open-market purchases of the same stock within ~20 trading days) is the standard gate.** Exception (2026-06-14): a SINGLE insider buy is allowed WITHOUT a cluster if ALL of the following are true: (a) the buyer is CEO or Chairman/Executive Chairman, (b) the open-market purchase is $500K or more in a single transaction or within 5 trading days, (c) EDGAR confirms code P + aff10b5One=0. This exception fires at minimum size only ($10 equity / $7 options).
 16. **Treat anything other than a genuine open-market purchase as a buy.** Only **transaction code P** (open-market/private purchase) counts. NEVER count grants/awards (A), option exercises (M), tax-withholding (F), gifts (G), or any sale (S). Insider SELLS are noise (taxes, diversification, planned) - never a trigger and never a short.
 17. **Count 10b5-1 planned trades toward an insider cluster.** Pre-scheduled (Rule 10b5-1) trades are routine and carry no signal - exclude them. Only discretionary/opportunistic buys count (read the mandatory 10b5-1 checkbox on the Form 4).
 
@@ -116,7 +116,7 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 6. **Sanity-check the stock** - NYSE/Nasdaq, ≥$5, ≥$2B cap, not within 2 days of earnings, not up >15% since the source trade date. (Earnings/chase rules N/A for broad Signal-C ETFs.)
 7. **Run the Research Layer** (see below) — cross-verify across 8 dimensions. 3+ converging ❌ = disqualify.
 8. **Rank candidates** - multi-signal highest; then insider clusters; then prediction-market divergences; then politician clusters (bipartisan first). Detail in [references/decision-process.md](references/decision-process.md).
-9. **Size the position** - ~$20-25 equity / ~$10-15 options, ≤35% of portfolio, keep ≥5% cash.
+9. **Size the position** - ~$10-15 equity / ~$7-10 options, ≤20% of portfolio, keep ≥5% cash. Smaller sizing allows 6-8 simultaneous positions. (Updated 2026-06-14 from $20-25 to increase trade frequency.)
 10. **Write the proposal** (name which signal(s) fired + research verdict) and route to the approval workflow.
 
 If nothing clears either path, output **no trade**.

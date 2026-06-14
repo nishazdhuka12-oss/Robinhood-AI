@@ -8,6 +8,8 @@ Log format: `DATE | ACTION | TICKER | $AMOUNT | SIGNAL-TYPE | SIGNAL DETAIL | TH
 
 ## Authorization events — ••••4744 (active account)
 
+**2026-06-14 | FREQUENCY LEVERS 1+2+3 AUTHORIZED (Ryan).** (1) Position sizing reduced $20-25→$10-15 equity, $10-15→$7-10 options; max positions 4-5→6-8; per-position cap 35%→20%. (2) Single CEO/Chairman insider buy allowed WITHOUT cluster if $500K+ open-market, code P, non-10b5-1 — fires at minimum size only. (3) Insider cluster window widened 10→20 trading days; politician cluster window widened 6→10 weeks. Target: 8-15 trades/month vs prior 3-7.
+
 **2026-06-14 | RESEARCH LAYER ADDED (Ryan).** Full 8-dimension research layer added to SOP: fundamentals (yfinance), technicals (RSI/SMA/volume), analyst ratings, earnings calendar, options Greeks/IV rank, sector/peer comparison, SEC 8-K filings, FRED macro. Cross-verification scoring: 3+ converging ❌ = disqualify, 3+ ✅ = high conviction. Research filters; cluster gate still required for entry. FRED_API_KEY needed (free, fred.stlouisfed.org).
 
 **2026-06-14 | OPTIONS AUTHORIZED (Ryan).** Long calls only added to the strategy. No puts, spreads, or naked selling. 30-60 DTE, ATM or 1-strike OTM, ~$10-15 sizing, +50%/-50% exits. Same cluster signal gates required. Hard Rule #3 updated in SKILL.md. Account must have option_level ≥ 1 before any order — Ryan to enable options on Agentic account ••••4744 in Robinhood app.
