@@ -113,13 +113,24 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 
 **Shared gate (every surviving candidate from either path):**
 5. **Apply HARD RULES** - drop crypto, sub-$5/$2B, leveraged, OTC. Options now permitted per 2026-06-14 authorization.
-6. **Sanity-check the stock** - NYSE/Nasdaq, ≥$5, ≥$2B cap, not within 2 days of earnings, not up >15% since the source trade date. (Earnings/chase rules N/A for broad Signal-C ETFs.)
-7. **Run the Research Layer** (see below) — cross-verify across 8 dimensions. 3+ converging ❌ = disqualify.
-8. **Rank candidates** - multi-signal highest; then insider clusters; then prediction-market divergences; then politician clusters (bipartisan first). Detail in [references/decision-process.md](references/decision-process.md).
-9. **Size the position** - ~$10-15 equity / ~$7-10 options, ≤20% of portfolio, keep ≥5% cash. Smaller sizing allows 6-8 simultaneous positions. (Updated 2026-06-14 from $20-25 to increase trade frequency.)
-10. **Write the proposal** (name which signal(s) fired + research verdict) and route to the approval workflow.
+6. **Market hours check** - if today is a U.S. market holiday (New Year's Day, MLK Day, Presidents Day, Good Friday, Memorial Day, Juneteenth, July 4th, Labor Day, Thanksgiving, Christmas), output NO TRADE immediately and stop. No research, no orders.
+7. **GFV check** - read GFV counter from sop/gfv-log.md. If GFV count = 2, do NOT buy anything until settled cash is confirmed. If GFV count ≥ 3, STOP and alert Ryan (account may be restricted).
+8. **Sector concentration check** - before any buy, count existing positions per GICS sector. If target stock's sector already has 2 open positions, skip it (false diversification / correlation risk).
+9. **Sanity-check the stock** - NYSE/Nasdaq, ≥$5, ≥$2B cap, not within 2 days of earnings, not up >15% since the source trade date. (Earnings/chase rules N/A for broad Signal-C ETFs.)
+10. **Run the Research Layer** (see below) — cross-verify across 8 dimensions. 3+ converging ❌ = disqualify.
+11. **Rank candidates** - multi-signal highest; then insider clusters; then CEO/Chairman exception; then prediction-market divergences; then politician clusters (bipartisan first).
+12. **Size the position** - ~$10-15 equity / ~$7-10 options, ≤20% of portfolio, keep ≥5% cash. Max 6-8 simultaneous positions.
+13. **Write the proposal** (name which signal(s) fired + research verdict) and route to the approval workflow.
 
 If nothing clears either path, output **no trade**.
+
+## Warm watchlist (added 2026-06-14)
+
+Track stocks where exactly 1 insider has bought (code P, non-10b5-1, EDGAR-confirmed) but the cluster gate hasn't fired yet. Store in sop/warm-watchlist.md with: ticker, insider name/role, transaction date, amount, EDGAR accession. On each daily scan, re-check every warm watchlist entry against fresh OpenInsider data — if a 2nd qualifying insider appears within the 20-day window, escalate immediately to Phase 2 research. Remove entries older than 20 trading days (window expired). This lets the agent act same-day when a cluster forms rather than waiting for the next morning scan.
+
+## Options theta protection (added 2026-06-14)
+
+In addition to the +50%/-50% exit rules, close ANY open option position when it has **fewer than 14 days to expiry**, regardless of P&L. Theta decay accelerates sharply in the final 2 weeks — holding through expiry on a losing position burns the remaining premium for nothing. Check DTE on every open option position in Phase 1 sell-trigger evaluation.
 
 ## Research layer (added 2026-06-14)
 
@@ -209,6 +220,7 @@ Sell when ANY is true (detail in [references/decision-process.md](references/dec
 - **Thesis broke:** the reason to own it no longer holds.
 - **Stale:** held >90 days with no progress and no fresh supporting signal.
 - **Signal-C resolution:** the macro print the position was based on has occurred (re-evaluate same day, close unless a fresh post-print divergence exists), the divergence closed before the print, or the next occurrence of the same print arrives (max hold). Detail in [references/prediction-markets.md](references/prediction-markets.md).
+- **Options theta exit:** any option position with <14 DTE → close immediately regardless of P&L. Theta decay in final 2 weeks destroys remaining value on losers.
 
 **Insider SELLS are NOT a sell trigger.** Research is clear that insider selling is noise (taxes, diversification, planned 10b5-1) and does not predict downside. Do not exit a position just because an insider sold. Only the rules above trigger sells.
 
