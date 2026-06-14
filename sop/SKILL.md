@@ -31,7 +31,7 @@ The agent must NEVER:
 
 1. Trade anything other than **long U.S. equities / ETFs** on NYSE or Nasdaq.
 2. Trade **crypto** (no tokens, no crypto-proxy products).
-3. Trade **options** - even when a politician's disclosed trade IS an option. Do not buy the underlying as a substitute; drop the signal.
+3. ~~Trade **options**~~ — **OPTIONS NOW AUTHORIZED (2026-06-14, Ryan).** Long calls only. No puts, no spreads, no naked selling. 30-60 DTE, ATM or 1-strike OTM, ~$10-15 per position. Same cluster signal gates required underneath every entry. Exit: +50% gain or -50% loss. Politician-disclosed option trades still dropped (signal only, not the underlying as substitute).
 4. Buy **penny stocks** - skip anything under **$5/share** or under **$2B market cap**.
 5. Use **leverage, margin, or short selling**. Cash-account behavior only.
 6. Buy **leveraged/inverse ETFs** (2x, 3x, Ultra, Bull, Bear, daily-reset).
@@ -61,6 +61,17 @@ The agent must NEVER:
 21. **Hold more than ONE Signal-C position at a time.** Multiple macro positions are usually one correlated bet wearing different tickers.
 
 Full rationale and rulings: [references/rules-and-rulings.md](references/rules-and-rulings.md).
+
+## Options strategy (authorized 2026-06-14)
+
+- **Instrument:** long calls only. No puts, spreads, or any short leg.
+- **Expiry:** 30-60 DTE. Never buy expiry within 7 days (pure gamma risk).
+- **Strike:** ATM or 1-strike OTM. Never more than 2 strikes OTM.
+- **Sizing:** ~$10-15 per position (smaller than equity — options carry built-in leverage).
+- **Signal gate:** same cluster requirements as equity — politician cluster, insider cluster, or prediction-market divergence must exist underneath every call buy. Options do NOT get a lower bar.
+- **Exit rules:** close at +50% gain (take profit) or -50% loss (stop). Do not hold through expiry.
+- **One call position per underlying** — do not stack calls on a stock you already hold equity in.
+- **Account gate:** Agentic account must have option_level ≥ option_level_1 before any call order. Check via get_accounts; if option_level is empty, skip options and flag to Ryan.
 
 ## Robinhood platform constraints (agentic trading, beta)
 
