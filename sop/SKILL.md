@@ -112,13 +112,92 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 5. Express via ONE long ETF (risk-on: QQQ/XLE; defensive: XLU/GLD). Max one Signal-C position at a time (Hard Rule 21).
 
 **Shared gate (every surviving candidate from either path):**
-5. **Apply HARD RULES** - drop crypto, options, event contracts, sub-$5/$2B, leveraged, OTC.
+5. **Apply HARD RULES** - drop crypto, sub-$5/$2B, leveraged, OTC. Options now permitted per 2026-06-14 authorization.
 6. **Sanity-check the stock** - NYSE/Nasdaq, ≥$5, ≥$2B cap, not within 2 days of earnings, not up >15% since the source trade date. (Earnings/chase rules N/A for broad Signal-C ETFs.)
-7. **Rank candidates** - multi-signal highest; then insider clusters; then prediction-market divergences; then politician clusters (bipartisan first). Detail in [references/decision-process.md](references/decision-process.md).
-8. **Size the position** - ~$20-25, ≤35% of portfolio, keep ≥5% cash.
-9. **Write the proposal** (name which signal(s) fired) and route to the approval workflow.
+7. **Run the Research Layer** (see below) — cross-verify across 8 dimensions. 3+ converging ❌ = disqualify.
+8. **Rank candidates** - multi-signal highest; then insider clusters; then prediction-market divergences; then politician clusters (bipartisan first). Detail in [references/decision-process.md](references/decision-process.md).
+9. **Size the position** - ~$20-25 equity / ~$10-15 options, ≤35% of portfolio, keep ≥5% cash.
+10. **Write the proposal** (name which signal(s) fired + research verdict) and route to the approval workflow.
 
 If nothing clears either path, output **no trade**.
+
+## Research layer (added 2026-06-14)
+
+Runs for EVERY verified cluster candidate BEFORE any order. Research is a filter and conviction enhancer — it cannot originate a trade (cluster gate still required). It CAN disqualify a candidate (3+ converging ❌) or raise conviction (3+ converging ✅).
+
+**Cross-verification principle:** one bad metric = note it. Two = flag it. Three or more independent sources converging on the same bearish (or bullish) verdict = act on that convergence. Agreement across sources is the signal.
+
+### Pull order (all free)
+
+**1. Fundamentals — yfinance**
+`pip install yfinance` then `ticker = yf.Ticker(symbol)`.
+- `ticker.info`: trailingPE, forwardPE, revenueGrowth, profitMargins, debtToEquity, currentRatio, returnOnEquity, marketCap, sector, industry
+- `ticker.financials`: revenue trend last 4 quarters
+- `ticker.balance_sheet`: totalDebt, cash
+- `ticker.cashflow`: freeCashflow
+❌ flags: P/E > 50, debt/equity > 2, negative FCF 3+ consecutive quarters, revenue shrinking YoY.
+
+**2. Technical analysis — yfinance + get_equity_historicals**
+Pull 90 days daily OHLCV via `ticker.history(period='90d')` or Robinhood MCP `get_equity_historicals`.
+Compute:
+- RSI (14-day): >70 = overbought ❌, <30 = oversold ✅
+- 20-day and 50-day SMA: price above both ✅, below both ❌
+- Volume trend: cluster happening on rising volume ✅, falling volume ❌
+- 52-week position: bottom 20% = potential value ✅, top 20% = extended ❌
+Cross-check: if RSI AND moving averages AND volume all agree → strong signal.
+
+**3. Analyst ratings + price targets — yfinance**
+- `ticker.recommendations_summary`: Buy/Hold/Sell counts
+- `ticker.analyst_price_targets`: mean target, current price vs mean upside %
+✅ Strong Buy consensus + price below mean target. ❌ Sell/Strong Sell majority OR price already above mean target.
+
+**4. Earnings calendar — yfinance + Nasdaq API**
+- `ticker.earnings_dates`: confirmed next date
+- Cross-check: `https://api.nasdaq.com/api/calendar/earnings?date=YYYY-MM-DD` for next 14 days
+- Hard block: within 2 trading days (Hard Rule 9). Extended flag: within 14 days = earnings risk, note in proposal.
+- `ticker.eps_trend`: estimates rising ✅, falling ❌. Positive surprise history ✅.
+
+**5. Options-specific — yfinance options chain** *(options entries only)*
+- `ticker.options`: list available expiries; pick nearest 30-60 DTE
+- `ticker.option_chain(expiry)`: pull IV, delta, theta, open interest, volume for ATM and 1-strike OTM calls
+- IV rank: `(current_IV - iv_52wk_low) / (iv_52wk_high - iv_52wk_low)` — compute from last 52w of weekly options data
+  - IV rank < 30% ✅ (cheap premium, good time to buy calls)
+  - IV rank > 70% ❌ (expensive premium, mean reversion risk — skip calls, consider equity instead)
+- Open interest > 500 on target strike ✅, < 100 ❌ (illiquid, wide spread risk)
+- Volume > 100 on target strike today ✅
+
+**6. Sector / peer comparison — yfinance**
+- Pull sector ETF (XLF=financials, XLV=health, XLE=energy, XLK=tech, XLI=industrials, XLRE=REITs, etc.) YTD return
+- Compare stock YTD vs sector ETF: lagging sector ✅ (room to run), already far ahead of sector ❌ (extended)
+- Pull 3-5 sector peers via `ticker.info['industry']`; compare P/E and revenue growth
+
+**7. SEC 8-K filings — EDGAR full-text search** *(no key, User-Agent required)*
+`https://efts.sec.gov/LATEST/search-index?q=%22TICKER%22&dateRange=custom&startdt=30-DAYS-AGO&forms=8-K`
+❌ Hard disqualifiers: going concern opinion, financial restatement, SEC investigation, CFO/CEO sudden departure, material adverse change. One of these = DISQUALIFY regardless of other scores.
+
+**8. FRED macro context — FRED API** *(free key, pull once per session)*
+Register free at fred.stlouisfed.org. Store key as `FRED_API_KEY` in `.env`.
+- `FEDFUNDS`: current fed funds rate — rising ❌ for growth stocks
+- `T10Y2Y`: 10Y-2Y yield spread — negative (inverted) ❌ = recession signal
+- `UNRATE`: unemployment — rising ❌ = macro headwind
+Macro context applies to all candidates in the session, not per-ticker.
+
+### Scoring and decision rule
+
+After all 8 dimensions, tally per candidate:
+
+| ❌ count | Action |
+|---|---|
+| 0–1 | Proceed — note flags in proposal |
+| 2 | Elevated caution — minimum size ($15 equity / $10 options), flag in proposal |
+| 3+ converging | **DISQUALIFY** — log reason, skip to next candidate |
+| 3+ ✅ converging | High conviction — note in proposal (do NOT exceed SOP size limits) |
+
+Any single ❌ from dimension 7 (adverse 8-K) = immediate disqualify, skip scoring.
+
+### Research does not replace the cluster gate
+
+Research runs AFTER a candidate clears the cluster gate. Bullish fundamentals + good technicals + analyst upgrades = still NO TRADE without a verified cluster underneath. Research filters and sizes; the cluster originates.
 
 ## SELL decision process
 

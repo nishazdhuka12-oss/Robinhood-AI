@@ -8,6 +8,8 @@ Log format: `DATE | ACTION | TICKER | $AMOUNT | SIGNAL-TYPE | SIGNAL DETAIL | TH
 
 ## Authorization events — ••••4744 (active account)
 
+**2026-06-14 | RESEARCH LAYER ADDED (Ryan).** Full 8-dimension research layer added to SOP: fundamentals (yfinance), technicals (RSI/SMA/volume), analyst ratings, earnings calendar, options Greeks/IV rank, sector/peer comparison, SEC 8-K filings, FRED macro. Cross-verification scoring: 3+ converging ❌ = disqualify, 3+ ✅ = high conviction. Research filters; cluster gate still required for entry. FRED_API_KEY needed (free, fred.stlouisfed.org).
+
 **2026-06-14 | OPTIONS AUTHORIZED (Ryan).** Long calls only added to the strategy. No puts, spreads, or naked selling. 30-60 DTE, ATM or 1-strike OTM, ~$10-15 sizing, +50%/-50% exits. Same cluster signal gates required. Hard Rule #3 updated in SKILL.md. Account must have option_level ≥ 1 before any order — Ryan to enable options on Agentic account ••••4744 in Robinhood app.
 
 **2026-06-13 | AUTONOMY AUTHORIZED for ••••4744.** Ryan explicitly authorized fully autonomous mode for the new Agentic account (••••4744, $100 funded). Account ••••8890 is closed; ••••4744 is the sole active Agentic account going forward. Prior autonomy override (2026-06-09) and all Hard Rules carry forward unchanged. No per-trade approval required; hard rules + full verification not waived; post-notify after every fill; stop-and-ask triggers remain live.
