@@ -8,6 +8,8 @@ Log format: `DATE | ACTION | TICKER | $AMOUNT | SIGNAL-TYPE | SIGNAL DETAIL | TH
 
 ## Authorization events — ••••4744 (active account)
 
+**2026-06-14 | RETURN IMPROVEMENTS (Ryan).** Trailing stop: -15% from high water mark once position +10% (tracked in positions-state.md). Partial profit: sell 50% at +20%, let rest run to +50%. VIX filter: size -50% when VIX>30, pause buys when VIX>40. Path D added: PEAD (post-earnings drift, beat >10%, entry within 5 days). Path E added: 13D/G activist filings (known activists >$1B AUM only).
+
 **2026-06-14 | SIZING + COMPOUNDING + LOGGING IMPROVEMENTS (Ryan).** Conviction-based dynamic sizing (12% of portfolio × tier multiplier). Add-to-winners rule (<10% gain, within cap). Monday weekend filing sweep. Failed signals log (failed-signals-log.md). Profit compounding flag on sells. Weekly performance summary routine added (separate, Fridays after close).
 
 **2026-06-14 | QUALITY IMPROVEMENTS ADDED (Ryan).** Market holiday gate (skip scan on US holidays). GFV counter (pause buys at 2, stop at 3 — tracked in gfv-log.md). Sector concentration limit (max 2 positions per GICS sector). Options theta exit (<14 DTE = close regardless of P&L). Warm watchlist (track single-insider buys awaiting cluster — warm-watchlist.md). FMP API key pending (Path A fallback only until key added).

@@ -104,6 +104,24 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 3. **10b5-1 filter** - drop pre-planned trades; keep only discretionary buys.
 4. **Cluster gate** - keep only tickers bought by **2+ different insiders within ~10 trading days**. Discard single-insider tickers.
 
+**Path D - PEAD (Post-Earnings Announcement Drift, added 2026-06-14):**
+1. Pull recent earnings results via yfinance `ticker.earnings_dates` for stocks that reported in the last 5 trading days.
+2. Compare actual EPS vs estimated EPS. Only proceed if actual beat estimated by ≥10%.
+3. Confirm the beat was on REVENUE too (not just EPS manipulation via buybacks) — yfinance `ticker.financials`.
+4. Check the stock's price reaction: if it ALREADY gapped up >15% on earnings day, skip (the move is priced in — Hard Rule 10 chase applies). If it moved <10% or pulled back, the drift hasn't started yet — this is the entry window.
+5. Entry window: within 5 trading days of the earnings announcement.
+6. Shared gate applies: $5+, $2B+ cap, not within 2 days of NEXT earnings, full research layer.
+7. PEAD positions hold 60-90 days (longer than cluster trades). Exit on +25% partial / trailing stop / stale >90 days.
+8. Log as signal-type: `pead`.
+
+**Path E - Activist investor 13D/G filings (added 2026-06-14):**
+1. Pull recent SC 13D filings from EDGAR (last 5 trading days): `https://efts.sec.gov/LATEST/search-index?q=&dateRange=custom&startdt=DATE&forms=SC+13D&hits.hits._source=period_of_report,entity_name,file_num,period_of_report` (User-Agent required).
+2. Filter for known high-signal activists only (AUM >$1B, track record): Elliott Management, Starboard Value, Icahn Enterprises, Bill Ackman/Pershing Square, Nelson Peltz/Trian, ValueAct Capital, Jana Partners, Third Point (Dan Loeb). Unknown filers = skip.
+3. Verify the 13D on EDGAR: confirm >5% stake, confirm it's a new position (not an amendment to an existing one unless the amendment shows a significant increase).
+4. Shared gate applies: $5+, $2B+ cap, not within 2 days of earnings.
+5. Activist positions can move fast — prioritize research layer (especially SEC 8-K for any response from the company).
+6. Exit: when activist files 13G amendment (passive, stake dropped below 5%) or our standard TP/stop/stale triggers. Log as signal-type: `activist-13d`.
+
 **Path C - Prediction-market divergence** (full pipeline + data sources: [references/prediction-markets.md](references/prediction-markets.md)):
 1. Pull implied probabilities for the next CPI / payrolls / FOMC print (Kalshi public API, cross-checked vs. Polymarket; material disagreement between the two = data flag, no trade).
 2. Pull independent anchors: Cleveland Fed Inflation Nowcast, FRED consensus/prior series.
@@ -113,6 +131,7 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 
 **Shared gate (every surviving candidate from either path):**
 5. **Apply HARD RULES** - drop crypto, sub-$5/$2B, leveraged, OTC. Options now permitted per 2026-06-14 authorization.
+5b. **VIX filter** — pull VIX via `yf.Ticker('^VIX').fast_info['last_price']`. If VIX > 30: reduce ALL new position sizes by 50% (high volatility = smaller bets). If VIX > 40: pause ALL new buys entirely — only manage existing positions. Log VIX level in every scan output.
 6. **Market hours check** - if today is a U.S. market holiday (New Year's Day, MLK Day, Presidents Day, Good Friday, Memorial Day, Juneteenth, July 4th, Labor Day, Thanksgiving, Christmas), output NO TRADE immediately and stop. No research, no orders.
 7. **GFV check** - read GFV counter from sop/gfv-log.md. If GFV count = 2, do NOT buy anything until settled cash is confirmed. If GFV count ≥ 3, STOP and alert Ryan (account may be restricted).
 8. **Sector concentration check** - before any buy, count existing positions per GICS sector. If target stock's sector already has 2 open positions, skip it (false diversification / correlation risk).
@@ -223,8 +242,9 @@ Research runs AFTER a candidate clears the cluster gate. Bullish fundamentals + 
 
 Sell when ANY is true (detail in [references/decision-process.md](references/decision-process.md)):
 
-- **Take profit:** position up ≥25% → sell full.
-- **Stop loss:** position down ≥15% → sell full. No averaging down.
+- **Partial profit at +20%:** when position is up ≥20%, sell HALF the position immediately. Log in sop/positions-state.md (partial_taken=yes). Let remaining half run with trailing stop. Do NOT sell the full position at +20%.
+- **Full take profit at +50%:** remaining half up ≥50% from cost → sell full. (Options: full exit at +50% as before.)
+- **Trailing stop (updated from fixed -15%):** track high_water_mark per position in sop/positions-state.md. Until position is up ≥10% from cost, use standard -15% stop from cost. Once position hits +10%, switch to trailing: stop = high_water_mark × 0.85 (15% below peak). Update high_water_mark daily if current price > stored high. Never move the stop DOWN.
 - **Politician signal reversal:** the politician/cluster that triggered a Path-A buy is now disclosed selling it.
 - **Thesis broke:** the reason to own it no longer holds.
 - **Stale:** held >90 days with no progress and no fresh supporting signal.
