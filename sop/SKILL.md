@@ -99,7 +99,7 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 4. **Disqualification filter** - drop every WEAK / no-live-signal / retired / divested member (validated leaderboard: [references/performance-scoring.md](references/performance-scoring.md)). If fewer than 2 qualifying members remain, discard.
 
 **Path B - Insider clusters** (data + filters: [references/insider-signal.md](references/insider-signal.md)):
-1. Pull recent insider buys, last ~10 trading days. Free flow: **discover code-P clusters on OpenInsider** (`/latest-cluster-buys`, the `Ins` column = cluster size), then **confirm each hit on SEC EDGAR Form 4 XML** - EDGAR is the only source carrying the 10b5-1 flag (`<aff10b5One>`), and it 403s without a `User-Agent` header. FMP/Finnhub are optional per-ticker cross-checks.
+1. Pull recent insider buys, last ~20 trading days. **On Mondays specifically: extend the OpenInsider pull to capture Saturday and Sunday filings from the prior weekend — these are often missed by agents that only look at the last trading day.** Free flow: **discover code-P clusters on OpenInsider** (`/latest-cluster-buys`, the `Ins` column = cluster size), then **confirm each hit on SEC EDGAR Form 4 XML** - EDGAR is the only source carrying the 10b5-1 flag (`<aff10b5One>`), and it 403s without a `User-Agent` header. FMP/Finnhub are optional per-ticker cross-checks.
 2. **Code filter** - keep ONLY open-market purchases (code P); drop sells, grants (A), exercises (M/F), gifts (G).
 3. **10b5-1 filter** - drop pre-planned trades; keep only discretionary buys.
 4. **Cluster gate** - keep only tickers bought by **2+ different insiders within ~10 trading days**. Discard single-insider tickers.
@@ -119,8 +119,17 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 9. **Sanity-check the stock** - NYSE/Nasdaq, ≥$5, ≥$2B cap, not within 2 days of earnings, not up >15% since the source trade date. (Earnings/chase rules N/A for broad Signal-C ETFs.)
 10. **Run the Research Layer** (see below) — cross-verify across 8 dimensions. 3+ converging ❌ = disqualify.
 11. **Rank candidates** - multi-signal highest; then insider clusters; then CEO/Chairman exception; then prediction-market divergences; then politician clusters (bipartisan first).
-12. **Size the position** - ~$10-15 equity / ~$7-10 options, ≤20% of portfolio, keep ≥5% cash. Max 6-8 simultaneous positions.
-13. **Write the proposal** (name which signal(s) fired + research verdict) and route to the approval workflow.
+12. **Add-to-winners check** — if the candidate is a stock already held in the portfolio AND the position is currently up <10% AND adding won't breach the 20% per-position cap: add at minimum conviction size. If position is up ≥10% or would breach the cap, skip (no doubling into extended positions).
+13. **Conviction-based sizing (dynamic):**
+    - Compute base size = 12% of current portfolio value (e.g. $100 portfolio → $12 base).
+    - Multi-signal (2+ independent signals on same stock): 1.25× base
+    - Insider cluster or prediction-market divergence: 1.0× base
+    - Politician cluster only: 0.85× base
+    - CEO/Chairman single-buy exception: 0.75× base (minimum conviction)
+    - Hard cap: never exceed 20% of portfolio or $25 per position (whichever is smaller). Never below $7.
+    - Options: 60% of the equity size for the same conviction tier.
+14. **Profit compounding** — when a position sells (TP, stop, or theta exit), log the freed cash amount in the output and flag it as available for the next qualifying signal. Do not let it sit silently — note it explicitly so the next scan prioritizes deploying it.
+15. **Log disqualified candidates** in sop/failed-signals-log.md: DATE | TICKER | SIGNAL-TYPE | DISQUALIFY REASON (which gate failed). This builds a tuning record over time.
 
 If nothing clears either path, output **no trade**.
 

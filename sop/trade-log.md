@@ -8,6 +8,8 @@ Log format: `DATE | ACTION | TICKER | $AMOUNT | SIGNAL-TYPE | SIGNAL DETAIL | TH
 
 ## Authorization events — ••••4744 (active account)
 
+**2026-06-14 | SIZING + COMPOUNDING + LOGGING IMPROVEMENTS (Ryan).** Conviction-based dynamic sizing (12% of portfolio × tier multiplier). Add-to-winners rule (<10% gain, within cap). Monday weekend filing sweep. Failed signals log (failed-signals-log.md). Profit compounding flag on sells. Weekly performance summary routine added (separate, Fridays after close).
+
 **2026-06-14 | QUALITY IMPROVEMENTS ADDED (Ryan).** Market holiday gate (skip scan on US holidays). GFV counter (pause buys at 2, stop at 3 — tracked in gfv-log.md). Sector concentration limit (max 2 positions per GICS sector). Options theta exit (<14 DTE = close regardless of P&L). Warm watchlist (track single-insider buys awaiting cluster — warm-watchlist.md). FMP API key pending (Path A fallback only until key added).
 
 **2026-06-14 | FREQUENCY LEVERS 1+2+3 AUTHORIZED (Ryan).** (1) Position sizing reduced $20-25→$10-15 equity, $10-15→$7-10 options; max positions 4-5→6-8; per-position cap 35%→20%. (2) Single CEO/Chairman insider buy allowed WITHOUT cluster if $500K+ open-market, code P, non-10b5-1 — fires at minimum size only. (3) Insider cluster window widened 10→20 trading days; politician cluster window widened 6→10 weeks. Target: 8-15 trades/month vs prior 3-7.
