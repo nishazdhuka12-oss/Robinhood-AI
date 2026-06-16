@@ -149,6 +149,13 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
     - Options: 60% of the equity size for the same conviction tier.
 14. **Profit compounding** — when a position sells (TP, stop, or theta exit), log the freed cash amount in the output and flag it as available for the next qualifying signal. Do not let it sit silently — note it explicitly so the next scan prioritizes deploying it.
 15. **Log disqualified candidates** in sop/failed-signals-log.md: DATE | TICKER | SIGNAL-TYPE | DISQUALIFY REASON (which gate failed). This builds a tuning record over time.
+16. **Rotation rule (added 2026-06-16)** — if the portfolio is at the 8-position limit AND a new signal clears all gates (Phase 1 + Phase 2 research), evaluate held profitable positions for ceiling indicators. If one qualifies, sell it to fund the new entry. Ceiling indicators (need 2+ to qualify for rotation):
+    - RSI-14 > 70 (overbought on 90-day chart)
+    - Price flat or declining 5+ consecutive trading days while position still profitable
+    - Price at or above analyst mean price target
+    - Partial profit already taken (post-+20% sell) AND remaining 50% showing no upward momentum for 5+ days
+    - Never rotate out of a position that is still trending (higher highs, price above 20 SMA). Only rotate out of stalling profitable positions.
+    - If no held position shows 2+ ceiling indicators, do NOT rotate — skip the new signal instead. Protecting existing momentum beats forcing a trade.
 
 If nothing clears either path, output **no trade**.
 
