@@ -16,4 +16,4 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| — | — | — | — | — | — |
+| FCN | PENDING FILL | PENDING FILL | PENDING FILL | no | GFD market order queued 2026-06-15, fills at 2026-06-16 open. Update cost_basis + trailing stop (cost×0.85) after fill. Signal: Path B insider cluster (3 insiders May 13-14). |
