@@ -20,29 +20,10 @@ All hard rules still apply: price >=5, mktcap >=2B, no earnings within 2 days, V
 
 Format: TICKER | STATUS | LAST_SCANNED | NOTES
 
-## Pre-existing tickers (skip auto-scan — added before 2026-06-16)
+## New additions (auto-scan results)
 
 | Ticker | Status | Last Scanned | Notes |
 |--------|--------|--------------|-------|
-| TSLA | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| NVDA | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| AAPL | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| LCID | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| AMZN | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| RIVN | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| MSFT | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| GOOGL | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| F | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| AMD | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| META | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| AMC | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| DIS | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| WMT | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| NFLX | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-| KO | EXISTING | — | Pre-loaded. Remove & re-add to trigger scan. |
-
-## New additions (auto-scan queue)
-
-| Ticker | Status | Last Scanned | Notes |
-|--------|--------|--------------|-------|
-| _(empty — add a stock to "First list" in Robinhood to trigger a scan)_ | | | |
+| FPS | PASS_BOUGHT | 2026-06-16 10:48 ET | GREEN. RSI ~64, strong uptrend, 103% YoY revenue growth, data center power equipment. Bought $10.18 @ ~$60.30. Order ID: 6a316224-1352-497d-8e71-93e94ea2c1a5 |
+| AAOI | RECHECK_DATE 2026-08-07 | 2026-06-16 10:48 ET | 4 flags: down 7.3% today, 20% off ATH $223, above all analyst targets ($177 vs $160 top), ongoing net losses. Q2 earnings Aug 6 — re-scan Aug 7. |
+| DRAM | PASS_BOUGHT | 2026-06-16 10:48 ET | YELLOW (×0.75 size). RSI ~62, AI/memory ETF, not leveraged. 1 flag: high volatility (15%+ single-day swings). Bought $7.64 @ ~$70.11. Order ID: 6a316227-65b0-4734-9691-fe1ce095804b |

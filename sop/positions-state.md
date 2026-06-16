@@ -19,3 +19,5 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 | FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Trailing activates at +10% ($172.59). Signal: Path B insider cluster (3 insiders May 13-14). |
 | RYAN | 36.11 | 36.11 | 30.69 | no | Filled 2026-06-16 ~9:51 AM ET. Trailing activates at +10% ($39.72). Signal: Path B insider cluster (Chair+CFO+GC, June 3-5). |
 | ADC | 74.51 | 74.51 | 63.33 | no | Filled 2026-06-16 ~9:51 AM ET. Trailing activates at +10% ($81.96). Signal: Path B insider cluster (Chair+CEO+2 dirs, May 14-Jun 4). |
+| FPS | 60.30 | 60.30 | 51.26 | no | Ordered 2026-06-16 ~10:48 AM ET. Trailing activates at +10% ($66.33). Signal: Path F user watchlist. Data center power equipment, 103% YoY growth. |
+| DRAM | 70.11 | 70.11 | 59.59 | no | Ordered 2026-06-16 ~10:48 AM ET. Trailing activates at +10% ($77.12). Signal: Path F user watchlist. Roundhill Memory ETF — AI/memory semiconductor theme. YELLOW sizing (×0.75). |
