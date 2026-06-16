@@ -10,7 +10,7 @@ Format: TICKER | INSIDER NAME | ROLE | DATE | AMOUNT | EDGAR ACCESSION | DAYS RE
 
 | Ticker | Insider | Role | Date | Amount | EDGAR Accession | Days Left |
 |---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — |
+| HOOD | Malka Meyer | Director | 2026-06-05 | ~$20M | EDGAR pending verification | 14 |
 
 ## Expired / promoted entries
 
