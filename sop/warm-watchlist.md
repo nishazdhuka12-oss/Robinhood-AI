@@ -10,7 +10,8 @@ Format: TICKER | INSIDER NAME | ROLE | DATE | AMOUNT | EDGAR ACCESSION | DAYS RE
 
 | Ticker | Insider | Role | Date | Amount | EDGAR Accession | Days Left |
 |---|---|---|---|---|---|---|
-| HOOD | Malka Meyer | Director | 2026-06-05 | ~$20M | EDGAR pending verification | 14 |
+| HOOD | Malka Meyer | Director | 2026-06-05 | ~$20M | EDGAR pending verification | 12 — NOTE: CLO Daniel Gallagher sold 10K shares Jun 3 (negative offsetting signal). Still monitoring for 2nd buy. |
+| ACM | Lara Poloni | President | 2026-06-16 | ~$298K (4,224 shares @ $70.64) | Quiver Jun 16, EDGAR unverified | 20 — AECOM ~$7B mktcap. Add 2nd insider to trigger research. Window expires ~2026-07-14. |
 
 ## Expired / promoted entries
 
