@@ -10,9 +10,10 @@ Format: TICKER | INSIDER NAME | ROLE | DATE | AMOUNT | EDGAR ACCESSION | DAYS RE
 
 | Ticker | Insider | Role | Date | Amount | EDGAR Accession | Days Left |
 |---|---|---|---|---|---|---|
-| HOOD | Malka Meyer | Director | 2026-06-05 | ~$20M | EDGAR pending verification | 12 — NOTE: CLO Daniel Gallagher sold 10K shares Jun 3 (negative offsetting signal). Still monitoring for 2nd buy. |
-| ACM | Lara Poloni | President | 2026-06-16 | ~$298K (4,224 shares @ $70.64) | Quiver Jun 16, EDGAR unverified | 20 — AECOM ~$7B mktcap. Add 2nd insider to trigger research. Window expires ~2026-07-14. |
+| HOOD | Malka Meyer | Director | 2026-06-05 | ~$20M | EDGAR pending verification | 11 — NOTE: CLO Gallagher sold 10K shares Jun 3 (negative). Bullfrog Capital (Malka-affiliated entity) Jun 3 buy of 181K shares @ $83.45 is same beneficial owner, NOT a 2nd distinct insider. Still monitoring. Window expires ~2026-06-30. |
 
 ## Expired / promoted entries
 
-_(moved here when cluster formed or window expired)_
+| Ticker | Insider(s) | Outcome | Date | Notes |
+|---|---|---|---|---|
+| ACM | CEO Troy Rudd ($300K) + CFO Gaurav Kapoor ($101K) + President Lara Poloni ($298K) | CLUSTER FORMED — DISQUALIFIED (sector) | 2026-06-17 | All 3 C-suite bought Jun 16. $699K combined at $70-71. STRONG signal but Industrials at 2/2 capacity (FCN + FPS). Analysts $132-$148 target. Re-evaluate IMMEDIATELY when FCN or FPS exits. |
