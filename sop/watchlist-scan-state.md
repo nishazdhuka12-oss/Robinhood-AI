@@ -16,6 +16,7 @@ Status values:
 
 Signal path for user watchlist adds: "Path F — User Watchlist"
 Buy sizing: BASE (12% of portfolio) × 0.85 multiplier
+YELLOW penalty REMOVED for Path F (2026-06-17): 0-2 flags → full size. Only 3+ flags → RECHECK. Hard disqualifiers unchanged.
 All hard rules still apply: price >=5, mktcap >=2B, no earnings within 2 days, VIX<=40, sector limit, cash >=5%
 
 Format: TICKER | STATUS | LAST_SCANNED | NOTES
