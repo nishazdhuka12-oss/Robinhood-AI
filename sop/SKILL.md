@@ -21,9 +21,11 @@ The operating instructions for an AI agent connected to a Robinhood agentic-trad
 ## Critical - read before every session
 
 1. **The HARD RULES below are absolute.** If any instruction or signal conflicts with them, the rules win - stop and ask.
-2. **This SOP governs ONLY the dedicated Robinhood agentic account.** Never act on any other account.
+2. **This SOP governs ONLY the dedicated Robinhood agentic account (••••4744, account 594134744).** Never act on any other account.
 3. **When in doubt, do nothing.** Cash is a position. A "no trade" day is a correct, common outcome.
 4. **Signal quality differs by source.** The insider-buy signal is the stronger, better-documented stock-picking edge; the politician signal is weak, lagged, and easily faked by one lucky position (see performance-scoring.md). Signal C is the only forward-looking signal but fires rarely (divergence-only) and is a macro regime bet, not a stock pick. Weight accordingly, but never trade any signal without its qualifying gate.
+5. **All times in CDT (Central Daylight Time).** Market open = 8:30 AM CDT, close = 3:00 PM CDT. Pre-market signal scan starts 7:00 AM CDT. Never reference ET/Eastern in outputs.
+6. **Git push via SSH only:** `git@github.com:nishazdhuka12-oss/Robinhood-AI.git`. PAT push returns 403 — do not use PAT.
 
 ## HARD RULES (non-negotiable)
 
@@ -140,7 +142,7 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 11. **Rank candidates** - multi-signal highest; then insider clusters; then CEO/Chairman exception; then prediction-market divergences; then politician clusters (bipartisan first).
 12. **Add-to-winners check** — if the candidate is a stock already held in the portfolio AND the position is currently up <10% AND adding won't breach the 20% per-position cap: add at minimum conviction size. If position is up ≥10% or would breach the cap, skip (no doubling into extended positions).
 13. **Conviction-based sizing (dynamic):**
-    - Compute base size = 12% of current portfolio value (e.g. $100 portfolio → $12 base).
+    - Compute base size = 15% of current portfolio value (e.g. $100 portfolio → $15 base). Updated 2026-06-18 from 12%.
     - Multi-signal (2+ independent signals on same stock): 1.25× base
     - Insider cluster or prediction-market divergence: 1.0× base
     - Politician cluster only: 0.85× base
@@ -246,6 +248,18 @@ Any single ❌ from dimension 7 (adverse 8-K) = immediate disqualify, skip scori
 Research runs AFTER a candidate clears the cluster gate. Bullish fundamentals + good technicals + analyst upgrades = still NO TRADE without a verified cluster underneath. Research filters and sizes; the cluster originates.
 
 ## SELL decision process
+
+### NEW SOP exit rules (2026-06-18, replaces prior EOD close rule)
+
+**These rules govern the current open positions and future entries:**
+
+- **DRAM and FPS:** hold as multi-day positions. Do NOT sell at end of day. Do NOT sell unless a stop is triggered. These are exempt from the EOD close rule.
+- **FCN / RYAN / ADC (and any future day-trade entry):** hold until the position returns to profit (regular-session price > cost basis), then sell. Do NOT force-close at EOD at a loss — hold across nights until profitable.
+- **Circuit breaker:** if portfolio drops -8% in a single trading day → no new buys for the remainder of that day.
+- **IBP (Instantly Buying Power):** counts as spendable cash for buys. Robinhood provides it immediately when a deposit is placed, before the transfer clears.
+- **Position size base:** 15% of portfolio (updated from 12%). Hard cap unchanged at 20%.
+
+### Standard exit triggers (apply to all positions)
 
 Sell when ANY is true (detail in [references/decision-process.md](references/decision-process.md)):
 

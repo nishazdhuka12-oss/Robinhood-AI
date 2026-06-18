@@ -1,50 +1,86 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-10 ~2:40 PM ET. Copy the prompt at the bottom into a new chat to continue the loop.
+Last updated: 2026-06-18 ~3:00 AM CDT.
 
 ## Current state (snapshot)
-- **Account:** Robinhood Agentic CASH account ••••8890 (`995608890`). NEVER trade the Individual margin account ••••5088 (`463795088`) — read-only, `agentic_allowed:false`.
-- **Authorization:** 2026-06-09 autonomy override — execute verified trades WITHOUT per-trade approval, but hard rules + verification NOT waived. NO "maximize money" mandate; disciplined cluster-following only.
-- **Portfolio:** ~$200 (started $200). 4 positions filled, ~$108 cash buffer.
+- **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account.
+- **Authorization:** Full autonomy. Execute verified trades without per-trade approval. Hard rules + verification NOT waived.
+- **Portfolio:** ~$100. 5 positions open, $46.18 cash.
+- **Git push:** SSH only — `git@github.com:nishazdhuka12-oss/Robinhood-AI.git`. PAT push returns 403.
+- **All times in CDT.** Market open = 8:30 AM CDT, close = 3:00 PM CDT, pre-market scan = 7:00 AM CDT.
 
-## Live positions (entry → synthetic stop / take-profit)
-All fractional → Robinhood rejects resting stop orders, so stops are SYNTHETIC (the loop enforces them each tick by selling at market if hit).
+## Live positions
 
-| Ticker | Shares | Cost | Stop | Take-profit | Signal |
-|---|---|---|---|---|---|
-| RYAN | 0.682695 | $33.69 | **$33.69** (breakeven, post-6/8 Goldman downgrade) | n/a | 3 insiders |
-| NCLH | 1.249327 | $18.41 | $15.65 (−15%) | $23.01 (+25%) | 7 insiders |
-| ADC | 0.304487 | $75.54 | $64.21 (−15%) | $94.42 (+25%) | 4 insiders |
-| RLI | 0.424682 | $54.16 | $46.03 (−15%) | $67.70 (+25%) | 4 insiders |
+| Ticker | Cost | HWM | Stop | New SOP Exit Rule | Signal |
+|--------|------|-----|------|-------------------|--------|
+| FCN | $156.90 | $156.90 | $133.37 | SELL when regular-session price > $156.90 (return to profit). Do NOT force EOD sell. | Path B insider cluster (3 insiders May 13-14). Trailing activates at +10% ($172.59). |
+| RYAN | $36.11 | $36.55 | $30.69 | SELL when regular-session price > $36.11 (return to profit). Do NOT force EOD sell. | Path B insider cluster (Chair+CFO+GC, Jun 3-5). Trailing activates at +10% ($39.72). |
+| ADC | $74.51 | $74.78 | $63.33 | SELL when regular-session price > $74.51 (return to profit). Do NOT force EOD sell. | Path B insider cluster (Chair+CEO+2 dirs, May 14-Jun 4). Trailing activates at +10% ($81.96). |
+| FPS | $60.48 | $64.38 | $51.41 | **HOLD indefinitely as multi-day position. Do NOT sell unless stop is hit.** | Path F user watchlist. Trailing activates at +10% ($66.53). |
+| DRAM | $70.15 | $72.33 | $59.63 | **HOLD indefinitely as multi-day position. Do NOT sell unless stop is hit.** YELLOW sizing (×0.75). | Path F user watchlist. Trailing activates at +10% ($77.17). |
 
-## Standing config
-- **Social layer (authorized 6/10):** pre-buy freshness check + live-position news-watch + social-led lead discovery. Social can DISQUALIFY or trigger an exit, NEVER originate a buy. Every entry still needs a verified primary-source cluster.
-- **RYAN note:** 6/8 Goldman downgrade-to-Neutral already known → decided HOLD w/ breakeven stop. Only a HARDER new catalyst (real probe/guidance cut/exec exit) escalates to an earlier exit.
-- **Drones/Defense watchlist** 🛩️ (id 564c2a43-a8b6-4b9f-93bc-a4f5120034a5): DRNZ, ONDS, AVAV, UMAC, RCAT, KTOS, DRS, TDG, BWXT, PLTR, RTX, LMT, NOC, GD, LHX, AXON. Folded into periodic scans.
-- **Warm watch (a 2nd buyer makes a cluster):** DRS (lone director Jeffery, 5/19); Rep. April McClain Delaney solo-loading TDG + BWXT. If a 2nd insider/member joins → EDGAR-verify + social-check + flag, ask before a 5th position.
-- **Loop cadence:** ~10 min. Stop-and-ask if portfolio down >20% ($160). Periodic fresh signal scan ~every 2.5h. Post-notify on any fill/trigger/new cluster; silent on no-op ticks except the log.
+## Jun 17 closes (reference for stop checks)
+FCN $150.60 | RYAN $35.28 | ADC $73.81 | FPS $61.92 | DRAM $69.95
 
-## Hard limits (never waived)
-Long US equities/ETFs only; no options/crypto/leverage/penny/<$5/<$2B/OTC; ≤35% per position; ≥5% cash; no chase >15% since source buy; no earnings within 2 trading days; EDGAR code-P + non-10b5-1 + 2+ insiders required for every insider buy. Loop runs ONLY while a session is live — no overnight/unattended monitoring.
+All stops clear vs last close. No stops triggered.
+
+## Sector caps
+- Industrials 2/2 FULL (FCN + FPS)
+- Financials 1/2 (RYAN)
+- Real Estate 1/2 (ADC)
+- All others 0/2
+
+## Warm watchlist (sop/warm-watchlist.md)
+- **HOOD**: Malka Meyer Dir ~$20M Jun 5. 7 trading days left (~Jun 30). Need 2nd distinct buyer.
+- **BRC**: CEO Nargolwala $1M Jun 10. 17 days left (~Jul 9). BLOCKED Industrials 2/2.
+- **SOFI**: CEO Noto $250K Jun 16. 18 days left (~Jul 14). Single buyer <$500K.
+- **AMR**: Dir Courtis $1.23M Jun 12. 17 days left (~Jul 11). Need 2nd distinct insider.
+- **PYPL**: CFO Miller $254K Jun 15. 18 days left (~Jul 11). 10b5-1 unconfirmed.
+
+## Pending re-evaluations
+- **ACM** (CEO+CFO+Pres $699K Jun 16): BLOCKED Industrials 2/2. Re-evaluate IMMEDIATELY when FCN or FPS exits.
+- **BRC** (CEO $1M Jun 10): BLOCKED Industrials 2/2. Window expires ~Jul 9.
+
+## New SOP (2026-06-18, replaces old SOP)
+
+**Exit rules:**
+- FCN / RYAN / ADC: sell when regular-session price exceeds cost basis. No EOD force-close.
+- DRAM / FPS: hold as multi-day positions. Only sell if stop is hit (-15% from cost).
+- Hard stop: -15% from cost (same as before).
+- Trailing: once position is up ≥10% from cost, stop = HWM × 0.85 (15% below peak).
+
+**Position sizing:** Base = 15% of portfolio (up from 12%).
+
+**Circuit breaker:** if portfolio drops -8% in a single trading day → no new buys for remainder of that day.
+
+**IBP (Instantly Buying Power):** Robinhood funds provided immediately when a deposit is placed (before transfer clears). Counts as spendable cash for buys.
+
+**Pre-market:** Signal scan starts at 7:00 AM CDT (8:00 AM ET). Heartbeat ticks every 15 min.
 
 ---
 
 ## COPY THIS INTO A FRESH CHAT:
 
 ```
-Resume the AI trading agent intraday loop. FIRST read these for full state:
-- ai-trading-agent-sop/RESUME.md (current positions, stops, config — start here)
-- ai-trading-agent-sop/SKILL.md (the SOP + hard rules)
-- ai-trading-agent-sop/trade-log.md (full history)
+Resume the AI trading agent loop. Account 594134744 (agentic_allowed=true ONLY).
 
-Trade ONLY the Robinhood Agentic cash account 995608890 (••••8890). NEVER touch the
-Individual margin account 463795088. Autonomy override is active (execute verified trades
-without per-trade approval; hard rules + verification NOT waived; no "maximize money").
+Read these files first:
+- sop/RESUME.md (current positions, stops, new SOP exit rules — start here)
+- sop/SKILL.md (full SOP + hard rules)
+- sop/positions-state.md (HWM tracking)
+- sop/warm-watchlist.md (tickers awaiting 2nd insider)
 
-Then run one loop tick now to confirm clean resume: get_portfolio + get_equity_positions
-+ get_equity_quotes on RYAN/NCLH/ADC/RLI, confirm cost-basis + synthetic stops match
-RESUME.md, enforce the synthetic stops (RYAN $33.69 / NCLH $15.65 / ADC $64.21 / RLI $46.03)
-and +25% take-profits, run the social news-watch, and re-arm the ~10-min ScheduleWakeup loop.
-If the market is closed, give the end-of-day summary instead and resume at the next open.
-Log every tick to trade-log.md. Post-notify on any fill/trigger/new cluster.
+NEW SOP EXIT RULES (confirmed 2026-06-18):
+- FCN: sell when regular-session price > $156.90 (cost basis)
+- RYAN: sell when regular-session price > $36.11 (cost basis)
+- ADC: sell when regular-session price > $74.51 (cost basis)
+- DRAM: HOLD as multi-day — do NOT sell unless stop ($59.63) is hit
+- FPS: HOLD as multi-day — do NOT sell unless stop ($51.41) is hit
+
+Git push via SSH only: git@github.com:nishazdhuka12-oss/Robinhood-AI.git
+All times in CDT. Market open = 8:30 AM CDT.
+
+Run one loop tick now: get_portfolio + get_equity_positions + get_equity_quotes on FCN/RYAN/ADC/FPS/DRAM.
+Check stops. Apply new SOP exit rules if market is open. Run signal scan if 7:00 AM CDT or later.
+Re-arm 15-min ScheduleWakeup loop.
 ```
