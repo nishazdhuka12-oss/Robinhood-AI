@@ -137,7 +137,7 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 This path runs continuously during market hours as a parallel scan alongside Paths A–E. It is entirely intraday — all Path G positions are day-trades and must close by 2:45 PM CDT (15 min before close). Never hold overnight.
 
 **Universe filter (screen first, then rank):**
-- Price: $5–$100
+- Price: $5–$300 (raised from $100 on 2026-06-18 — the $100 cap excluded every genuine mega-cap catalyst mover (Intel, Micron, Marvell) on a day when small/mid-caps lagged the broader market)
 - Market cap: ≥$300M (Path G exception to the general $2B rule — applies ONLY to this path)
 - Average daily volume: ≥1M shares
 - Current volume: ≥3× the 30-day average volume
