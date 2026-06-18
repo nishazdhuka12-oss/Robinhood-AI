@@ -142,8 +142,8 @@ This path runs continuously during market hours as a parallel scan alongside Pat
 - Average daily volume: ≥1M shares
 - Current volume: ≥3× the 30-day average volume
 - Exchange: NYSE or Nasdaq only. No OTC, no SPACs, no low-float stocks.
-- Intraday gain: exclude any stock already up >40-50% with no news catalyst (parabolic blow-off, no edge)
-- News catalyst required: earnings beat, guidance raise, analyst upgrade, major contract, FDA announcement, or other significant confirmed news. No catalyst = skip.
+- Intraday gain: 5-50% range. Below 5% = not enough momentum. Above 50% = parabolic/halt risk, skip.
+- News catalyst required: earnings beat, guidance raise, analyst upgrade, major contract, FDA announcement, or other significant confirmed news, confirmed same-day (not yesterday's news rehashed). No catalyst = skip.
 
 **Rank surviving candidates by weighted score:**
 1. % gain on the day (higher = better, but penalize vertical spikes with no pullback)
@@ -158,6 +158,23 @@ This path runs continuously during market hours as a parallel scan alongside Pat
 - Stock is making higher highs and higher lows (confirmed uptrend)
 - Breaking out of a consolidation pattern with increasing volume
 - NOT in a vertical spike — wait for a pullback or flat consolidation followed by confirmation of renewed strength before entering
+- RSI-14 between 30-65 (not overbought; >70 = avoid entry)
+- MACD bullish crossover (MACD line > signal line, and rising — not just crossed, still climbing)
+- Price above SMA20 AND SMA50
+- Volume spike >1.5x the 3-month average
+- No bearish reversal candle at current peak (no shooting star, no doji at the top, no upper wick longer than the candle body)
+- Put/call ratio <1.0 if options data available (skip this check if unavailable, don't hard-block)
+- Avoid if volume is fading while price still rising (distribution pattern — bulls losing conviction)
+
+**15-minute profitability assessment (run immediately before every Path G buy):**
+Ask: "If I buy now, can I sell at a profit when the next 15-min tick fires?" ALL must be true or skip the candidate this tick (reassess next tick, don't permanently disqualify):
+(a) Price trending upward with volume >1.5x avg (same as technical gates above)
+(b) RSI <70, MACD bullish and still rising
+(c) No bearish reversal signal at the current peak
+(d) Bid-ask spread tight enough that the expected move covers round-trip cost (spread isn't eating the edge)
+(e) Catalyst confirmed same-day, not stale news
+
+**GFV check:** call review_equity_order before every Path G buy to avoid a Good Faith Violation on unsettled cash.
 
 **Timing restrictions:**
 - No trades in the first 5 minutes after market open (no entries before 8:35 AM CDT)
@@ -169,7 +186,7 @@ This path runs continuously during market hours as a parallel scan alongside Pat
 - Risk per trade: 0.5–1% of account value ($0.50–$1.00 on a $100 account)
 - Initial stop: 2–3% below entry price OR below the nearest key support level (whichever is tighter)
 - Partial profit: take 50% off at +5% gain, move stop to breakeven on remainder
-- Trail the remaining position with a volatility-based trailing stop (widen stop in high-VIX environments)
+- **Tighter momentum trailing exit (added 2026-06-18):** once a Path G position peaks at ≥+5% from entry, sell immediately if it pulls back 3 percentage points from that peak. This is tighter than the general SOP trailing rule (5pp pullback from a +10% peak) — Path G always uses the tighter 3pp/+5% version, never the looser one.
 
 **Exit rules (Path G — hard exits, no exceptions):**
 - Exits immediately if: stock loses VWAP on heavy volume | momentum indicators deteriorate | catalyst is invalidated or walked back
