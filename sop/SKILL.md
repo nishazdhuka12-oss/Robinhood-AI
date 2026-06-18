@@ -196,6 +196,8 @@ Ask: "If I buy now, can I sell at a profit when the next 15-min tick fires?" ALL
 
 **Path G does NOT go through the shared gate or 8-dimension research layer.** Its own entry gates above replace those checks. It also does not require the $2B market cap (uses $300M instead). All other hard rules still apply (no OTC, no leverage, no crypto, no shorts).
 
+**TRIAL — best-available fallback (2026-06-18, ONE DAY ONLY, re-evaluate after today):** Run the strict Path G gate as normal all day. If zero Path G trades have executed by 1:00 PM CDT, fall back: take the single best-ranked candidate from today's top-movers scan that still passes the hard universe filter (price $5-$100, mktcap ≥$300M, volume floors, 5-50% intraday range, NYSE/Nasdaq, no OTC/SPAC/low-float) — but does NOT need to clear every technical/catalyst gate. Rank fallback candidates by how many of {RSI 30-65, MACD bullish, above VWAP, above 9EMA, above 20EMA, above SMA20, above SMA50, volume spike >1.5x, no bearish reversal candle, has some same-day news} they satisfy, and take the highest scorer. Size at the minimum Path G risk (0.5% of account, not 1%). Tag the trade-log entry "PATH G FALLBACK TRIAL" so today's result is easy to find and review. Do not repeat this fallback past today without explicit re-confirmation.
+
 **Path G is fully autonomous.** Execute qualifying entries and exits immediately without asking for approval. Post-notify after every fill. Do not wait for human confirmation on any Path G trade.
 
 Log as signal-type: `path-g-daily-riser`.
