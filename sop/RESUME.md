@@ -59,6 +59,8 @@ All stops clear vs last close. No stops triggered.
 
 **Pre-market:** Signal scan starts at 7:00 AM CDT (8:00 AM ET). Heartbeat ticks every 15 min.
 
+**Path G (Daily Risers, added 2026-06-18):** Continuous intraday scan for top % gainers. $5–$100, mktcap ≥$300M (Path G exception), vol ≥3× avg, confirmed catalyst required. Entry: above VWAP + 9/20 EMA on 5-min, HH+HL, breaking consolidation — no vertical spikes. Risk 0.5–1% per trade, partial at +5%, trail remainder. Hard close by 2:45 PM CDT. Stop after 3 consecutive losses or 2–3% daily loss. No trades first 5 min. No pre-earnings entries. All Path G = day-trades (never overnight).
+
 ---
 
 ## COPY THIS INTO A FRESH CHAT:

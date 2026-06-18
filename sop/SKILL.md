@@ -132,6 +132,55 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 5. Activist positions can move fast — prioritize research layer (especially SEC 8-K for any response from the company).
 6. Exit: when activist files 13G amendment (passive, stake dropped below 5%) or our standard TP/stop/stale triggers. Log as signal-type: `activist-13d`.
 
+**Path G — Daily Risers / Top Movers (added 2026-06-18):**
+
+This path runs continuously during market hours as a parallel scan alongside Paths A–E. It is entirely intraday — all Path G positions are day-trades and must close by 2:45 PM CDT (15 min before close). Never hold overnight.
+
+**Universe filter (screen first, then rank):**
+- Price: $5–$100
+- Market cap: ≥$300M (Path G exception to the general $2B rule — applies ONLY to this path)
+- Average daily volume: ≥1M shares
+- Current volume: ≥3× the 30-day average volume
+- Exchange: NYSE or Nasdaq only. No OTC, no SPACs, no low-float stocks.
+- Intraday gain: exclude any stock already up >40-50% with no news catalyst (parabolic blow-off, no edge)
+- News catalyst required: earnings beat, guidance raise, analyst upgrade, major contract, FDA announcement, or other significant confirmed news. No catalyst = skip.
+
+**Rank surviving candidates by weighted score:**
+1. % gain on the day (higher = better, but penalize vertical spikes with no pullback)
+2. Relative volume vs 30-day average (higher = more conviction)
+3. Trend strength (higher highs + higher lows on intraday chart = positive)
+4. News quality (earnings/FDA/contract > analyst upgrade > generic bullish article)
+5. Institutional interest (large-cap names with institutional ownership score higher)
+
+**Technical entry gates (ALL must be true before buying):**
+- Price is above VWAP
+- Price is above both the 9 EMA and 20 EMA on the 5-minute chart
+- Stock is making higher highs and higher lows (confirmed uptrend)
+- Breaking out of a consolidation pattern with increasing volume
+- NOT in a vertical spike — wait for a pullback or flat consolidation followed by confirmation of renewed strength before entering
+
+**Timing restrictions:**
+- No trades in the first 5 minutes after market open (no entries before 8:35 AM CDT)
+- No buying before an earnings report (no pre-earnings gambles — wait for the report to drop first)
+- Stop trading Path G for the remainder of the day after 3 consecutive losses on this path
+- Stop trading Path G if daily loss from this path hits 2–3% of total account value ($2–$3 on a $100 account)
+
+**Risk management (Path G — overrides general SOP sizing for this path only):**
+- Risk per trade: 0.5–1% of account value ($0.50–$1.00 on a $100 account)
+- Initial stop: 2–3% below entry price OR below the nearest key support level (whichever is tighter)
+- Partial profit: take 50% off at +5% gain, move stop to breakeven on remainder
+- Trail the remaining position with a volatility-based trailing stop (widen stop in high-VIX environments)
+
+**Exit rules (Path G — hard exits, no exceptions):**
+- Exits immediately if: stock loses VWAP on heavy volume | momentum indicators deteriorate | catalyst is invalidated or walked back
+- Never average down on a losing Path G position
+- Never hold a Path G position overnight — if position is still open at 2:45 PM CDT, close it regardless of P&L
+- Close all Path G positions at least 15 minutes before market close (2:45 PM CDT hard deadline)
+
+**Path G does NOT go through the shared gate or 8-dimension research layer.** Its own entry gates above replace those checks. It also does not require the $2B market cap (uses $300M instead). All other hard rules still apply (no OTC, no leverage, no crypto, no shorts).
+
+Log as signal-type: `path-g-daily-riser`.
+
 **Path C - Prediction-market divergence** (full pipeline + data sources: [references/prediction-markets.md](references/prediction-markets.md)):
 1. Pull implied probabilities for the next CPI / payrolls / FOMC print (Kalshi public API, cross-checked vs. Polymarket; material disagreement between the two = data flag, no trade).
 2. Pull independent anchors: Cleveland Fed Inflation Nowcast, FRED consensus/prior series.
