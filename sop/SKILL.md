@@ -42,6 +42,7 @@ The agent must NEVER:
 9. Open a position **within 2 trading days before** that company's earnings.
 10. **Chase** - skip if already up >15% since the source trade date (the politician's trade date, or the insider's Form 4 transaction date).
 11. Act on **thinly-disclosed signals** (missing ticker, type, or amount/share data).
+29. **(Hard Rule 29, added 2026-06-18) Force-sell all day-trade positions by 4:00 PM ET (3:00 PM CDT) at the EOD tick.** IBP-designated multi-day holds are the only exception — they have no EOD close rule. Current IBP positions: DRAM, FPS. *Exception for current legacy positions: FCN, RYAN, ADC are held past EOD until they return to profit (price > cost basis), then sold — this overrides Hard Rule 29 for these specific positions only.*
 
 **Politician-signal rules (Signal A):**
 
@@ -90,6 +91,13 @@ What the platform enforces (verified 2026-06-09), independent of our rules:
 
 Buy **long U.S. equities/ETFs only**, sized small across 3-5 positions, when a qualifying **politician cluster** (multiple members, same stock, tight window, after disqualifying no-signal members), a qualifying **insider cluster** (2+ insiders, open-market non-10b5-1 purchases, same stock, tight window), OR a qualifying **prediction-market divergence** on a recurring macro print (divergence vs. nowcast, expressed via one long ETF) fires. A stock backed by **multiple** signals is the highest-conviction setup. Insider buys are the strongest stock-picking edge; politician signals are weak and used cautiously; Signal C is forward-looking but rare by design.
 
+## Opening procedure (run at first tick of each trading day)
+
+1. **Reset daily tracking:** clear intraday high-water marks, reset circuit breaker flag to OFF.
+2. **Circuit breaker check:** compute today's starting portfolio value. If account is already down ≥8% from yesterday's close → set circuit breaker ON (no new buys for the rest of today). Log in daily summary.
+3. **Execute pending sells first:** before any scan or buy, sell any positions marked PENDING_SELL in positions-state.md. Day-trade positions that hit their EOD close rule carry over as PENDING_SELL if the prior session ended with the market closed mid-sell.
+4. Then proceed to normal tick (position monitoring → signal scan → buys).
+
 ## BUY decision process
 
 Two parallel signal paths feed one shared gate. A candidate must pass EVERY shared gate. Detailed scoring, ranking, and the insider pipeline: [references/decision-process.md](references/decision-process.md).
@@ -132,6 +140,7 @@ Two parallel signal paths feed one shared gate. A candidate must pass EVERY shar
 5. Express via ONE long ETF (risk-on: QQQ/XLE; defensive: XLU/GLD). Max one Signal-C position at a time (Hard Rule 21).
 
 **Shared gate (every surviving candidate from either path):**
+4b. **Real news catalyst required (added 2026-06-18):** every buy needs a verified signal (politician cluster, insider cluster, activist, or PEAD) PLUS a real news catalyst confirming the thesis (earnings beat, product launch, contract win, regulatory approval, etc.). Signal alone without a confirmable catalyst = skip.
 5. **Apply HARD RULES** - drop crypto, sub-$5/$2B, leveraged, OTC. Options now permitted per 2026-06-14 authorization.
 5b. **VIX filter** — pull VIX via `yf.Ticker('^VIX').fast_info['last_price']`. If VIX > 30: reduce ALL new position sizes by 50% (high volatility = smaller bets). If VIX > 40: pause ALL new buys entirely — only manage existing positions. Log VIX level in every scan output.
 6. **Market hours check** - if today is a U.S. market holiday (New Year's Day, MLK Day, Presidents Day, Good Friday, Memorial Day, Juneteenth, July 4th, Labor Day, Thanksgiving, Christmas), output NO TRADE immediately and stop. No research, no orders.
@@ -265,7 +274,7 @@ Sell when ANY is true (detail in [references/decision-process.md](references/dec
 
 - **Partial profit at +20%:** when position is up ≥20%, sell HALF the position immediately. Log in sop/positions-state.md (partial_taken=yes). Let remaining half run with trailing stop. Do NOT sell the full position at +20%.
 - **Full take profit at +50%:** remaining half up ≥50% from cost → sell full. (Options: full exit at +50% as before.)
-- **Trailing stop (updated from fixed -15%):** track high_water_mark per position in sop/positions-state.md. Until position is up ≥10% from cost, use standard -15% stop from cost. Once position hits +10%, switch to trailing: stop = high_water_mark × 0.85 (15% below peak). Update high_water_mark daily if current price > stored high. Never move the stop DOWN.
+- **Trailing stop (updated 2026-06-18):** track high_water_mark per position in sop/positions-state.md. Until position is up ≥10% from cost, use standard -15% stop from cost. Once position hits +10%, switch to trailing: if price pulls back **5+ points from the peak (high_water_mark)** → SELL ALL immediately. Update high_water_mark each tick when current price > stored value. Never move the stop DOWN.
 - **Politician signal reversal:** the politician/cluster that triggered a Path-A buy is now disclosed selling it.
 - **Thesis broke:** the reason to own it no longer holds.
 - **Stale:** held >90 days with no progress and no fresh supporting signal.

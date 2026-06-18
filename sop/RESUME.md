@@ -44,10 +44,12 @@ All stops clear vs last close. No stops triggered.
 ## New SOP (2026-06-18, replaces old SOP)
 
 **Exit rules:**
-- FCN / RYAN / ADC: sell when regular-session price exceeds cost basis. No EOD force-close.
-- DRAM / FPS: hold as multi-day positions. Only sell if stop is hit (-15% from cost).
-- Hard stop: -15% from cost (same as before).
-- Trailing: once position is up ≥10% from cost, stop = HWM × 0.85 (15% below peak).
+- FCN / RYAN / ADC: sell when regular-session price exceeds cost basis. No EOD force-close (exception to Hard Rule 29 for these specific legacy positions).
+- DRAM / FPS: IBP multi-day holds. Only sell if stop is hit (-15% from cost). Exempt from EOD close rule.
+- Hard stop: -15% from cost.
+- Trailing (updated 2026-06-18): once position is up ≥10% from cost → if price pulls back 5+ points from the peak (HWM) → SELL ALL immediately.
+- EOD rule (Hard Rule 29): all day-trade positions force-sold by 3:00 PM CDT. Only IBP holds (DRAM, FPS) are exempt.
+- Opening each day: reset daily tracking, check -8% circuit breaker, execute PENDING_SELL before scanning buys.
 
 **Position sizing:** Base = 15% of portfolio (up from 12%).
 
