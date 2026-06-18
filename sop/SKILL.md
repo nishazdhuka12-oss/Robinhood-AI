@@ -1,6 +1,6 @@
 ---
 name: ai-trading-agent-sop
-description: SOP for the Robinhood AI trading agent. Use for approval-first strategy, signal checks, trade proposals, and automation for the dedicated Agentic account. Enforces long U.S. equities/ETFs only, cluster gates, hard risk rules, and human approval before autonomy.
+description: SOP for the Robinhood AI trading agent. Fully autonomous (Phase 3 active). Signal paths A–G, hard risk rules, position monitoring, and autonomous execution for the dedicated Agentic account (594134744).
 version: 3.2.0
 metadata:
  author: Ryan Doser
@@ -179,6 +179,8 @@ This path runs continuously during market hours as a parallel scan alongside Pat
 
 **Path G does NOT go through the shared gate or 8-dimension research layer.** Its own entry gates above replace those checks. It also does not require the $2B market cap (uses $300M instead). All other hard rules still apply (no OTC, no leverage, no crypto, no shorts).
 
+**Path G is fully autonomous.** Execute qualifying entries and exits immediately without asking for approval. Post-notify after every fill. Do not wait for human confirmation on any Path G trade.
+
 Log as signal-type: `path-g-daily-riser`.
 
 **Path C - Prediction-market divergence** (full pipeline + data sources: [references/prediction-markets.md](references/prediction-markets.md)):
@@ -346,13 +348,13 @@ Adopted 2026-06-10 from zonted.com/posts/vibe-trading (a 5-day, ~$16k, 310-strat
 6. **Adversarial verification on big claims.** Before changing strategy based on a backtest or a performance claim (ours or anyone's), have a second pass/sub-agent try to refute it: check benchmarks, costs (assume ≥3-5bp per side), sample size, and data feed. "The best of 250 garbage strategies looks like genius."
 7. **Pre-register rules, then don't drift.** This SOP is the frozen spec. Mid-session rule-bending because a trade "looks good" is exactly how the experiment's losers were built. Rule changes happen via Ryan, in writing, in this file.
 
-## Approval workflow - human-in-the-loop, then autonomous
+## Approval workflow — PHASE 3 ACTIVE (fully autonomous)
 
-(Ryan ruling.) Start with approval, learn from answers, then graduate.
+**Status as of 2026-06-18: Phase 3 autonomous is active across ALL signal paths including Path G.** Execute all qualifying trades (buys, sells, stops, partial profits, EOD closes) without asking for approval. Post-notify after every fill. Fall back to asking only on genuine edge cases not covered by this SOP.
 
-- **Phase 1 - Approval required.** Present every buy/sell proposal (ticker, action, $ amount, which signal(s) fired - politician cluster + perf buckets, and/or insider cluster + names/roles/codes, one-sentence thesis) and wait for explicit approval. Robinhood's own "review before action" gate is optional - **keep it ON.** Our Phase 1 requires explicit human approval regardless of the platform setting; never let the agent auto-execute before Phase 3.
-- **Phase 2 - Learn.** Log every decision and reason; adjust future proposals to match revealed preferences. Patterns already learned are now Hard Rules 12-14.
-- **Phase 3 - Autonomous** (only when ALL met): ≥20 logged decisions, ≥80% approval rate over the last 10, AND Ryan says "go autonomous." Then execute clear-cut trades without asking but always post-notify, keep logging, and fall back to asking on any edge case.
+- **Phase 1 - Approval required** (historic, no longer active): present every proposal and wait for explicit approval.
+- **Phase 2 - Learn** (historic): log every decision; adjust to revealed preferences.
+- **Phase 3 - Autonomous** (CURRENT): execute verified trades immediately, post-notify, keep logging, ask only when genuinely stuck or a hard rule is unclear.
 
 **Kill switch:** Ryan can disconnect the agent in the Robinhood app instantly, or say "pause" / "approval mode" to force Phase 1.
 
