@@ -87,6 +87,10 @@ What the platform enforces (verified 2026-06-09), independent of our rules:
 - **Connect:** `claude mcp add robinhood-trading --transport http https://agent.robinhood.com/mcp/trading`. Auth is OAuth (no static token); the in-session PKCE round-trip expires fast - approve in-browser and paste the `localhost/callback?code=...` URL back immediately, or it times out ("No OAuth flow is in progress"). Browser auth alone does NOT give the session a token.
 - **The tradable account is the dedicated cash account nicknamed "Agentic" (`agentic_allowed: true`); verified 2026-06-13 as ••••4744.** The default margin individual account is `agentic_allowed: false` - read-only to the agent, never traded. Always confirm via `get_accounts` before any order.
 
+## Daily performance goal (added 2026-06-19)
+
+Target: **+2% portfolio gain per trading day.** This is a benchmark/goal, not a hard rule — it never overrides risk limits (circuit breaker, position caps, sector caps, GFV checks, stop-losses). Never force a low-quality trade or skip a stop-loss just to chase the number. Report progress toward this target in each daily summary (e.g. "+0.8% so far today, below the +2% target" or "+2.3%, target hit"). If the target is hit early in the day, that does not mean stop trading — keep following the SOP normally; it's a performance lens, not a cap.
+
 ## The strategy in one line
 
 Buy **long U.S. equities/ETFs only**, sized small across 3-5 positions, when a qualifying **politician cluster** (multiple members, same stock, tight window, after disqualifying no-signal members), a qualifying **insider cluster** (2+ insiders, open-market non-10b5-1 purchases, same stock, tight window), OR a qualifying **prediction-market divergence** on a recurring macro print (divergence vs. nowcast, expressed via one long ETF) fires. A stock backed by **multiple** signals is the highest-conviction setup. Insider buys are the strongest stock-picking edge; politician signals are weak and used cautiously; Signal C is forward-looking but rare by design.
