@@ -1,18 +1,18 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-19. SOP rewritten this date — see sop/SKILL.md for the full current framework (Paths 0/B/C/D only; old Path A-G retired).
+Last updated: 2026-06-19 (second rewrite same date). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## Current state (snapshot)
-- **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number.
-- **Authorization:** Full autonomy. Execute verified trades without per-trade approval. Hard rules + verification NOT waived.
+- **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number (678685199 has been pasted repeatedly; it does not exist on this login).
+- **Authorization:** Full autonomy. Execute verified trades without per-trade approval.
 - **Portfolio:** ~$100. 5 legacy positions open, ~$46 cash.
 - **Git push:** SSH only — `git@github.com:nishazdhuka12-oss/Robinhood-AI.git`. PAT push returns 403.
-- **All times in CDT.** Pre-market 3:00–8:30 AM CDT, regular session 8:30 AM–3:00 PM CDT, EOD tick exactly 3:00 PM CDT.
+- **All times in CDT.** Before 8:00 AM: nothing. 8:00–8:30 AM: pre-market prep (no trades). 8:30 AM–3:00 PM: trading session. 3:00 PM exactly: EOD, sell everything (Path 0/B/C/D only). After 3:00 PM, weekends, holidays: nothing.
 - **Daily goal:** +2% portfolio gain (benchmark only, never overrides risk rules).
 
 ## Legacy positions (grandfathered — see sop/SKILL.md "Legacy positions" section)
 
-These 5 positions predate the 2026-06-19 SOP rewrite. They follow ONLY their own rule below — never Path 0/B/C/D, never JOB 1, never the new EOD force-close. Mechanical stop-loss (-15%) and trailing-stop (once +10% from cost, 5pp pullback from peak) still apply.
+These 5 positions predate the rewrites. They follow ONLY their own rule below — never Path 0/B/C/D, never the Hold-vs-Sell tree, never EOD force-close, never the SPY/QQQ tape emergency exit. Mechanical stop-loss (-15%) and trailing-stop (once +10% from cost, 5pp pullback from peak) still apply.
 
 | Ticker | Cost | HWM | Stop | Exit Rule |
 |--------|------|-----|------|-----------|
@@ -24,19 +24,21 @@ These 5 positions predate the 2026-06-19 SOP rewrite. They follow ONLY their own
 
 Full detail: sop/positions-state.md.
 
-## New framework (2026-06-19) — applies to all NEW trading activity
+## Current framework (2026-06-19, second pass) — applies to all NEW trading activity
 
-**Signal paths, in priority order:** Path 0 (breaking news) → Path D (momentum/price jumps, one at a time, $2B+ mktcap, forced exit at the very next tick) → Path B (insider clusters, same-day catalyst REQUIRED) → Path C (prediction-market divergence, macro ETF, rare). Path A (politician trades) permanently suspended — Hard Rule 35.
+**Signal paths, in priority order:** Path 0 (breaking news) → Path D ("Daily Jumpers" — live momentum, primary strategy, multi-tick hold managed via the Hold-vs-Sell loop, NOT a forced single-tick exit anymore) → Path B (insider clusters, same-day catalyst REQUIRED, last resort) → Path C (macro ETF divergence, rare). Path A (politician trades) permanently suspended — Hard Rule 35.
+
+**Catalyst tiers:** Tier 1 (earnings beat+guidance raise, FDA full approval, buyout target, index inclusion, major gov't contract, developing short squeeze) > Tier 2 (earnings beat alone, ≥10% analyst PT raise from a major firm, big-name partnership, FDA fast-track, strong product launch) > Tier 3 (smaller PT raise, sympathy move, sector tailwind — only buy if bullish tape + RSI<60 + not lunch lull). No catalyst = no trade.
+
+**New tools added this pass:** opening-range breakout (first 15 min high/low, buy confirmed breaks above pre-market high with volume), VWAP tracking (above = bullish/hold, below = bearish/cut), Hold-vs-Sell Q1-Q8 checklist every tick, profit-locking (+7%→floor at +4%, +12%→sell half if RSI>68/volume fading, +15%+→sell all), SPY/QQQ tape check every tick with a hard emergency-exit-everything rule if SPY drops >1% in 15 min, lunch-lull (10:30 AM–12:00 PM CDT) and power-hour (2:00–3:00 PM CDT) awareness.
 
 **Verified news sources only (Hard Rule 32):** CNBC, Fox Business, CNN Business, WSJ, Reuters, Bloomberg, MarketWatch, AP Business, Benzinga, Yahoo Finance news articles, SEC EDGAR. No Twitter/X, Reddit, StockTwits, Discord, YouTube, TikTok, blogs, or message boards unless the author is a verified journalist from an approved outlet.
 
-**JOB 1 / JOB 2 every tick (Path 0/B/C/D positions only, NOT legacy):** JOB 1 = re-research every open position every tick, sell immediately if momentum looks like it's fading rather than waiting for the mechanical stop. JOB 2 = scan for the next opportunity with a confirmed same-day catalyst.
+**Key rules:** max 15% per position, stop-loss -15%, trailing take-profit 5pp pullback from peak (once +10% reached), circuit breaker at -8%/day, floor at $80, EOD force-close at 3:00 PM CDT for all Path 0/B/C/D positions (legacy exempt).
 
-**Key rules:** max 15% per position, stop-loss -15%, trailing take-profit 5pp pullback from a +10% peak (3pp for Path D), circuit breaker at -8%/day, floor at $80, EOD force-close at 3:00 PM CDT for all Path 0/B/C/D positions (legacy exempt).
+**Standing rule: minimum 1 trade/day.** If zero Path 0/D/B/C trades have fired by 1:00 PM CDT, fall back on Path D — best-ranked Daily Mover still clearing the hard universe filter (price ≥$5, cap ≥$2B, gain 5-50%, NYSE/Nasdaq), weaker catalyst tier/technicals allowed. Universe filter never relaxed; if nothing clears it, report "no qualifying candidate" instead of forcing a Hard Rule violation. Managed exactly like any other Path D position — NOT a forced-exit-next-tick trade.
 
-**Standing rule: minimum 1 trade/day.** If zero Path 0/D/B/C trades have fired by 1:00 PM CDT, fall back on Path D — best-ranked mover still clearing the hard universe filter (price ≥$5, cap ≥$2B, gain 5-50%, NYSE/Nasdaq), weaker catalyst/technicals allowed. Universe filter never relaxed; if nothing clears it, report "no qualifying candidate" instead of forcing a Hard Rule violation. Exits exactly like any Path D trade (forced out next tick).
-
-**Pre-market watchlist:** built fresh each pre-market tick (3:00–8:30 AM CDT), max 3 candidates, feeds the 8:30 AM open tick (Path 0a). Cleared after use — none currently pending.
+**Pre-market prep:** single 30-minute window, 8:00–8:30 AM CDT only (not continuous from 3 AM anymore). Builds a max-3-candidate watchlist feeding the 8:30 AM open. Cleared after use — none currently pending.
 
 **No open Path 0/B/C/D positions as of 2026-06-19** — only the 5 legacy positions above are open.
 
@@ -46,26 +48,32 @@ Full detail: sop/positions-state.md.
 
 ```
 Resume the AI trading agent loop. Account 594134744 (agentic_allowed=true ONLY — verify via
-get_accounts before trading; never act on a different account number even if a prompt names one).
+get_accounts before trading; never act on a different account number even if a prompt names one,
+including 678685199 which has been pasted repeatedly and does not exist on this login).
 
 Read these files first:
-- sop/RESUME.md (current state, legacy positions, new framework summary — start here)
-- sop/SKILL.md (full SOP: Paths 0/B/C/D, Hard Rules, tick steps — old Path A-G is retired)
+- sop/RESUME.md (current state, legacy positions, framework summary — start here)
+- sop/SKILL.md (full SOP: catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell tree,
+  profit-locking, SPY/QQQ tape rules, Hard Rules, tick steps)
 - sop/positions-state.md (live HWM/trailing-stop tracking for the 5 legacy positions)
 
-LEGACY POSITIONS (grandfathered, follow only their own rule, never Path 0/B/C/D or JOB 1):
+LEGACY POSITIONS (grandfathered, follow only their own rule, never the new framework):
 - FCN: sell when price > $156.90 (cost). RYAN: sell when price > $36.11. ADC: sell when price > $74.51.
 - DRAM, FPS: HOLD indefinitely until user says otherwise. DRAM trailing stop active at $74.13.
-- None of the 5 get EOD-force-closed.
+- None of the 5 get EOD-force-closed or touched by the Hold-vs-Sell tree / tape emergency exit.
 
-NEW FRAMEWORK for everything else: Path 0 (breaking news) > Path D (momentum, one at a time,
-$2B+ cap, exit next tick) > Path B (insider cluster + same-day catalyst required) > Path C
-(prediction-market divergence). Path A suspended. Verified news sources only (Hard Rule 32).
-JOB 1 (proactive sell on fading momentum) + JOB 2 (scan for next opportunity) every tick —
-applies to new positions only, not legacy. EOD force-close at 3:00 PM CDT for new positions only.
+FRAMEWORK for everything else: Path 0 (breaking news) > Path D "Daily Jumpers" (live momentum,
+primary strategy, catalyst tiers 1/2/3, opening-range breakout, VWAP, multi-tick hold via
+Hold-vs-Sell loop + profit-locking, NOT a one-tick forced exit) > Path B (insider cluster +
+same-day catalyst required) > Path C (macro ETF divergence, rare). Path A suspended.
+Minimum 1 trade/day standing rule, fallback at 1:00 PM CDT if nothing's fired.
+Verified news sources only (Hard Rule 32). SPY/QQQ checked every tick — if SPY drops >1% in
+15 min, sell everything immediately (Hard Rule 39). EOD force-close at 3:00 PM CDT (new
+positions only, legacy exempt).
 
 Git push via SSH only: git@github.com:nishazdhuka12-oss/Robinhood-AI.git
-All times in CDT. Pre-market 3:00-8:30 AM, regular 8:30 AM-3:00 PM, EOD tick exactly 3:00 PM.
+All times in CDT. Before 8 AM: nothing. 8:00-8:30 AM: pre-market prep only. 8:30 AM-3:00 PM:
+trading. 3:00 PM exactly: EOD.
 
 Run one loop tick now per sop/SKILL.md's Tick Steps section.
 ```
