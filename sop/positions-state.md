@@ -1,11 +1,8 @@
 # Positions State — Trailing Stop High Water Marks
 
-Tracks the highest price reached for each open position since entry.
-Updated every daily scan. Used to compute trailing stop level.
+These are the 5 legacy positions, grandfathered per sop/SKILL.md — they follow ONLY their own specific exit rule (sop/RESUME.md), not the Path 0/B/C/D framework. Mechanical stop-loss and trailing-stop below still apply to all of them.
 
-Trailing stop rule: -15% from high_water_mark (not from cost).
-High water mark activates trailing once position is up >=10% from cost.
-Until +10% is reached, standard -15% from cost applies.
+Trailing stop rule (updated 2026-06-19 to percentage-point math, matching the current SOP): once a position is up ≥10% from cost, track the peak gain % (high water mark). Trailing stop fires if the position pulls back ≥5 percentage points from that peak gain % (e.g. peak +12% → stop at +7%). Until +10% is reached, standard -15% from cost applies. Never move the stop down.
 
 Partial profit rule: when position hits +20%, sell 50% of shares. Log here.
 Remaining 50% continues with trailing stop from the +20% price as new high water mark.
@@ -16,8 +13,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Trailing activates at +10% ($172.59). Signal: Path B insider cluster (3 insiders May 13-14). |
-| RYAN | 36.11 | 36.55 | 30.69 | no | Filled 2026-06-16 ~9:51 AM ET. Trailing activates at +10% ($39.72). Signal: Path B insider cluster (Chair+CFO+GC, June 3-5). HWM updated 2026-06-17 ~8:50 AM CDT (exchange print $36.55, +1.22% vs cost). |
-| ADC | 74.51 | 74.78 | 63.33 | no | Filled 2026-06-16 ~9:51 AM ET. Trailing activates at +10% ($81.96). Signal: Path B insider cluster (Chair+CEO+2 dirs, May 14-Jun 4). HWM updated 2026-06-16 ~11 AM ET. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16 ~10:48 AM ET (actual fill $60.48). Trailing activates at +10% ($66.53). Signal: Path F user watchlist. Data center power equipment, 103% YoY growth. HWM updated 2026-06-18 ~9:24 AM CDT (exchange print $65.24, +7.87% vs cost — new HWM, still below +10% trailing threshold). |
-| DRAM | 70.15 | 77.64 | 72.64 | no | Filled 2026-06-16 ~10:48 AM ET (actual fill $70.15). **TRAILING ACTIVE** — crossed +10% threshold 2026-06-18 ~10:16 AM CDT. New HWM 2026-06-18 ~2:47 PM CDT (exchange print $77.64, +10.66% vs cost). Trailing stop = HWM - $5.00 = $72.64 (sells if price falls to/below this). Signal: Path F user watchlist. Roundhill Memory ETF — AI/memory semiconductor theme. YELLOW sizing (×0.75). |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. |
+| RYAN | 36.11 | 36.55 | 30.69 | no | Filled 2026-06-16. Below +10% threshold ($39.72), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $36.11. |
+| ADC | 74.51 | 74.78 | 63.33 | no | Filled 2026-06-16. Below +10% threshold ($81.96), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $74.51. |
+| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. |
+| DRAM | 70.15 | 77.64 | 74.13 | no | Filled 2026-06-16. **TRAILING ACTIVE** — crossed +10% threshold 2026-06-18. Peak gain +10.68% at HWM $77.64. Trailing stop recomputed 2026-06-19 using percentage-point math (was $5-absolute): trigger gain = peak% − 5pp = 5.68% → trigger price = cost × 1.0568 = **$74.13**. Sells if price falls to/below $74.13. Legacy exit rule: hold indefinitely until user says otherwise. |

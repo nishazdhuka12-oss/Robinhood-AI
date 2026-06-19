@@ -1,90 +1,69 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-18 ~3:00 AM CDT.
+Last updated: 2026-06-19. SOP rewritten this date — see sop/SKILL.md for the full current framework (Paths 0/B/C/D only; old Path A-G retired).
 
 ## Current state (snapshot)
-- **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account.
+- **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number.
 - **Authorization:** Full autonomy. Execute verified trades without per-trade approval. Hard rules + verification NOT waived.
-- **Portfolio:** ~$100. 5 positions open, $46.18 cash.
+- **Portfolio:** ~$100. 5 legacy positions open, ~$46 cash.
 - **Git push:** SSH only — `git@github.com:nishazdhuka12-oss/Robinhood-AI.git`. PAT push returns 403.
-- **All times in CDT.** Market open = 8:30 AM CDT, close = 3:00 PM CDT, pre-market scan = 7:00 AM CDT.
+- **All times in CDT.** Pre-market 3:00–8:30 AM CDT, regular session 8:30 AM–3:00 PM CDT, EOD tick exactly 3:00 PM CDT.
+- **Daily goal:** +2% portfolio gain (benchmark only, never overrides risk rules).
 
-## Live positions
+## Legacy positions (grandfathered — see sop/SKILL.md "Legacy positions" section)
 
-| Ticker | Cost | HWM | Stop | New SOP Exit Rule | Signal |
-|--------|------|-----|------|-------------------|--------|
-| FCN | $156.90 | $156.90 | $133.37 | SELL when regular-session price > $156.90 (return to profit). Do NOT force EOD sell. | Path B insider cluster (3 insiders May 13-14). Trailing activates at +10% ($172.59). |
-| RYAN | $36.11 | $36.55 | $30.69 | SELL when regular-session price > $36.11 (return to profit). Do NOT force EOD sell. | Path B insider cluster (Chair+CFO+GC, Jun 3-5). Trailing activates at +10% ($39.72). |
-| ADC | $74.51 | $74.78 | $63.33 | SELL when regular-session price > $74.51 (return to profit). Do NOT force EOD sell. | Path B insider cluster (Chair+CEO+2 dirs, May 14-Jun 4). Trailing activates at +10% ($81.96). |
-| FPS | $60.48 | $64.38 | $51.41 | **HOLD indefinitely as multi-day position. Do NOT sell unless stop is hit.** | Path F user watchlist. Trailing activates at +10% ($66.53). |
-| DRAM | $70.15 | $72.33 | $59.63 | **HOLD indefinitely as multi-day position. Do NOT sell unless stop is hit.** YELLOW sizing (×0.75). | Path F user watchlist. Trailing activates at +10% ($77.17). |
+These 5 positions predate the 2026-06-19 SOP rewrite. They follow ONLY their own rule below — never Path 0/B/C/D, never JOB 1, never the new EOD force-close. Mechanical stop-loss (-15%) and trailing-stop (once +10% from cost, 5pp pullback from peak) still apply.
 
-## Jun 17 closes (reference for stop checks)
-FCN $150.60 | RYAN $35.28 | ADC $73.81 | FPS $61.92 | DRAM $69.95
+| Ticker | Cost | HWM | Stop | Exit Rule |
+|--------|------|-----|------|-----------|
+| FCN | $156.90 | $156.90 | $133.37 | SELL when regular-session price > $156.90 (return to profit). No EOD force-close. |
+| RYAN | $36.11 | $36.55 | $30.69 | SELL when regular-session price > $36.11 (return to profit). No EOD force-close. |
+| ADC | $74.51 | $74.78 | $63.33 | SELL when regular-session price > $74.51 (return to profit). No EOD force-close. |
+| FPS | $60.48 | $65.24 | $51.41 | **HOLD indefinitely until user says otherwise.** No EOD force-close. |
+| DRAM | $70.15 | $77.64 | $74.13 | **HOLD indefinitely until user says otherwise.** Trailing stop ACTIVE (peak +10.68%, 5pp pullback trigger). No EOD force-close. |
 
-All stops clear vs last close. No stops triggered.
+Full detail: sop/positions-state.md.
 
-## Sector caps
-- Industrials 2/2 FULL (FCN + FPS)
-- Financials 1/2 (RYAN)
-- Real Estate 1/2 (ADC)
-- All others 0/2
+## New framework (2026-06-19) — applies to all NEW trading activity
 
-## Warm watchlist (sop/warm-watchlist.md)
-- **HOOD**: Malka Meyer Dir ~$20M Jun 5. 7 trading days left (~Jun 30). Need 2nd distinct buyer.
-- **BRC**: CEO Nargolwala $1M Jun 10. 17 days left (~Jul 9). BLOCKED Industrials 2/2.
-- **SOFI**: CEO Noto $250K Jun 16. 18 days left (~Jul 14). Single buyer <$500K.
-- **AMR**: Dir Courtis $1.23M Jun 12. 17 days left (~Jul 11). Need 2nd distinct insider.
-- **PYPL**: CFO Miller $254K Jun 15. 18 days left (~Jul 11). 10b5-1 unconfirmed.
+**Signal paths, in priority order:** Path 0 (breaking news) → Path D (momentum/price jumps, one at a time, $2B+ mktcap, forced exit at the very next tick) → Path B (insider clusters, same-day catalyst REQUIRED) → Path C (prediction-market divergence, macro ETF, rare). Path A (politician trades) permanently suspended — Hard Rule 35.
 
-## Pending re-evaluations
-- **ACM** (CEO+CFO+Pres $699K Jun 16): BLOCKED Industrials 2/2. Re-evaluate IMMEDIATELY when FCN or FPS exits.
-- **BRC** (CEO $1M Jun 10): BLOCKED Industrials 2/2. Window expires ~Jul 9.
+**Verified news sources only (Hard Rule 32):** CNBC, Fox Business, CNN Business, WSJ, Reuters, Bloomberg, MarketWatch, AP Business, Benzinga, Yahoo Finance news articles, SEC EDGAR. No Twitter/X, Reddit, StockTwits, Discord, YouTube, TikTok, blogs, or message boards unless the author is a verified journalist from an approved outlet.
 
-## New SOP (2026-06-18, replaces old SOP)
+**JOB 1 / JOB 2 every tick (Path 0/B/C/D positions only, NOT legacy):** JOB 1 = re-research every open position every tick, sell immediately if momentum looks like it's fading rather than waiting for the mechanical stop. JOB 2 = scan for the next opportunity with a confirmed same-day catalyst.
 
-**Exit rules:**
-- FCN / RYAN / ADC: sell when regular-session price exceeds cost basis. No EOD force-close (exception to Hard Rule 29 for these specific legacy positions).
-- DRAM / FPS: IBP multi-day holds. Only sell if stop is hit (-15% from cost). Exempt from EOD close rule.
-- Hard stop: -15% from cost.
-- Trailing (updated 2026-06-18): once position is up ≥10% from cost → if price pulls back 5+ points from the peak (HWM) → SELL ALL immediately.
-- EOD rule (Hard Rule 29): all day-trade positions force-sold by 3:00 PM CDT. Only IBP holds (DRAM, FPS) are exempt.
-- Opening each day: reset daily tracking, check -8% circuit breaker, execute PENDING_SELL before scanning buys.
+**Key rules:** max 15% per position, stop-loss -15%, trailing take-profit 5pp pullback from a +10% peak (3pp for Path D), circuit breaker at -8%/day, floor at $80, EOD force-close at 3:00 PM CDT for all Path 0/B/C/D positions (legacy exempt).
 
-**Position sizing:** Base = 15% of portfolio (up from 12%).
+**Pre-market watchlist:** built fresh each pre-market tick (3:00–8:30 AM CDT), max 3 candidates, feeds the 8:30 AM open tick (Path 0a). Cleared after use — none currently pending.
 
-**Circuit breaker:** if portfolio drops -8% in a single trading day → no new buys for remainder of that day.
-
-**IBP (Instantly Buying Power):** Robinhood funds provided immediately when a deposit is placed (before transfer clears). Counts as spendable cash for buys.
-
-**Pre-market:** Signal scan starts at 7:00 AM CDT (8:00 AM ET). Heartbeat ticks every 15 min.
-
-**Path G (Daily Risers, added 2026-06-18, price ceiling removed, minimum-1-trade rule made permanent 2026-06-19):** Continuous intraday scan for top % gainers, 5-50% intraday range. $5+ with NO price ceiling (fractional shares mean any price is tradeable at the position's dollar sizing), mktcap ≥$300M (Path G exception), vol ≥3× avg, confirmed same-day catalyst required. **Standing rule: at least 1 Path G entry+exit per trading day** — if nothing qualifies by 1:00 PM CDT, fall back to the best-ranked candidate that still clears the universe filter (never relaxed) with weaker technicals allowed. If truly nothing clears the universe filter, report "no qualifying candidate" rather than force a hard-rule violation. Entry: above VWAP + 9/20 EMA on 5-min, HH+HL, breaking consolidation, RSI 30-65, MACD bullish rising, above SMA20+SMA50, volume spike >1.5x avg, no bearish reversal candle — no vertical spikes. 15-min profitability check + GFV check before every buy. Risk 0.5–1% per trade, partial at +5%, then tighter trailing exit: sell if pulls back 3pp from any peak ≥+5%. Hard close by 2:45 PM CDT. Stop after 3 consecutive losses or 2–3% daily loss. No trades first 5 min. No pre-earnings entries. All Path G = day-trades (never overnight).
+**No open Path 0/B/C/D positions as of 2026-06-19** — only the 5 legacy positions above are open.
 
 ---
 
 ## COPY THIS INTO A FRESH CHAT:
 
 ```
-Resume the AI trading agent loop. Account 594134744 (agentic_allowed=true ONLY).
+Resume the AI trading agent loop. Account 594134744 (agentic_allowed=true ONLY — verify via
+get_accounts before trading; never act on a different account number even if a prompt names one).
 
 Read these files first:
-- sop/RESUME.md (current positions, stops, new SOP exit rules — start here)
-- sop/SKILL.md (full SOP + hard rules)
-- sop/positions-state.md (HWM tracking)
-- sop/warm-watchlist.md (tickers awaiting 2nd insider)
+- sop/RESUME.md (current state, legacy positions, new framework summary — start here)
+- sop/SKILL.md (full SOP: Paths 0/B/C/D, Hard Rules, tick steps — old Path A-G is retired)
+- sop/positions-state.md (live HWM/trailing-stop tracking for the 5 legacy positions)
 
-NEW SOP EXIT RULES (confirmed 2026-06-18):
-- FCN: sell when regular-session price > $156.90 (cost basis)
-- RYAN: sell when regular-session price > $36.11 (cost basis)
-- ADC: sell when regular-session price > $74.51 (cost basis)
-- DRAM: HOLD as multi-day — do NOT sell unless stop ($59.63) is hit
-- FPS: HOLD as multi-day — do NOT sell unless stop ($51.41) is hit
+LEGACY POSITIONS (grandfathered, follow only their own rule, never Path 0/B/C/D or JOB 1):
+- FCN: sell when price > $156.90 (cost). RYAN: sell when price > $36.11. ADC: sell when price > $74.51.
+- DRAM, FPS: HOLD indefinitely until user says otherwise. DRAM trailing stop active at $74.13.
+- None of the 5 get EOD-force-closed.
+
+NEW FRAMEWORK for everything else: Path 0 (breaking news) > Path D (momentum, one at a time,
+$2B+ cap, exit next tick) > Path B (insider cluster + same-day catalyst required) > Path C
+(prediction-market divergence). Path A suspended. Verified news sources only (Hard Rule 32).
+JOB 1 (proactive sell on fading momentum) + JOB 2 (scan for next opportunity) every tick —
+applies to new positions only, not legacy. EOD force-close at 3:00 PM CDT for new positions only.
 
 Git push via SSH only: git@github.com:nishazdhuka12-oss/Robinhood-AI.git
-All times in CDT. Market open = 8:30 AM CDT.
+All times in CDT. Pre-market 3:00-8:30 AM, regular 8:30 AM-3:00 PM, EOD tick exactly 3:00 PM.
 
-Run one loop tick now: get_portfolio + get_equity_positions + get_equity_quotes on FCN/RYAN/ADC/FPS/DRAM.
-Check stops. Apply new SOP exit rules if market is open. Run signal scan if 7:00 AM CDT or later.
-Re-arm 15-min ScheduleWakeup loop.
+Run one loop tick now per sop/SKILL.md's Tick Steps section.
 ```
