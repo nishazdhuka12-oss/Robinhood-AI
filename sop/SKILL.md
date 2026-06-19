@@ -95,6 +95,8 @@ For each material event found: identify which stock(s) benefit. If a partnership
 - Run 15-min check + GFV check. Buy up to 15%. Tag `PATH D FORCED EXIT next tick` — forced sell at the very next tick regardless of P&L.
 - **One Path D position at a time.**
 
+**STANDING RULE — minimum 1 trade per day (2026-06-19):** the user wants at least one Path 0/D/B/C entry+exit completed every trading day. If zero trades across all four paths have fired by **1:00 PM CDT**, fall back on Path D: take the single best-ranked mover that still clears the hard universe filter (price ≥$5, market cap ≥$2B, intraday gain 5-50%, NYSE/Nasdaq) even if the same-day catalyst or technical confirmation is weak. Rank fallback candidates by how many of {trending up, volume >1.5x avg, RSI<70, MACD bullish, no bearish reversal candle, some same-day news} they satisfy, take the highest scorer. Exit it exactly like any other Path D trade — forced out at the very next tick regardless of P&L. The universe filter itself is NEVER relaxed — if literally nothing clears price/cap/range/exchange even at minimum bar, report "no qualifying candidate found" rather than force a trade that breaks a Hard Rule. This is a standing daily rule, not a one-time trial.
+
 **Path B — Insider clusters (same-day news catalyst REQUIRED):**
 - Qualify: cluster_size ≥2, EDGAR-verified ≥2 distinct insiders, trade_date ≤14 days, transaction code P only (open-market purchases), exclude 10b5-1 planned trades.
 - REQUIRED: WebSearch (Hard Rule 32 sources) for news about this stock published **TODAY**. Not last week's news, not just the insider buy itself — there must be a same-day catalyst that will move the stock today. No same-day news found → SKIP, do not buy.

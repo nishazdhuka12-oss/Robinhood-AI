@@ -34,6 +34,8 @@ Full detail: sop/positions-state.md.
 
 **Key rules:** max 15% per position, stop-loss -15%, trailing take-profit 5pp pullback from a +10% peak (3pp for Path D), circuit breaker at -8%/day, floor at $80, EOD force-close at 3:00 PM CDT for all Path 0/B/C/D positions (legacy exempt).
 
+**Standing rule: minimum 1 trade/day.** If zero Path 0/D/B/C trades have fired by 1:00 PM CDT, fall back on Path D — best-ranked mover still clearing the hard universe filter (price ≥$5, cap ≥$2B, gain 5-50%, NYSE/Nasdaq), weaker catalyst/technicals allowed. Universe filter never relaxed; if nothing clears it, report "no qualifying candidate" instead of forcing a Hard Rule violation. Exits exactly like any Path D trade (forced out next tick).
+
 **Pre-market watchlist:** built fresh each pre-market tick (3:00–8:30 AM CDT), max 3 candidates, feeds the 8:30 AM open tick (Path 0a). Cleared after use — none currently pending.
 
 **No open Path 0/B/C/D positions as of 2026-06-19** — only the 5 legacy positions above are open.
