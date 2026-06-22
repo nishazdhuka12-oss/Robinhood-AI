@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 9:35 AM CDT (market open, fifth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 9:50 AM CDT (market open, sixth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Path D scan — 2026-06-22 9:35 AM CDT
+## Path D scan — 2026-06-22 9:50 AM CDT
 
-**Watching DFTX, no entry yet.** Confirmed Tier 1 catalyst (Phase 3 trial primary endpoint met, p<0.0001, verified via Benzinga/Yahoo Finance) but failed the technical entry gate — gapped to $39.16 at open then declined nearly every 5-min bar since, down to ~$35.44-$36.27, a fading vertical spike, not a confirmed bullish setup. Will re-check for stabilization/basing pattern next tick. APGE still deprioritized (dead merger-arb range). FCN/RYAN extending losses but no stops breached. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
+**Watching DFTX, no entry yet — close to confirmation.** Bounced off $35.44 low with a higher low ($35.84) and a new recovery high ($36.89) on rising volume (3.5-4.5x typical pace) — 3 confirming bars so far, want a 4th before entry. UMC (+16.16%, $70.4B cap) found but no same-day catalyst — failed Hard Rule 32. APGE still deprioritized. FCN now -11.93% (closest to its stop yet, watching closely) but no stops breached. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
