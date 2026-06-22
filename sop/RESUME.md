@@ -1,14 +1,14 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 12:20 PM CDT (market open, sixteenth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 12:35 PM CDT (market open, seventeenth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## CLOSED PATH D TRADE — DFTX (2026-06-22)
 
 Bought 10:20 AM CDT @ $37.05, sold 11:50 AM CDT @ ~$36.90 on a discretionary bearish-reversal exit (11-bar/45-min continuous downtrend, volume-confirmed down-bar). Realized P&L: ~-0.40%. See sop/trade-journal.md. **This satisfies the minimum-1-trade-per-day rule for today** — no further Path D trade required, though new qualifying signals will still be evaluated if found.
 
-## Path D scan — 2026-06-22 12:20 PM CDT
+## Path D scan — 2026-06-22 12:35 PM CDT
 
-**No qualifying candidate.** AVTX (+16.26%) failed cap floor ($897.6M). No open Path D positions.
+**No qualifying candidate.** JBIO (+15.60%) failed cap floor ($1.18B). No open Path D positions.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
