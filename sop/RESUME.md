@@ -1,14 +1,14 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 11:50 AM CDT (market open, fourteenth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 12:05 PM CDT (market open, fifteenth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## CLOSED PATH D TRADE — DFTX (2026-06-22)
 
 Bought 10:20 AM CDT @ $37.05, sold 11:50 AM CDT @ ~$36.90 on a discretionary bearish-reversal exit (11-bar/45-min continuous downtrend, volume-confirmed down-bar). Realized P&L: ~-0.40%. See sop/trade-journal.md. **This satisfies the minimum-1-trade-per-day rule for today** — no further Path D trade required, though new qualifying signals will still be evaluated if found.
 
-## Path D scan — 2026-06-22 11:50 AM CDT
+## Path D scan — 2026-06-22 12:05 PM CDT
 
-No open Path D positions. Will resume scanning Daily Movers next tick if time permits.
+**No qualifying candidate.** ORKA (+21.16%, $5.31B cap) found but no same-day catalyst (trial data 2 months stale, recent filing is a dilutive offering) — failed Hard Rule 32. DMRA failed cap floor. No open Path D positions.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
