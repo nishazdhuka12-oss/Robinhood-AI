@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 2:20 PM CDT (market open, power hour, twenty-fourth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 2:35 PM CDT (market open, power hour, twenty-fifth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## No open Path D positions
 
-Today's two closed trades: DFTX -0.40%, SMCI -1.32% (both small, controlled losses). See sop/trade-journal.md. ~40 min to 3:00 PM EOD — no new scan this tick, just monitoring legacy positions. ADC at $73.77, no longer close to its $74.51 trigger.
+Today's two closed trades: DFTX -0.40%, SMCI -1.32% (both small, controlled losses). See sop/trade-journal.md. ~25 min to 3:00 PM EOD — no new entries this tick, just monitoring legacy positions.
 
 ## CLOSED PATH D TRADE — DFTX (2026-06-22)
 
