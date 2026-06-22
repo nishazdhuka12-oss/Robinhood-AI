@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 9:05 AM CDT (market open, third trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 9:20 AM CDT (market open, fourth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Path D scan — 2026-06-22 9:05 AM CDT
+## Path D scan — 2026-06-22 9:20 AM CDT
 
-**No qualifying candidate.** APGE (confirmed AbbVie buyout catalyst) has settled into a dead, low-volume merger-arb range ($132.50-$132.83) — no breakout, deprioritized as a day-trade. Daily Movers list unchanged from 8:51 AM tick; no new candidates. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
+**No qualifying candidate.** Daily Movers list unchanged since 8:51 AM — no new candidates. APGE (confirmed AbbVie buyout catalyst) remains deprioritized in its merger-arb lockup range. Tape softened slightly (SPY +0.16%, QQQ +0.34%) and FCN/RYAN extended losses, but no stops breached. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
