@@ -1,10 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 1:50 PM CDT (market open, twenty-second trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 2:05 PM CDT (market open, power hour, twenty-third trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## OPEN PATH D POSITION — SMCI (bought 1:22 PM CDT 2026-06-22)
+## CLOSED PATH D TRADE — SMCI (2026-06-22)
 
-Filled: 0.407949 sh @ $36.40. Confirmed Tier 2 catalyst (GF Securities Hold→Buy upgrade, $48 PT). Pulled back to $36.06 (-0.93%) but found support exactly at $35.97 (old breakout level) and recovered to close $36.175 — retest-and-hold, not a breakdown. Holding; exit if it breaks below $35.97 on volume. Today's second Path D trade (min-1-trade already satisfied via DFTX). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** ADC (legacy) at $74.20, 31¢ below its $74.51 profit-exit trigger — watch closely.
+Bought 1:22 PM CDT @ $36.40, sold 2:06 PM CDT @ ~$35.92 on a confirmed bearish-reversal exit (2 consecutive bars closed below $35.97 support level). Realized P&L: ~-1.32%. See sop/trade-journal.md. No open Path D positions. Today's net across both trades (DFTX -0.40%, SMCI -1.32%): two small, controlled losses.
+
+ADC (legacy) pulled back to $74.20→$73.94, no longer close to its $74.51 trigger.
 
 ## CLOSED PATH D TRADE — DFTX (2026-06-22)
 
