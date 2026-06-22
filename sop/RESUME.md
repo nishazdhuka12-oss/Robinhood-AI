@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 8:51 AM CDT (market open, second trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 9:05 AM CDT (market open, third trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Path D scan — 2026-06-22 8:51 AM CDT
+## Path D scan — 2026-06-22 9:05 AM CDT
 
-**Watching APGE, no entry yet.** Daily Movers list rotated fully since 8:35 AM. APGE (Apogee Therapeutics) has a confirmed Tier 1 catalyst — AbbVie acquiring it for $135.11/share cash ($10.9B deal), announced today. Current price $132.68 is below the 5-min VWAP (~$132.74) and below the opening-range high ($133.00); volume decaying each bar — gap-and-flatline, not a breakout. Also a merger-arb situation capped near deal price with antitrust-closing risk (Q3 2026), thin intraday upside even on breakout. Will re-check for a confirmed break above $133.00 with volume next tick. FRVO/BWIN cleared the universe filter but had no dated same-day catalyst — failed Hard Rule 32. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
+**No qualifying candidate.** APGE (confirmed AbbVie buyout catalyst) has settled into a dead, low-volume merger-arb range ($132.50-$132.83) — no breakout, deprioritized as a day-trade. Daily Movers list unchanged from 8:51 AM tick; no new candidates. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
