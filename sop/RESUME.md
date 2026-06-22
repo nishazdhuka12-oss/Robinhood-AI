@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 9:50 AM CDT (market open, sixth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 10:05 AM CDT (market open, seventh trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Path D scan — 2026-06-22 9:50 AM CDT
+## Path D scan — 2026-06-22 10:05 AM CDT
 
-**Watching DFTX, no entry yet — close to confirmation.** Bounced off $35.44 low with a higher low ($35.84) and a new recovery high ($36.89) on rising volume (3.5-4.5x typical pace) — 3 confirming bars so far, want a 4th before entry. UMC (+16.16%, $70.4B cap) found but no same-day catalyst — failed Hard Rule 32. APGE still deprioritized. FCN now -11.93% (closest to its stop yet, watching closely) but no stops breached. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
+**Watching DFTX, no entry yet.** Now holding a clean 6-bar base between $36.40-$36.89, volume tapering as expected during consolidation — but no confirmed breakout above $36.89 yet. Will buy on a confirmed break with renewed volume. MLTX (+16.79%) failed cap floor ($1.65B). APGE still deprioritized. FCN recovered slightly to -11.40%, no stops breached. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
