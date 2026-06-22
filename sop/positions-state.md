@@ -18,3 +18,9 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 | ADC | 74.51 | 74.78 | 63.33 | no | Filled 2026-06-16. Below +10% threshold ($81.96), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $74.51. |
 | FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. |
 | DRAM | 70.15 | 80.83 | 77.32 | no | Filled 2026-06-16. **TRAILING ACTIVE.** New HWM 2026-06-22 ~8:35 AM CDT (exchange print $80.83, +15.22% vs cost — big move). Trigger gain = peak% − 5pp = 10.22% → trigger price = cost × 1.1022 = **$77.32**. Sells if price falls to/below $77.32. Legacy exit rule: hold indefinitely until user says otherwise. |
+
+## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
+
+| Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
+|---|---|---|---|---|---|
+| DFTX | ~37.02 | 37.02 | n/a (day-trade, EOD force-close 3:00 PM CDT, not trailing-stop managed) | no | Bought 2026-06-22 10:21 AM CDT, $14.89 notional (0.40221 sh), order id 6a395316-81bc-4cff-a5c0-ad9eb71b6bf5, state unconfirmed pending fill. Tier 1 catalyst: Phase 3 Emerge trial met primary endpoint for MDD (p<0.0001), confirmed via Benzinga/Yahoo Finance. Entered on confirmed breakout above $36.89 base with 2 bars of renewed volume (110K+/bar). Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29) — apply Hold-vs-Sell Q1-Q8 loop and profit-locking ladder (+7%→floor+4%, +12%→sell half, +15%+→sell all) each tick until then. |

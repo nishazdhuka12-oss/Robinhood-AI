@@ -1,10 +1,14 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 10:05 AM CDT (market open, seventh trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 10:20 AM CDT (market open, eighth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Path D scan — 2026-06-22 10:05 AM CDT
+## OPEN PATH D POSITION — DFTX (bought 10:20 AM CDT 2026-06-22)
 
-**Watching DFTX, no entry yet.** Now holding a clean 6-bar base between $36.40-$36.89, volume tapering as expected during consolidation — but no confirmed breakout above $36.89 yet. Will buy on a confirmed break with renewed volume. MLTX (+16.79%) failed cap floor ($1.65B). APGE still deprioritized. FCN recovered slightly to -11.40%, no stops breached. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered.
+Bought $14.89 notional (0.40221 sh) @ ~$37.02, order id 6a395316-81bc-4cff-a5c0-ad9eb71b6bf5. Confirmed Tier 1 catalyst (Phase 3 Emerge depression trial, primary endpoint met p<0.0001). Entered on confirmed breakout above $36.89 base with renewed volume. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder (+7%→floor+4%, +12%→sell half, +15%+→sell all) every tick until then. This satisfies the minimum-1-trade-per-day rule for today — fallback checkpoint no longer needed.
+
+## Path D scan — 2026-06-22 10:20 AM CDT
+
+No further scan this tick — focus shifted to managing the new DFTX position.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
