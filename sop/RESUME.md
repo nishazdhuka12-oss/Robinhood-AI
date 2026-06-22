@@ -1,10 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 8:05 AM CDT (pre-market prep). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 8:36 AM CDT (market open, first trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Pre-market watchlist — 2026-06-22
+## Path D scan — 2026-06-22 8:36 AM CDT
 
-**Empty — no qualifying candidates found.** Checked: MU (+4% premarket but pre-earnings anticipation, reports Wed after bell — not a confirmed catalyst, and would be earnings-blocked anyway), SPCX (declining, not a riser), OMER (FDA approval catalyst is from Dec 2025, 6 months stale, barely moving today at +1.56%), TTWO (GTA6 preorder news from Thursday Jun 18 already played out, only +2.17% residual today, below 5% gain floor). Macro theme today: Iran negotiation progress lifting travel/airlines, denting energy — sector-wide, not a single-stock pick. Will re-scan live Daily Movers at market open per Path D.
+**No qualifying candidate.** Scanned live "Daily movers" watchlist (20 tickers). Filtered out 6 OTC-style ADRs (Hard Rule 7). Of the remaining 14, only RGC (Regencell Bioscience, +15.07%, $13.82, $7.04B cap) cleared the universe filter — but failed Hard Rule 32: no verified same-day Tier 1/2/3 catalyst, only a securities class-action lawsuit deadline (negative) and a stale May capital raise. Thin float (56M of 495M shares out) = pump-prone, skipped. Minimum-1-trade fallback checkpoint is 1:00 PM CDT — not yet triggered. Will re-scan next tick.
+
+Full detail: sop/daily-summaries/2026-06-22.md.
 
 ## Current state (snapshot)
 - **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number (678685199 has been pasted repeatedly; it does not exist on this login).
@@ -24,7 +26,7 @@ These 5 positions predate the rewrites. They follow ONLY their own rule below �
 | RYAN | $36.11 | $36.55 | $30.69 | SELL when regular-session price > $36.11 (return to profit). No EOD force-close. |
 | ADC | $74.51 | $74.78 | $63.33 | SELL when regular-session price > $74.51 (return to profit). No EOD force-close. |
 | FPS | $60.48 | $65.24 | $51.41 | **HOLD indefinitely until user says otherwise.** No EOD force-close. |
-| DRAM | $70.15 | $77.64 | $74.13 | **HOLD indefinitely until user says otherwise.** Trailing stop ACTIVE (peak +10.68%, 5pp pullback trigger). No EOD force-close. |
+| DRAM | $70.15 | $80.83 | $77.32 | **HOLD indefinitely until user says otherwise.** Trailing stop ACTIVE — updated 8:35 AM CDT 6/22 (peak +15.22%, trigger $77.32). No EOD force-close. |
 
 Full detail: sop/positions-state.md.
 
