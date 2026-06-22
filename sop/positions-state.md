@@ -21,6 +21,4 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 
-| Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
-|---|---|---|---|---|---|
-| DFTX | ~37.02 | 37.02 | n/a (day-trade, EOD force-close 3:00 PM CDT, not trailing-stop managed) | no | Bought 2026-06-22 10:21 AM CDT, $14.89 notional (0.40221 sh), order id 6a395316-81bc-4cff-a5c0-ad9eb71b6bf5, state unconfirmed pending fill. Tier 1 catalyst: Phase 3 Emerge trial met primary endpoint for MDD (p<0.0001), confirmed via Benzinga/Yahoo Finance. Entered on confirmed breakout above $36.89 base with 2 bars of renewed volume (110K+/bar). Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29) — apply Hold-vs-Sell Q1-Q8 loop and profit-locking ladder (+7%→floor+4%, +12%→sell half, +15%+→sell all) each tick until then. |
+None open. DFTX (bought 10:20 AM CDT, 0.40189 sh @ $37.05) closed 11:50 AM CDT — sold all on a discretionary bearish-reversal exit after an 11-bar (45 min) continuous downtrend with a volume-confirmed down-bar, well before the 3:00 PM EOD deadline. See sop/trade-journal.md for the full closed-trade entry.
