@@ -1,12 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 11:20 AM CDT (market open, twelfth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 11:35 AM CDT (market open, thirteenth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## OPEN PATH D POSITION — DFTX (bought 10:20 AM CDT 2026-06-22)
 
-Filled: 0.40189 sh @ $37.05. Confirmed Tier 1 catalyst (Phase 3 Emerge depression trial, primary endpoint met p<0.0001). Now $38.03 (+2.64%), still below +7% profit-locking threshold, holding. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Exit early if it breaks decisively below $35.84 (base low) or accelerates down on volume. This satisfies the minimum-1-trade-per-day rule for today.
+Filled: 0.40189 sh @ $37.05. Confirmed Tier 1 catalyst (Phase 3 Emerge depression trial, primary endpoint met p<0.0001). Drifted down steadily from $38.30 highs to $37.23 (+0.49%) over the last 35 min, in line with broader tape weakness — never touched +7%, no floor-lock applies. Still ~3.7% above the $35.84 base low, catalyst intact, holding but watching closely. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Exit early if it breaches $35.84 or the decline accelerates. This satisfies the minimum-1-trade-per-day rule for today.
 
-## Path D scan — 2026-06-22 11:20 AM CDT
+## Path D scan — 2026-06-22 11:35 AM CDT
 
 No further scan this tick — focus on managing the open DFTX position.
 
