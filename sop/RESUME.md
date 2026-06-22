@@ -1,21 +1,15 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 2:35 PM CDT (market open, power hour, twenty-fifth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 3:00 PM CDT (EOD close). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## No open Path D positions
+## Market closed — day complete (2026-06-22)
 
-Today's two closed trades: DFTX -0.40%, SMCI -1.32% (both small, controlled losses). See sop/trade-journal.md. ~25 min to 3:00 PM EOD — no new entries this tick, just monitoring legacy positions.
-
-## CLOSED PATH D TRADE — DFTX (2026-06-22)
-
-Bought 10:20 AM CDT @ $37.05, sold 11:50 AM CDT @ ~$36.90 on a discretionary bearish-reversal exit. Realized P&L: ~-0.40%. See sop/trade-journal.md.
-
-Full detail: sop/daily-summaries/2026-06-22.md.
+Portfolio: $100.156 → $98.793 (-1.36%). No open Path D positions, no options. Two Path D trades today, both proactively exited on confirmed reversal signals ahead of forced closure: DFTX -0.40%, SMCI -1.32% (net ~-1.72%). All 5 legacy positions carry overnight unchanged — no triggers fired. Full wrap-up: sop/daily-summaries/2026-06-22.md. Next trading day: Tuesday 2026-06-23.
 
 ## Current state (snapshot)
 - **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number (678685199 has been pasted repeatedly; it does not exist on this login).
 - **Authorization:** Full autonomy. Execute verified trades without per-trade approval.
-- **Portfolio:** ~$100. 5 legacy positions open, ~$46 cash.
+- **Portfolio:** $98.793 as of 2026-06-22 close. 5 legacy positions open, ~$46 cash.
 - **Git push:** SSH only — `git@github.com:nishazdhuka12-oss/Robinhood-AI.git`. PAT push returns 403.
 - **All times in CDT.** Before 8:00 AM: nothing. 8:00–8:30 AM: pre-market prep (no trades). 8:30 AM–3:00 PM: trading session. 3:00 PM exactly: EOD, sell everything (Path 0/B/C/D only). After 3:00 PM, weekends, holidays: nothing.
 - **Daily goal:** +2% portfolio gain (benchmark only, never overrides risk rules).
@@ -24,13 +18,13 @@ Full detail: sop/daily-summaries/2026-06-22.md.
 
 These 5 positions predate the rewrites. They follow ONLY their own rule below — never Path 0/B/C/D, never the Hold-vs-Sell tree, never EOD force-close, never the SPY/QQQ tape emergency exit. Mechanical stop-loss (-15%) and trailing-stop (once +10% from cost, 5pp pullback from peak) still apply.
 
-| Ticker | Cost | HWM | Stop | Exit Rule |
-|--------|------|-----|------|-----------|
-| FCN | $156.90 | $156.90 | $133.37 | SELL when regular-session price > $156.90 (return to profit). No EOD force-close. |
-| RYAN | $36.11 | $36.55 | $30.69 | SELL when regular-session price > $36.11 (return to profit). No EOD force-close. |
-| ADC | $74.51 | $74.78 | $63.33 | SELL when regular-session price > $74.51 (return to profit). No EOD force-close. |
-| FPS | $60.48 | $65.24 | $51.41 | **HOLD indefinitely until user says otherwise.** No EOD force-close. |
-| DRAM | $70.15 | $80.83 | $77.32 | **HOLD indefinitely until user says otherwise.** Trailing stop ACTIVE — updated 8:35 AM CDT 6/22 (peak +15.22%, trigger $77.32). No EOD force-close. |
+| Ticker | Cost | HWM | Stop | Close 6/22 | Exit Rule |
+|--------|------|-----|------|------|-----------|
+| FCN | $156.90 | $156.90 | $133.37 | $141.05 (-10.10%) | SELL when regular-session price > $156.90 (return to profit). No EOD force-close. |
+| RYAN | $36.11 | $36.55 | $30.69 | $33.26 (-7.89%) | SELL when regular-session price > $36.11 (return to profit). No EOD force-close. |
+| ADC | $74.51 | $74.78 | $63.33 | $73.37 (-1.53%) | SELL when regular-session price > $74.51 (return to profit). No EOD force-close. |
+| FPS | $60.48 | $65.24 | $51.41 | $61.82 (+2.22%) | **HOLD indefinitely until user says otherwise.** No EOD force-close. |
+| DRAM | $70.15 | $80.83 | $77.32 | $80.699 (+15.04%) | **HOLD indefinitely until user says otherwise.** Trailing stop ACTIVE — HWM set 8:35 AM CDT 6/22 (peak +15.22%, trigger $77.32). No EOD force-close. |
 
 Full detail: sop/positions-state.md.
 

@@ -11,13 +11,15 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 ## Active positions
 
+(As of 2026-06-22 EOD close: FCN $141.05/-10.10%, RYAN $33.26/-7.89%, ADC $73.37/-1.53%, FPS $61.82/+2.22%, DRAM $80.699/+15.04% — no triggers fired, all carry overnight unchanged.)
+
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
 | FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. |
 | RYAN | 36.11 | 36.55 | 30.69 | no | Filled 2026-06-16. Below +10% threshold ($39.72), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $36.11. |
 | ADC | 74.51 | 74.78 | 63.33 | no | Filled 2026-06-16. Below +10% threshold ($81.96), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $74.51. |
 | FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. |
-| DRAM | 70.15 | 80.83 | 77.32 | no | Filled 2026-06-16. **TRAILING ACTIVE.** New HWM 2026-06-22 ~8:35 AM CDT (exchange print $80.83, +15.22% vs cost — big move). Trigger gain = peak% − 5pp = 10.22% → trigger price = cost × 1.1022 = **$77.32**. Sells if price falls to/below $77.32. Legacy exit rule: hold indefinitely until user says otherwise. |
+| DRAM | 70.15 | 80.83 | 77.32 | no | Filled 2026-06-16. **TRAILING ACTIVE.** HWM $80.83 set 2026-06-22 ~8:35 AM CDT (+15.22% vs cost). Trigger gain = peak% − 5pp = 10.22% → trigger price = cost × 1.1022 = **$77.32**. Sells if price falls to/below $77.32. Never exceeded $80.83 again the rest of the day (closed $80.699). Legacy exit rule: hold indefinitely until user says otherwise. |
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 
