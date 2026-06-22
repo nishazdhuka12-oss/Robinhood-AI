@@ -21,4 +21,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 
-None open. DFTX (bought 10:20 AM CDT, 0.40189 sh @ $37.05) closed 11:50 AM CDT — sold all on a discretionary bearish-reversal exit after an 11-bar (45 min) continuous downtrend with a volume-confirmed down-bar, well before the 3:00 PM EOD deadline. See sop/trade-journal.md for the full closed-trade entry.
+| Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
+|---|---|---|---|---|---|
+| SMCI | ~36.40 | 36.40 | n/a (day-trade, EOD force-close 3:00 PM CDT, not trailing-stop managed) | no | Bought 2026-06-22 1:22 PM CDT, $14.85 notional (0.40796 sh), order id 6a397d60-9c68-4a75-ae6b-a4255614b678, state unconfirmed pending fill. Tier 2 catalyst: GF Securities upgraded SMCI Hold→Buy this morning, $48 PT, confirmed via Yahoo Finance/Benzinga. Entered after a confirmed afternoon breakout above the day's prior high ($35.97) to $36.80 on rising volume, following a morning-spike/midday-base pattern. Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29) — apply Hold-vs-Sell Q1-Q8 loop and profit-locking ladder (+7%→floor+4%, +12%→sell half, +15%+→sell all) each tick until then. |
+
+DFTX (bought 10:20 AM CDT, 0.40189 sh @ $37.05) closed 11:50 AM CDT — sold all on a discretionary bearish-reversal exit. See sop/trade-journal.md.

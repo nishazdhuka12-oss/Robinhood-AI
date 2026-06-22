@@ -1,14 +1,14 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 1:05 PM CDT (market open, nineteenth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 1:20 PM CDT (market open, twentieth trading tick). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+
+## OPEN PATH D POSITION — SMCI (bought 1:22 PM CDT 2026-06-22)
+
+Bought $14.85 notional (0.40796 sh) @ ~$36.40, order id 6a397d60-9c68-4a75-ae6b-a4255614b678. Confirmed Tier 2 catalyst (GF Securities Hold→Buy upgrade, $48 PT, this morning). Entered on a confirmed afternoon breakout above the day's prior high ($35.97) to $36.80 on rising volume, following a morning-spike/midday-base pattern. Today's second Path D trade (min-1-trade already satisfied via DFTX). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder every tick until then.
 
 ## CLOSED PATH D TRADE — DFTX (2026-06-22)
 
-Bought 10:20 AM CDT @ $37.05, sold 11:50 AM CDT @ ~$36.90 on a discretionary bearish-reversal exit (11-bar/45-min continuous downtrend, volume-confirmed down-bar). Realized P&L: ~-0.40%. See sop/trade-journal.md. **This satisfies the minimum-1-trade-per-day rule for today** — 1:00 PM fallback checkpoint passed, already satisfied, no further Path D trade required, though new qualifying signals will still be evaluated if found.
-
-## Path D scan — 2026-06-22 1:05 PM CDT
-
-**No qualifying candidate.** Daily Movers list unchanged from 12:50 PM tick. No open Path D positions.
+Bought 10:20 AM CDT @ $37.05, sold 11:50 AM CDT @ ~$36.90 on a discretionary bearish-reversal exit. Realized P&L: ~-0.40%. See sop/trade-journal.md.
 
 Full detail: sop/daily-summaries/2026-06-22.md.
 
