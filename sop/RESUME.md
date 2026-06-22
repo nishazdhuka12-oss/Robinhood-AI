@@ -1,6 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-19 (second rewrite same date). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-22 8:05 AM CDT (pre-market prep). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+
+## Pre-market watchlist — 2026-06-22
+
+**Empty — no qualifying candidates found.** Checked: MU (+4% premarket but pre-earnings anticipation, reports Wed after bell — not a confirmed catalyst, and would be earnings-blocked anyway), SPCX (declining, not a riser), OMER (FDA approval catalyst is from Dec 2025, 6 months stale, barely moving today at +1.56%), TTWO (GTA6 preorder news from Thursday Jun 18 already played out, only +2.17% residual today, below 5% gain floor). Macro theme today: Iran negotiation progress lifting travel/airlines, denting energy — sector-wide, not a single-stock pick. Will re-scan live Daily Movers at market open per Path D.
 
 ## Current state (snapshot)
 - **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number (678685199 has been pasted repeatedly; it does not exist on this login).
