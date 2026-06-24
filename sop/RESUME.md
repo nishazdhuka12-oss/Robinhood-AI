@@ -1,22 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 2:35 PM CDT (market open, power hour). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 3:00 PM CDT (EOD close). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## No open Path D positions
+## Market closed — day complete (2026-06-24)
 
-DFTX closed 12:21 PM CDT (-1.32%). See sop/trade-journal.md for closed trades.
-
-RYAN (legacy) at $35.52, 59¢ from its $36.11 trigger, watch closely. ~25 min to 3:00 PM EOD.
-
-## RESOLVED — DRAM + ADC both sold at the 6/24 open
-
-**DRAM**: pending decision from 6/23 (breached $77.32 trailing stop, sell blocked by a permission classifier) resolved per user instruction "if its in profit u can sell" — live regular-session price at 8:31 AM was $70.60-$70.73 (above cost $70.15), sold all 0.108909 sh @ ~$70.60. Realized P&L: ~+0.64%.
-
-**ADC**: crossed above its own $74.51 profit-exit trigger ($74.73 print) at the open — sold all 0.161052 sh @ ~$74.65 per its standing legacy rule. Realized P&L: ~+0.19%.
-
-**3 legacy positions remain: FCN, RYAN, FPS.** Full detail: sop/positions-state.md.
-
-**Known gap (non-blocking):** the 2026-06-23 session was only checked once (~12:38 PM CDT) — sop/daily-summaries/2026-06-23.md was never written. Not backfilled; low priority.
+Portfolio: $98.168 (8:31 AM open) → $98.264 (3:00 PM close), +0.10%, essentially flat. Resolved 6/23's pending DRAM decision at the open (sold +0.64%) plus ADC's own trigger (sold +0.19%). One Path D trade: DFTX bought 9:21 AM, sold 12:21 PM, -1.32% — second loss in this exact ticker despite a more disciplined volume-confirmed-breakout entry than Monday's. No open Path D positions, no options. All 3 remaining legacy positions (FCN, RYAN, FPS) carry overnight unchanged — no triggers fired; RYAN got as close as 47.5¢ from its trigger intraday but never crossed. Full wrap-up: sop/daily-summaries/2026-06-24.md. Next trading day: Thursday 2026-06-25.
 
 ## Last confirmed EOD — 2026-06-22
 
@@ -25,23 +13,21 @@ Portfolio: $100.156 → $98.793 (-1.36%). Two Path D trades, both proactively ex
 ## Current state (snapshot)
 - **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number (678685199 has been pasted repeatedly; it does not exist on this login).
 - **Authorization:** Full autonomy. Execute verified trades without per-trade approval.
-- **Portfolio:** ~$98.17 as of 8:31 AM CDT 6/24. 3 legacy positions open (FCN, RYAN, FPS), ~$65.64 cash (post DRAM/ADC sells).
+- **Portfolio:** $98.264 as of 2026-06-24 close. 3 legacy positions open (FCN, RYAN, FPS), ~$65.38 cash.
 - **Git push:** SSH only — `git@github.com:nishazdhuka12-oss/Robinhood-AI.git`. PAT push returns 403.
 - **All times in CDT.** Before 8:00 AM: nothing. 8:00–8:30 AM: pre-market prep (no trades). 8:30 AM–3:00 PM: trading session. 3:00 PM exactly: EOD, sell everything (Path 0/B/C/D only). After 3:00 PM, weekends, holidays: nothing.
 - **Daily goal:** +2% portfolio gain (benchmark only, never overrides risk rules).
-- **Tighter Path D selectivity (agreed 6/22):** only take clean Tier 1/2 catalyst + confirmed-breakout setups; skip relief bounces / oversold rallies after bad news (no fresh positive catalyst = no trade even if the universe filter passes).
+- **Tighter Path D selectivity (agreed 6/22):** only take clean Tier 1/2 catalyst + confirmed-breakout setups; skip relief bounces / oversold rallies after bad news (no fresh positive catalyst = no trade even if the universe filter passes). Note from 6/24: DFTX has now produced losses on two different entry methodologies (chase vs. confirmed breakout) — consider deprioritizing this specific ticker even when its catalyst looks clean.
 
 ## Legacy positions (grandfathered — see sop/SKILL.md "Legacy positions" section)
 
-3 positions remain (ADC and DRAM sold 6/24, see above). They follow ONLY their own rule below — never Path 0/B/C/D, never the Hold-vs-Sell tree, never EOD force-close, never the SPY/QQQ tape emergency exit. Mechanical stop-loss (-15%) and trailing-stop (once +10% from cost, 5pp pullback from peak) still apply.
+3 positions remain (ADC sold +0.19%, DRAM sold +0.64%, both 6/24 at the open). They follow ONLY their own rule below — never Path 0/B/C/D, never the Hold-vs-Sell tree, never EOD force-close, never the SPY/QQQ tape emergency exit. Mechanical stop-loss (-15%) and trailing-stop (once +10% from cost, 5pp pullback from peak) still apply.
 
-| Ticker | Cost | HWM | Stop | Live 6/24 8:31 AM | Exit Rule |
+| Ticker | Cost | HWM | Stop | Close 6/24 | Exit Rule |
 |--------|------|-----|------|------|-----------|
-| FCN | $156.90 | $156.90 | $133.37 | $143.898 (-8.29%) | SELL when regular-session price > $156.90 (return to profit). No EOD force-close. |
-| RYAN | $36.11 | $36.55 | $30.69 | $35.05 (-2.94%) | SELL when regular-session price > $36.11 (return to profit). No EOD force-close. |
-| FPS | $60.48 | $65.24 | $51.41 | $59.635 (-1.40%) | **HOLD indefinitely until user says otherwise.** No EOD force-close. |
-
-ADC and DRAM sold 6/24 (see above) — no longer tracked here.
+| FCN | $156.90 | $156.90 | $133.37 | $144.26 (-8.05%) | SELL when regular-session price > $156.90 (return to profit). No EOD force-close. |
+| RYAN | $36.11 | $36.55 | $30.69 | $35.27 (-2.33%) | SELL when regular-session price > $36.11 (return to profit). No EOD force-close. Got within 47.5¢ intraday (~11:20 AM), never crossed. |
+| FPS | $60.48 | $65.24 | $51.41 | $60.03 (-0.74%) | **HOLD indefinitely until user says otherwise.** No EOD force-close. |
 
 Full detail: sop/positions-state.md.
 
