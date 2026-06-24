@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 8:50 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 9:05 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## Watching — DFTX (same stock as Monday's trade)
 
-DFTX is up again today (+16%, new 52-wk high $43.00) on continued momentum from Monday's Phase 3 catalyst, now also digesting a $500M dilutive offering announced 6/22. Gapped to $43 then immediately retraced to $39.25 within the first 5-min bar — vertical-spike-and-fade, no confirmed base. Not entering on the spike; will reconsider only on a clean consolidation + breakout. RUN (+28.89%) skipped — catalyst (solar ITC bill) not confirmed dated today, sector-wide not company-specific.
+DFTX recovered to $42.96, near today's $43 high, but volume hasn't confirmed a breakout (157K latest bar vs 993K opening spike) — still watching, not entering. KBH (+16.92%, $3.85B cap) skipped — "mixed" Q2 earnings (rev beat/EPS miss), only +3% after-hours reaction but +17% intraday today; orderly price action but not a clean Tier 1/2 catalyst and likely overbought (fails Tier 3 RSI<60). RUN (+28.89%) skipped earlier — catalyst not confirmed dated today.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
