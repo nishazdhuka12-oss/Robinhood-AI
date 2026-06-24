@@ -1,10 +1,19 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-22 3:00 PM CDT (EOD close). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 5:27 AM CDT (pre-market, before open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Market closed — day complete (2026-06-22)
+## PENDING DECISION — DRAM, check at market open
 
-Portfolio: $100.156 → $98.793 (-1.36%). No open Path D positions, no options. Two Path D trades today, both proactively exited on confirmed reversal signals ahead of forced closure: DFTX -0.40%, SMCI -1.32% (net ~-1.72%). All 5 legacy positions carry overnight unchanged — no triggers fired. Full wrap-up: sop/daily-summaries/2026-06-22.md. Next trading day: Tuesday 2026-06-23.
+DRAM cratered on 2026-06-23 from the prior close $80.72 down to a $69.22 close — breached its $77.32 trailing stop intraday, but a sell attempt was blocked by a permission classifier mid-tick (timing concern re: user's own loop-restart plan). User's instruction when asked: **"if its in profit u can sell"** — i.e. check DRAM's live regular-session price at next market open; if above cost ($70.15), sell all; if below, hold per the original legacy rule (no other override). Pre-market print as of 5:25 AM CDT 6/24 was $71.85 (above cost) but pre-market prices aren't reliably tradable — re-check the live regular-session quote right after 8:30 AM open before acting.
+
+**Known gap:** the 2026-06-23 session was only checked once (~12:38 PM CDT, the tick that found the DRAM breach) — roughly 4 hours of that morning went unmonitored. sop/daily-summaries/2026-06-23.md was never written; backfill if useful but not urgent.
+
+## Last confirmed EOD — 2026-06-22
+
+Portfolio: $100.156 → $98.793 (-1.36%). Two Path D trades, both proactively exited ahead of forced closure: DFTX -0.40%, SMCI -1.32%. Full wrap-up: sop/daily-summaries/2026-06-22.md.
+
+## Legacy closes as of 2026-06-23 (last confirmed regular-session prints)
+FCN $143.65, RYAN $34.51, ADC $74.37 (14¢ below its $74.51 trigger), FPS $59.30, DRAM $69.22 (see pending decision above).
 
 ## Current state (snapshot)
 - **Account:** Robinhood Agentic CASH account ••••4744 (`594134744`). `agentic_allowed: true`. NEVER trade any other account — verify via `get_accounts` first if a prompt names a different number (678685199 has been pasted repeatedly; it does not exist on this login).
