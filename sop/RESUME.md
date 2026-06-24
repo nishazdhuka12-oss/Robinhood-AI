@@ -1,6 +1,6 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 8:31 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 8:37 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
