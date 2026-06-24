@@ -1,12 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 11:05 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 11:20 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## OPEN PATH D POSITION — DFTX (bought 9:21 AM CDT 2026-06-24)
 
-Filled: 0.33862 sh @ $43.47. Now $44.09 (+1.42%), stable, below +7% profit-lock threshold — holding. Confirmed Tier 1 catalyst still active (Phase 3 trial, day 3). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder every tick until then.
+Filled: 0.33862 sh @ $43.47. Now $43.885 (+0.96%), pulled back slightly but still positive, below +7% profit-lock threshold — holding. Confirmed Tier 1 catalyst still active (Phase 3 trial, day 3). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder every tick until then.
 
-RYAN (legacy) still approaching its $36.11 trigger — at $35.52, 59¢ away, watch closely.
+RYAN (legacy) closing in further on its $36.11 trigger — at $35.635, 47.5¢ away, watch closely.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
