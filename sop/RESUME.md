@@ -1,12 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 9:20 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 9:35 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## OPEN PATH D POSITION — DFTX (bought 9:21 AM CDT 2026-06-24)
 
-Bought $14.72 notional (0.33862 sh) @ ~$43.47, order id 6a3be7e4-5265-4d69-97a4-d440d7bb560d. Same stock as Monday's losing trade, but entered this time only after a clean volume-confirmed breakout above $43.00 (417K vs 157K, 2.65x) with 3 consecutive higher-high bars — not chasing the open-spike. Confirmed Tier 1 catalyst still active (Phase 3 trial, day 3). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder every tick until then.
-
-KBH (+16.92%) and RUN (+28.89%) skipped earlier today — mixed earnings/overbought and unconfirmed-date catalyst respectively.
+Filled: 0.33862 sh @ $43.47. Now $43.65 (+0.41%), stable above breakout level, below +7% profit-lock threshold, holding. Confirmed Tier 1 catalyst still active (Phase 3 trial, day 3). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder every tick until then.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
