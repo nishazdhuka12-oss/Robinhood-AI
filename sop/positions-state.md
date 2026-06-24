@@ -26,8 +26,6 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 
-| Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
-|---|---|---|---|---|---|
-| DFTX | ~43.47 | 43.47 | n/a (day-trade, EOD force-close 3:00 PM CDT, not trailing-stop managed) | no | Bought 2026-06-24 9:21 AM CDT, $14.72 notional (0.33862 sh), order id 6a3be7e4-5265-4d69-97a4-d440d7bb560d, state unconfirmed pending fill. Same stock as Monday's losing trade — confirmed Tier 1 catalyst still active (Phase 3 trial, now day 3, absorbing a $500M dilutive offering). This time entered only after a clean volume-confirmed breakout above $43.00 (417K vs 157K prior bar, 2.65x) with 3 consecutive higher-high bars on sustained volume, not on the initial open-spike. Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29) — apply Hold-vs-Sell Q1-Q8 loop and profit-locking ladder (+7%→floor+4%, +12%→sell half, +15%+→sell all) each tick until then. |
+None open. DFTX (bought 9:21 AM CDT 6/24, 0.33746 sh @ $43.47) closed 12:21 PM CDT — sold all on a confirmed bearish-reversal exit after closing below the $43.00 support level with volume tripling (58K vs 19K prior bar). Realized P&L: ~-1.32%.
 
-**Prior closed Path D trades:** SMCI (bought 1:22 PM, closed 2:06 PM 6/22, -1.32%, bearish-reversal exit). DFTX (bought 10:20 AM, closed 11:50 AM 6/22, -0.40%, bearish-reversal exit). See sop/trade-journal.md.
+**Prior closed Path D trades:** DFTX #2 (bought 9:21 AM, closed 12:21 PM 6/24, -1.32%, bearish-reversal exit — same ticker as the 6/22 trade, disciplined breakout entry still produced a loss when momentum reversed). SMCI (bought 1:22 PM, closed 2:06 PM 6/22, -1.32%, bearish-reversal exit). DFTX #1 (bought 10:20 AM, closed 11:50 AM 6/22, -0.40%, bearish-reversal exit). See sop/trade-journal.md.
