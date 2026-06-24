@@ -1,12 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 2:05 PM CDT (market open, power hour). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 2:20 PM CDT (market open, power hour). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## No open Path D positions
 
 DFTX closed 12:21 PM CDT (-1.32%). See sop/trade-journal.md for closed trades.
 
-RYAN (legacy) at $35.415, 70¢ from its $36.11 trigger, watch closely. Tape stabilized, no Hard Rule 39 concern. ~55 min to 3:00 PM EOD.
+RYAN (legacy) at $35.535, 57.5¢ from its $36.11 trigger, watch closely. ~40 min to 3:00 PM EOD.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
