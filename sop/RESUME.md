@@ -1,6 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 8:37 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 8:50 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+
+## Watching — DFTX (same stock as Monday's trade)
+
+DFTX is up again today (+16%, new 52-wk high $43.00) on continued momentum from Monday's Phase 3 catalyst, now also digesting a $500M dilutive offering announced 6/22. Gapped to $43 then immediately retraced to $39.25 within the first 5-min bar — vertical-spike-and-fade, no confirmed base. Not entering on the spike; will reconsider only on a clean consolidation + breakout. RUN (+28.89%) skipped — catalyst (solar ITC bill) not confirmed dated today, sector-wide not company-specific.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
