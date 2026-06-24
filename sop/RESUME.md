@@ -1,12 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-24 12:20 PM CDT (market open, lunch lull). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-24 12:35 PM CDT (market open, lunch lull). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## CLOSED PATH D TRADE — DFTX (2026-06-24)
+## No open Path D positions
 
-Bought 9:21 AM CDT @ $43.47, sold 12:21 PM CDT @ ~$42.90 on a confirmed bearish-reversal exit (closed below $43.00 support, volume tripled). Peaked +2.12% intraday before reversing. Realized P&L: ~-1.32%. Same ticker as the 6/22 loss — disciplined entry didn't prevent a second loss when momentum reversed. See sop/trade-journal.md. No open Path D positions.
+DFTX closed 12:21 PM CDT (-1.32%). LIFE/NVCT/BUUU all cap-failed this tick. See sop/trade-journal.md for closed trades.
 
-RYAN (legacy) at $35.32, 79¢ from its $36.11 trigger, watch closely.
+RYAN (legacy) at $35.23, 88¢ from its $36.11 trigger, watch closely.
 
 ## RESOLVED — DRAM + ADC both sold at the 6/24 open
 
