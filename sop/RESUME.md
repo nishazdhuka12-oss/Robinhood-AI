@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-25 8:35 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-25 8:50 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## Today (2026-06-25) — market open
 
-Portfolio $98.067. Tape strongly bullish (SPY +0.59%, QQQ +1.87%). No legacy triggers: FCN -10.50%, RYAN -4.74%, FPS +3.31%. No qualifying Path D candidates — Daily Movers list unchanged from open. No open Path D positions.
+Portfolio $98.144. Tape pulled back from earlier highs but still positive (SPY +0.05%, QQQ +0.55%). No legacy triggers: FCN -8.47%, RYAN -3.21%, FPS -0.23%. No qualifying Path D candidates. No open Path D positions.
 
 ## Market closed — day complete (2026-06-24)
 
