@@ -1,10 +1,12 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-25 8:50 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-25 9:05 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Today (2026-06-25) — market open
+## Watching — BB (BlackBerry)
 
-Portfolio $98.144. Tape pulled back from earlier highs but still positive (SPY +0.05%, QQQ +0.55%). No legacy triggers: FCN -8.47%, RYAN -3.21%, FPS -0.23%. No qualifying Path D candidates. No open Path D positions.
+Confirmed clean Tier 1 catalyst: Q1 earnings double beat + raised guidance, first cash-positive quarter in 9 years. $6.06B cap. Currently basing in a $10.00-10.44 range on sustained volume — no confirmed breakout above the range high yet. Watching for that confirmation before entering. TECH (Merck buyout, merger-arb, capped upside like APGE) and KYMR (unconfirmed catalyst source) skipped. AYI's earnings beat/miss unconfirmed, weak volume — skipped.
+
+RYAN (legacy) closing in fast — at $35.72 (39¢ from its $36.11 trigger), watch closely.
 
 ## Market closed — day complete (2026-06-24)
 
