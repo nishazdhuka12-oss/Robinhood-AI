@@ -1,12 +1,14 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-25 2:49 PM CDT (market open, power-hour). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-25 3:03 PM CDT (market closed, day complete).
 
-## OPEN PATH D POSITION — BB (bought 9:22 AM CDT 2026-06-25)
+## Market closed — day complete (2026-06-25)
 
-Filled: 1.39396 sh @ $10.61. $10.32 (-2.74%), holding above the $10.19-10.27 base. ~11 minutes left until 3:00 PM EOD force-close — will sell regardless of P&L at that point if not exited sooner. Exit trigger: confirmed CLOSE below $10.19 with rising volume = immediate sell. Confirmed Tier 1 catalyst (Q1 earnings double beat + raised guidance). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
+Portfolio: $98.293 (8:31 AM open) → ~$97.65 (3:01 PM, last marked). Two trades today: RYAN (legacy) sold 9:20 AM @ ~$36.53 vs $36.11 cost, **+1.16%** — crossed its profit-exit trigger. BB (Path D) bought 9:22 AM @ $10.61 on a confirmed Tier 1 catalyst (Q1 earnings double beat + raised guidance) and a clean volume-confirmed breakout; wicked to $10.17 intraday (10:05 AM), recovered to near-breakeven by early afternoon, then drifted back down to close the regular session at $10.33 (**-2.64%** unrealized).
 
-2 legacy positions remain (FCN, FPS) — RYAN sold this morning at +1.16%.
+**⚠ OPERATIONAL FLAG — BB EOD force-close did not fill.** Sell order submitted 3:01:51 PM CDT (order id `6a3d892f-9476-444b-9e87-69251596e62f`, 1.393981 sh) missed the 3:00 PM CDT closing bell by ~2 minutes and is sitting in `queued` state. BB will carry over to the next session unintentionally. **First action of the next trading day, before any pre-market prep or new signal scan: confirm the order's fill status and, if still unfilled or if it carried over, sell BB immediately at the open.** Log the final realized P&L to sop/trade-journal.md once confirmed.
+
+2 legacy positions remain (FCN $140.25, -10.62%; FPS $58.64, -2.95%), both carrying overnight per their standing rules — no triggers fired today. Full wrap-up: sop/daily-summaries/2026-06-25.md.
 
 ## Market closed — day complete (2026-06-24)
 
