@@ -1,12 +1,14 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-25 9:05 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-25 9:20 AM CDT (market open). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
-## Watching — BB (BlackBerry)
+## RYAN sold — 2 legacy positions remain (FCN, FPS)
 
-Confirmed clean Tier 1 catalyst: Q1 earnings double beat + raised guidance, first cash-positive quarter in 9 years. $6.06B cap. Currently basing in a $10.00-10.44 range on sustained volume — no confirmed breakout above the range high yet. Watching for that confirmation before entering. TECH (Merck buyout, merger-arb, capped upside like APGE) and KYMR (unconfirmed catalyst source) skipped. AYI's earnings beat/miss unconfirmed, weak volume — skipped.
+RYAN crossed above its $36.11 trigger at 9:20 AM CDT, sold @ ~$36.53. Realized P&L: ~+1.16%.
 
-RYAN (legacy) closing in fast — at $35.72 (39¢ from its $36.11 trigger), watch closely.
+## OPEN PATH D POSITION — BB (bought 9:22 AM CDT 2026-06-25)
+
+Bought $14.79 notional (1.39396 sh) @ ~$10.61. Confirmed Tier 1 catalyst (Q1 earnings double beat + raised guidance). Entered on a clean, orderly 2-bar breakout with sustained volume, not a spike. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).** Running Hold-vs-Sell Q1-Q8 + profit-locking ladder every tick until then.
 
 ## Market closed — day complete (2026-06-24)
 
