@@ -1,10 +1,10 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-25 2:20 PM CDT (market open, power-hour). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
+Last updated: 2026-06-25 2:28 PM CDT (market open, power-hour). See sop/SKILL.md for the full current framework — Path 0/B/C/D with catalyst tiers, opening-range breakout, VWAP, Hold-vs-Sell decision tree, profit-locking, SPY/QQQ tape rules.
 
 ## OPEN PATH D POSITION — BB (bought 9:22 AM CDT 2026-06-25)
 
-Filled: 1.39396 sh @ $10.61. $10.30 (-2.88%) — steady grind down on rising volume in the last bar (380K vs 237K prior), more concerning than the earlier wick. Hasn't breached the $10.19-10.27 base yet — holding, watching closely. ~40 minutes left until 3:00 PM EOD force-close. Exit trigger: confirmed CLOSE below $10.19 with rising volume = immediate sell. Confirmed Tier 1 catalyst (Q1 earnings double beat + raised guidance). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
+Filled: 1.39396 sh @ $10.61. Stabilized at $10.32 (-2.72%) — the rising-volume selling from the prior tick paused, still above the $10.19-10.27 base. ~32 minutes left until 3:00 PM EOD force-close. Exit trigger: confirmed CLOSE below $10.19 with rising volume = immediate sell. Confirmed Tier 1 catalyst (Q1 earnings double beat + raised guidance). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
 
 2 legacy positions remain (FCN, FPS) — RYAN sold this morning at +1.16%.
 
