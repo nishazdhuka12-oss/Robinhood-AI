@@ -13,8 +13,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 6/25 3:00 PM close: $140.25 (-10.62%). No trigger today, carries overnight. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 6/25 3:00 PM close: $58.64 (-2.95%). Carries overnight per standing hold rule. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 6/26 3:00 PM close: $150.94 (-3.80%). No trigger, carries over the weekend. |
+| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 6/26 3:00 PM close: $54.84 (-9.36%). Carries over the weekend per standing hold rule. |
 
 ## Closed legacy positions
 
@@ -26,8 +26,6 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 
-| Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
-|---|---|---|---|---|---|
-| BB | ~10.61 | 10.64 | n/a (day-trade, EOD force-close, not trailing-stop managed) | no | Bought 2026-06-25 9:22 AM CDT, $14.79 notional (1.393981 sh), order id 6a3d3984-3e56-4d55-abe4-efd99c2a8e9c. Intraday journey: wicked to $10.17 at 10:05 AM (briefly piercing $10.19-10.27 base, recovered), climbed to near-breakeven ~$10.55 around 1:05-1:35 PM, ground back down to close the regular session at $10.33 (-2.64%). **EOD force-close sell order submitted 3:01:51 PM CDT (order id 6a3d892f-9476-444b-9e87-69251596e62f) but missed the 3:00 PM closing bell by ~2 minutes — state `queued`, unfilled as of day-end.** PENDING: must confirm/execute this sale as the very first action of the next session, ahead of any new signal scan. Not yet logged to trade-journal.md — pending final fill price. |
+No open Path D positions. BB's delayed EOD sell (queued overnight 6/25→6/26) finally filled at the 6/26 open — see closed trades below.
 
-**Prior closed Path D trades:** DFTX #2 (6/24, -1.32%). SMCI (6/22, -1.32%). DFTX #1 (6/22, -0.40%). See sop/trade-journal.md.
+**Prior closed Path D trades:** BB (6/26 open fill, EOD force-close delayed overnight, -4.34%). DFTX #2 (6/24, -1.32%). SMCI (6/22, -1.32%). DFTX #1 (6/22, -0.40%). See sop/trade-journal.md.

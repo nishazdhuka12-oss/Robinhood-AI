@@ -1,6 +1,18 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-25 3:03 PM CDT (market closed, day complete).
+Last updated: 2026-06-28 2:25 AM CDT (Sunday, market closed). See sop/SKILL.md for the full current framework.
+
+## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
+
+BB's 6/25 EOD sell order (queued, missed the 3:00 PM closing bell by ~2 minutes) filled at the 6/26 8:30 AM CDT open at $10.15 — final P&L -4.34%. Logged to sop/trade-journal.md and sop/positions-state.md. Lesson applied going forward: fire the EOD force-close sell by ~2:58 PM CDT instead of exactly 3:00 PM, to leave margin for order-submission latency on fractional-share market orders (which require regular_hours and won't fill in extended hours).
+
+## Operational gap — Friday 2026-06-26 not logged
+
+The loop did not run during Friday's session (no daily-summaries/2026-06-26.md, no tick log) — similar to the 6/23 gap. Confirmed via get_equity_orders/get_equity_positions on 6/28 that the only activity that day was the BB order auto-filling at the open; no other trades occurred. FCN and FPS carried the full session unchanged, closing at $150.94 (-3.80%) and $54.84 (-9.36%) — no triggers.
+
+## Current state (snapshot)
+- Portfolio: $98.05 as of 6/26 3:00 PM close. 2 legacy positions open (FCN, FPS), $76.85 cash. No open Path D positions.
+- Account 594134744 only — 678685199 (pasted in a stale alternate template on 6/28) does not exist on this login.
 
 ## Market closed — day complete (2026-06-25)
 
