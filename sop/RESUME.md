@@ -16,9 +16,9 @@ No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS 
 
 ## OPEN PATH D POSITION — OUST (bought 11:06 AM CDT 2026-06-29)
 
-Filled: 0.282239 sh @ $51.80 avg. $52.00 (+0.39%), drifting slightly lower but still above the $50.50 support. Tier 2 catalyst: strategic partnership with AIM Intelligent Machines (lidar sensors for autonomous heavy equipment). No profit-lock threshold yet (+3% breakeven stop activates ~$53.35, +4% partial exit ~$53.87). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
+Filled: 0.282239 sh @ $51.80 avg. $52.03 (+0.44%), steady, still above the $50.50 support. Tier 2 catalyst: strategic partnership with AIM Intelligent Machines (lidar sensors for autonomous heavy equipment). No profit-lock threshold yet (+3% breakeven stop activates ~$53.35, +4% partial exit ~$53.87). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
 
-FCN $150.025, FPS $54.81 — no legacy triggers.
+FCN $149.87, FPS $54.91 — no legacy triggers.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
