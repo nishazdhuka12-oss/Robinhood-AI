@@ -14,8 +14,11 @@ Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymark
 
 No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
 
-## 10:49 AM tick update — WATCHING OUST
-FCN $150.025, FPS $54.04 — no triggers. SPY +1.23%, QQQ +1.61% — stable. **OUST (+19.71%, Tier 2 partnership w/ AIM Intelligent Machines, lidar sensors)**: spiked to $52.50 high early, pulled back to $47.10, now consolidating $48-50.30 on low volume (40-50K/bar vs 200-400K early). NOT YET bought — watching for a confirmed break above $50.50 with volume back to 100K+/bar as the entry trigger. Re-check next tick.
+## OPEN PATH D POSITION — OUST (bought 11:06 AM CDT 2026-06-29)
+
+Filled (pending confirmation): ~0.2825 sh @ ~$51.75, $14.62 notional, order id 6a42983d-1e65-409f-8b1a-866d2660862b. Confirmed volume-backed breakout above $50.50 (2 consecutive higher-high bars, volume 50K→70K→108K). Tier 2 catalyst: strategic partnership with AIM Intelligent Machines (lidar sensors for autonomous heavy equipment), concrete production-scale details. Earlier today: spiked to $52.50, pulled back to $47.10, consolidated an hour, then broke out. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
+
+FCN $149.545, FPS $54.73 — no legacy triggers.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 

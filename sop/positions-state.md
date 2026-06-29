@@ -13,8 +13,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 6/26 3:00 PM close: $150.94 (-3.80%). No trigger, carries over the weekend. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 6/26 3:00 PM close: $54.84 (-9.36%). Carries over the weekend per standing hold rule. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 6/29 11:06 AM: $149.545 (-4.69%). No trigger. |
+| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 6/29 11:06 AM: $54.73 (-9.51%). |
 
 ## Closed legacy positions
 
@@ -26,6 +26,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 
-No open Path D positions. BB's delayed EOD sell (queued overnight 6/25→6/26) finally filled at the 6/26 open — see closed trades below.
+| Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
+|---|---|---|---|---|---|
+| OUST | ~51.75 | 51.95 | n/a (day-trade, EOD force-close, not trailing-stop managed) | no | Bought 2026-06-29 11:06 AM CDT, $14.62 notional (~0.2825 sh), order id 6a42983d-1e65-409f-8b1a-866d2660862b, market order pending fill confirmation. Tier 2 catalyst: strategic partnership with AIM Intelligent Machines for lidar sensors (autonomous heavy equipment — mining/construction/defense), concrete production-scale details (100K units/yr capacity, 10-yr production life). Entered on a confirmed volume-backed breakout above $50.50 (2 consecutive higher-high bars, volume 50K→70K→108K) after an earlier spike-to-$52.50/pullback-to-$47.10/hour-long consolidation. Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29) — apply Hold-vs-Sell loop and profit-locking ladder (+7%→floor+4%, +12%→sell half, +15%+→sell all) each tick until then. |
 
 **Prior closed Path D trades:** BB (6/26 open fill, EOD force-close delayed overnight, -4.34%). DFTX #2 (6/24, -1.32%). SMCI (6/22, -1.32%). DFTX #1 (6/22, -0.40%). See sop/trade-journal.md.
