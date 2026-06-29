@@ -16,9 +16,9 @@ No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS 
 
 ## OPEN PATH D POSITION — OUST (bought 11:06 AM CDT 2026-06-29)
 
-Filled (pending confirmation): ~0.2825 sh @ ~$51.75, $14.62 notional, order id 6a42983d-1e65-409f-8b1a-866d2660862b. Confirmed volume-backed breakout above $50.50 (2 consecutive higher-high bars, volume 50K→70K→108K). Tier 2 catalyst: strategic partnership with AIM Intelligent Machines (lidar sensors for autonomous heavy equipment), concrete production-scale details. Earlier today: spiked to $52.50, pulled back to $47.10, consolidated an hour, then broke out. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
+Filled: 0.282239 sh @ $51.80 avg. Now $51.94 (+0.27%), holding steady just above the breakout level. Tier 2 catalyst: strategic partnership with AIM Intelligent Machines (lidar sensors for autonomous heavy equipment), concrete production-scale details. Earlier today: spiked to $52.50, pulled back to $47.10, consolidated an hour, then broke out above $50.50 on confirmed rising volume. **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
 
-FCN $149.545, FPS $54.73 — no legacy triggers.
+FCN $149.50, FPS $54.785 — no legacy triggers.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
