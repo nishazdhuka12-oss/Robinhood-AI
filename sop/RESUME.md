@@ -14,8 +14,8 @@ Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymark
 
 No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
 
-## 8:49 AM tick update
-FCN $152.255, FPS $56.06 — no triggers. SPY +1.42%, QQQ +1.60% — strongly bullish, no Hard Rule 39. VRDN opening-range high (8:30-8:45 AM) was $19.53; back to $19.16 now on declining volume (317K→254K→99K) — no breakout, skipping. IRDM $52.90 vs $54 deal (~2.1% upside left) — capped-upside confirmed, skipping. STI -14.34% today — confirmed hard reversal, skipping. No trade yet, no qualifying candidate this tick.
+## 9:06 AM tick update
+FCN $151.74, FPS $55.21 — no triggers. SPY -0.46%, QQQ -0.89% over 15 min (cooling but below Hard Rule 39 threshold). VRDN faded further to $18.83, dropped from consideration. Fresh scan found MNTS (speculative SpaceX-hype micro-cap, skipped — history of violent reversals) and CMCSA (NBCUniversal spin-off, +8.43%, but already gapped-and-faded from $27.10 open peak with volume collapsing 10.4M→637K — skipped, no chasing). No qualifying candidate.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
