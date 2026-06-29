@@ -1,6 +1,18 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-28 2:25 AM CDT (Sunday, market closed). See sop/SKILL.md for the full current framework.
+Last updated: 2026-06-29 8:02 AM CDT (pre-market prep). See sop/SKILL.md for the full current framework.
+
+## Pre-market watchlist (2026-06-29, max 3, ranked)
+
+| Ticker | Tier | Catalyst | Source | Pre-market move |
+|---|---|---|---|---|
+| VRDN | 1 | FDA approval + launch of Lumvoa for thyroid eye disease | [Benzinga](https://www.benzinga.com/markets/equities/26/06/60149448/stock-market-today-dow-jones-sp-500-futures-gain-as-trump-admin-says-us-iran-will-stand-down-verizon-hp-universe-pharmaceuticals-in-focus) | +11.45% |
+| IRDM | 1 (capped-upside, flag) | Rocket Lab to acquire all outstanding shares at $54/share (~$8B deal) | [Benzinga](https://www.benzinga.com/m-a/26/06/60152421/rklb-stock-surges-over-11-in-monday-premarket-whats-going-on) | +20.86% — merger-arb pattern like APGE (6/22) and TECH (6/25); verify current price vs $54 deal price at open before treating as tradeable, likely capped/thin upside |
+| STI | 3 (speculative, low confidence) | Announced plan to buy SPCX (SpaceX) shares as a "strategic treasury asset" — unusual, not a standard catalyst | [Benzinga](https://www.benzinga.com/trading-ideas/movers/26/06/60152297/why-is-solidion-technology-stock-gaining-monday) | +7.78% to $13.30 |
+
+Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymarket pricing 86% odds of a green S&P open amid US-Iran de-escalation headlines.
+
+No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
