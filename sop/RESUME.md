@@ -14,8 +14,8 @@ Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymark
 
 No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
 
-## 9:58 AM tick update
-FCN $150.45, FPS $54.47 — no triggers. SPY/QQQ flat/stable. No qualifying candidate (chip stocks falling, not buy candidates).
+## 10:15 AM tick update
+FCN $149.78, FPS $54.23 — no triggers. SPY +1.17%, QQQ +1.38% — bullish, stable. MRNA (+3.15%, below 5% threshold) and BIIB (+0.77%, flat) checked and skipped — catalysts already priced in. No qualifying candidate.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
