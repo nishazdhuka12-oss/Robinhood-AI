@@ -14,6 +14,9 @@ Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymark
 
 No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
 
+## 8:32 AM open-tick update
+FCN $154.80, FPS $55.65 — no triggers. SPY +1.12%, QQQ +1.21% — bullish, no Hard Rule 39. VRDN $19.205 (+7.29%, faded from premarket high) — too early for opening-range breakout (only 2 min into session), re-check ~8:45 AM. IRDM $51.885 vs $54 deal price (~4.1% upside left) — confirmed capped-upside merger-arb, skipping. STI $11.725 (-4.99% today) — confirmed fading, skipping. No trade yet.
+
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
 BB's 6/25 EOD sell order (queued, missed the 3:00 PM closing bell by ~2 minutes) filled at the 6/26 8:30 AM CDT open at $10.15 — final P&L -4.34%. Logged to sop/trade-journal.md and sop/positions-state.md. Lesson applied going forward: fire the EOD force-close sell by ~2:58 PM CDT instead of exactly 3:00 PM, to leave margin for order-submission latency on fractional-share market orders (which require regular_hours and won't fill in extended hours).
