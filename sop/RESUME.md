@@ -1,24 +1,18 @@
 # AI Trading Agent — RESUME (for a fresh chat)
 
-Last updated: 2026-06-29 8:02 AM CDT (pre-market prep). See sop/SKILL.md for the full current framework.
+Last updated: 2026-06-29 2:58 PM CDT (market closed, day complete).
 
-## Pre-market watchlist (2026-06-29, max 3, ranked)
+## Market closed — day complete (2026-06-29)
 
-| Ticker | Tier | Catalyst | Source | Pre-market move |
-|---|---|---|---|---|
-| VRDN | 1 | FDA approval + launch of Lumvoa for thyroid eye disease | [Benzinga](https://www.benzinga.com/markets/equities/26/06/60149448/stock-market-today-dow-jones-sp-500-futures-gain-as-trump-admin-says-us-iran-will-stand-down-verizon-hp-universe-pharmaceuticals-in-focus) | +11.45% |
-| IRDM | 1 (capped-upside, flag) | Rocket Lab to acquire all outstanding shares at $54/share (~$8B deal) | [Benzinga](https://www.benzinga.com/m-a/26/06/60152421/rklb-stock-surges-over-11-in-monday-premarket-whats-going-on) | +20.86% — merger-arb pattern like APGE (6/22) and TECH (6/25); verify current price vs $54 deal price at open before treating as tradeable, likely capped/thin upside |
-| STI | 3 (speculative, low confidence) | Announced plan to buy SPCX (SpaceX) shares as a "strategic treasury asset" — unusual, not a standard catalyst | [Benzinga](https://www.benzinga.com/trading-ideas/movers/26/06/60152297/why-is-solidion-technology-stock-gaining-monday) | +7.78% to $13.30 |
+Portfolio: ~$98.06 (8:32 AM) → $98.15 (close) — roughly flat to slightly up. One trade today: **OUST** (Path D), bought 11:06 AM @ $51.80 on a Tier 2 partnership catalyst (AIM Intelligent Machines lidar deal) after a clean volume-confirmed breakout above $50.50. Managed through the full profit-locking ladder — breakeven stop activated at +3%, sold 1/3 at +4% (2:43 PM @ $54.3891), force-closed the remaining 2/3 at 2:58 PM @ $53.8101 (submitted ~2 min before the close this time, applying the lesson from 6/25's BB late-fill — filled immediately, no issue). **Blended realized P&L: +4.25%.**
 
-Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymarket pricing 86% odds of a green S&P open amid US-Iran de-escalation headlines.
+Several candidates evaluated and skipped: VRDN (failed opening-range breakout), IRDM (capped-upside merger-arb, deal price $54), STI (reversed hard negative), CMCSA (already gapped-and-faded), MNTS (too speculative), IBRX (stale catalyst), MRNA/BIIB/CYTK (too small a move), and AXON (+9.73%, cleared the filter but skipped on principle — catalyst was a Trump-personal-stock/ICE-contract story, within the spirit of Hard Rule 35's politician-trade suspension).
 
-No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
+2 legacy positions remain (FCN $149.455 -4.74%, FPS $54.98 -9.08%), both carrying overnight — no triggers today. Full wrap-up: sop/daily-summaries/2026-06-29.md.
 
-## OPEN PATH D POSITION — OUST (bought 11:06 AM CDT 2026-06-29)
+## Prior day (2026-06-28, Sunday) — resolved BB carryover
 
-Partial exit confirmed filled: sold 1/3 (0.094080 sh) @ ~$54.36, order id 6a42cae6-538b-4408-8c50-51486accd9f5. Remaining 0.188159 sh @ $51.82 avg cost, now $54.02 (+4.25%), below the +7% floor (~$55.43). ~8 min until 3:00 PM EOD — will submit the force-close sell by ~2:58 PM to leave margin for order latency (lesson from the BB late-fill incident). **Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29).**
-
-FCN $149.65, FPS $54.955 — no legacy triggers.
+BB's 6/25 EOD order (missed the close by ~2 min) filled at the 6/26 open at $10.15, -4.34%. See sop/trade-journal.md.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 

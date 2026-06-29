@@ -13,8 +13,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 6/29 11:06 AM: $149.545 (-4.69%). No trigger. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 6/29 11:06 AM: $54.73 (-9.51%). |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 6/29 3:00 PM close: $149.455 (-4.74%). No trigger. |
+| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 6/29 3:00 PM close: $54.98 (-9.08%). |
 
 ## Closed legacy positions
 
@@ -28,6 +28,6 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| OUST | 51.80 | 54.43 | n/a (day-trade, EOD force-close, not trailing-stop managed) | YES — 1/3 sold @ ~$54.36, 2:43 PM CDT | Bought 2026-06-29 11:06 AM CDT, 0.282239 sh @ $51.80 avg ($14.62 notional), order id 6a42983d-1e65-409f-8b1a-866d2660862b, FILLED. Climbed to $54.43 (+5.08%), crossing the +4% partial-exit threshold — sold 1/3 (0.094080 sh @ ~$54.36, order id 6a42cae6-538b-4408-8c50-51486accd9f5). Remaining ~0.188159 sh: breakeven stop active (sell all if back to/below $51.80), watching for +7% floor (~$55.43). Tier 2 catalyst: strategic partnership with AIM Intelligent Machines for lidar sensors. Must close by 3:00 PM CDT regardless of P&L (Hard Rule 29). |
+No open Path D positions. OUST closed out via partial exit + EOD force-close — see closed trades below.
 
-**Prior closed Path D trades:** BB (6/26 open fill, EOD force-close delayed overnight, -4.34%). DFTX #2 (6/24, -1.32%). SMCI (6/22, -1.32%). DFTX #1 (6/22, -0.40%). See sop/trade-journal.md.
+**Prior closed Path D trades:** OUST (6/29, bought $51.80, partial 1/3 @ $54.3891 + EOD close 2/3 @ $53.8101, blended +4.25%). BB (6/26 open fill, EOD force-close delayed overnight, -4.34%). DFTX #2 (6/24, -1.32%). SMCI (6/22, -1.32%). DFTX #1 (6/22, -0.40%). See sop/trade-journal.md.
