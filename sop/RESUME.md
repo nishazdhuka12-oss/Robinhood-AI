@@ -14,8 +14,8 @@ Broader tape supportive: SPY +1.09% premarket, QQQ +1.22% premarket, on Polymark
 
 No legacy triggers as of Friday's close: FCN $151.10 (still below $156.90), FPS $55.13 (holds indefinitely).
 
-## 10:32 AM tick update
-FCN $150.04, FPS $53.795 — no triggers. SPY +1.23%, QQQ +1.58% — bullish. Lunch lull starting. CYTK +4.77% (just under 5% threshold) skip. AXON +9.73% clears the universe filter but catalyst is a Trump-personal-stock/ICE-contract controversy story — skipped on principle, within the spirit of Hard Rule 35 (Path A suspended). No qualifying candidate.
+## 10:49 AM tick update — WATCHING OUST
+FCN $150.025, FPS $54.04 — no triggers. SPY +1.23%, QQQ +1.61% — stable. **OUST (+19.71%, Tier 2 partnership w/ AIM Intelligent Machines, lidar sensors)**: spiked to $52.50 high early, pulled back to $47.10, now consolidating $48-50.30 on low volume (40-50K/bar vs 200-400K early). NOT YET bought — watching for a confirmed break above $50.50 with volume back to 100K+/bar as the entry trigger. Re-check next tick.
 
 ## RESOLVED — BB EOD force-close (filled overnight at 6/26 open)
 
