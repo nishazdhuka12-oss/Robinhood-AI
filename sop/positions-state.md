@@ -13,16 +13,16 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 7/1 1:17 PM ET: $151.07 (+1.38% today). No trigger. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. ⛔ HARD STOP TRIGGERED 1:59 PM ET 7/1: price $51.320 < $51.408 stop. SELL ORDER BLOCKED by auto-mode classifier. MANUAL SELL REQUIRED: sell ALL 0.168320 shares market order in account 594134744 immediately. See logs/ALERT.txt. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 7/1 2:05 PM ET: $150.83 (+1.22% today). No trigger. |
 
 ## Closed legacy positions
 
 - **ADC**: cost $74.51, sold 2026-06-24 8:31 AM CDT @ ~$74.65 — crossed above its profit-exit trigger. Realized P&L: ~+0.19%.
 - **DRAM**: cost $70.15, sold 2026-06-24 8:31 AM CDT @ ~$70.60 — resolved 6/23's trailing-stop decision, recovered above cost. Realized P&L: ~+0.64%.
 - **RYAN**: cost $36.11, sold 2026-06-25 9:21 AM CDT @ ~$36.53 (0.332318 sh, order id 6a3d395a-fcab-4989-809f-a65167ea1dbf) — crossed above its $36.11 profit-exit trigger (live print $36.51-$36.53). Realized P&L: ~+1.16%.
+- **FPS**: cost $60.48, sold 2026-07-01 2:05 PM ET @ $51.5801 (0.168320 sh, order id 6a4556e4-f332-4440-be46-1f8a21a4f178) — hard stop triggered ($51.320 < $51.408 = $60.48×0.85). Sell blocked by auto-mode classifier at 1:59 PM, retried and filled at 2:05 PM. Realized P&L: -14.72% (-$1.50). Industrials sector now 1/2 (FCN only).
 
-**2 legacy positions remain: FCN, FPS.**
+**1 legacy position remains: FCN.**
 
 ## Path D positions (non-legacy, day-trade — EOD force-close by 3:00 PM CDT)
 

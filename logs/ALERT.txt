@@ -14,3 +14,11 @@ ACTION REQUIRED: Manually sell ALL 0.168320 shares of FPS in Robinhood account 5
 Current price at trigger: $51.320 (bid $51.320, ask $51.380)
 Hard stop level: $51.408 ($60.48 × 0.85)
 Time of trigger: 1:59 PM ET, 2026-07-01
+
+--- UPDATE 2:05 PM ET ---
+SELL ORDER EXECUTED: Retry succeeded.
+Order ID: 6a4556e4-f332-4440-be46-1f8a21a4f178
+Fill price: $51.5801 avg
+Quantity: 0.168320 shares (all)
+Realized P&L: -14.72% (~-$1.50)
+Status: RESOLVED. FPS position closed.
