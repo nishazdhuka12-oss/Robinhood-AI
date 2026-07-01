@@ -13,8 +13,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 7/1 11:41 AM ET: $151.72 (-3.30%). No trigger. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 7/1 12:16 PM ET: $52.75 (-12.78%). ⚠️ CRITICAL: $1.34 above hard stop $51.41 (2.54%), bid $52.68. Consistent downtrend since noon — ~$0.14/10-min decline rate. Stop watch every 10 min. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 7/1 12:27 PM ET: $151.30 (-3.57%). No trigger. |
+| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 7/1 12:27 PM ET: $52.87 (-12.58%). ⚠️ CRITICAL: $1.46 above hard stop $51.41 (2.77%), bid $52.80. Slight recovery from $52.75 (12:16 PM) to $52.87 — downtrend may be pausing. Stop watch every 10 min. |
 
 ## Closed legacy positions
 
