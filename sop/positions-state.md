@@ -13,8 +13,8 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 7/1 12:57 PM ET: $150.67 (+1.11% today). No trigger. |
-| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 7/1 12:57 PM ET: $52.14 (-6.66% today). ⚠️ IMMINENT: cushion $0.73 above hard stop $51.408 (1.42%), bid $52.12. Slight recovery from $52.04 low (12:52). Range: $52.04-$52.97 this session. Monitoring every 5 min. SELL ALL 0.168 shares market order if ≤ $51.408. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. As of 7/1 1:02 PM ET: $150.67 (+1.11% today). No trigger. |
+| FPS | 60.48 | 65.24 | 51.41 | no | Filled 2026-06-16. Peak +7.87% vs cost, still below +10% trailing threshold ($66.53) — standard -15%-from-cost stop applies. Legacy exit rule: hold indefinitely until user says otherwise. As of 7/1 1:02 PM ET: $52.43 (-6.14% today). ⚠️ CRITICAL: cushion $1.02 above hard stop $51.408 (1.99%), bid $52.39. Recovering off $52.04 session low (12:52): $52.04 → $52.14 → $52.43. Still well below cost ($60.48) and dangerous. Monitoring every 5 min. SELL ALL 0.168 shares market order if ≤ $51.408. |
 
 ## Closed legacy positions
 
