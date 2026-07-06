@@ -13,7 +13,7 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. EOD 7/2: CLOSED $153.68 (+2.87%). Session high $154.26. No trigger. $3.22 below exit trigger. Pre-market 7/6 5:25 AM CT: bid $152.50/ask $154.50 (wide, no print). 10-min watch from market open 8:30 AM CT. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 open: $153.77 (+0.11%). No trigger. $3.13 below exit trigger. VIX 15.81 (clear). 10-min watch active. |
 
 ## Closed legacy positions
 
