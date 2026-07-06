@@ -13,7 +13,7 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 EOD CLOSE: $155.575 (+1.29%). Strong close — best day since entry. Hard stop $133.37 — $22.21 clear. Exit trigger $156.90 — $1.33 away. No trigger. Day range: $151.59–$155.575. Next session: exit fires if price ≥ $156.90. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 EOD CLOSE: $155.77 (+1.42%). Strong close — best day since entry. Hard stop $133.37 — $22.40 clear. Exit trigger $156.90 — $1.13 away. No trigger. Day range: $151.59–$155.77. AH illiquid ($140/$180 spread). Next session: exit fires if price ≥ $156.90. |
 
 ## Closed legacy positions
 
