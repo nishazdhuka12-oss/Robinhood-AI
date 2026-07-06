@@ -13,7 +13,7 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 11:11 AM CT: $153.23 (-0.23%). Flat; bid $153.22/ask $153.63. Hard stop $133.37 — $19.86 clear. Exit trigger $156.90 — $3.67 away. No trigger. 10-min watch active. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 11:21 AM CT: $153.55 (-0.03%). Nearly perfectly flat; bid $153.38/ask $153.97. Hard stop $133.37 — $20.18 clear. Exit trigger $156.90 — $3.35 away. No trigger. 10-min watch active. |
 
 ## Closed legacy positions
 
