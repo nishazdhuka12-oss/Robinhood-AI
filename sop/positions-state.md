@@ -13,7 +13,7 @@ Format: TICKER | COST_BASIS | HIGH_WATER_MARK | PARTIAL_TAKEN (yes/no) | PARTIAL
 
 | Ticker | Cost Basis | High Water Mark | Trailing Stop Level | Partial Taken | Notes |
 |---|---|---|---|---|---|
-| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 EOD CLOSE: $155.69 (+1.37%, official settled close). Best day since entry. Hard stop $133.37 — $22.32 clear. Exit trigger $156.90 — $1.21 away. No trigger. Day range: $151.59–$155.77. 7/7 pre-market: illiquid ($132/$165 spread). Exit fires if price ≥ $156.90. |
+| FCN | 156.90 | 156.90 | 133.37 | no | Filled 2026-06-16 at open. Below +10% threshold ($172.59), standard -15%-from-cost stop applies. Legacy exit rule: sell when price returns above $156.90. 7/6 EOD CLOSE: $155.69 (+1.37%). Best day since entry. Hard stop $133.37 — $22.32 clear. Exit trigger $156.90 — $1.21 away. CATALYST: FCN expanded credit facility $900M→$1.5B on Jul 6 (positive). Earnings Jul 23 (exit strategy unchanged — sell at $156.90 regardless). 7/7 pre-market illiquid. 10-min watch at open. |
 
 ## Closed legacy positions
 
