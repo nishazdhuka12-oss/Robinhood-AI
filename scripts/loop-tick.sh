@@ -1,11 +1,17 @@
 #!/bin/bash
-# Trading loop tick — runs every 15 minutes via system crontab
-# Survives Claude Code session resets
+# Trading loop tick — runs every 15 min via launchd (GUI session, keychain access)
 
 export HOME="/Users/nishazdhuka"
 export PATH="/Users/nishazdhuka/.local/bin:/usr/local/bin:/usr/bin:/bin"
 LOGFILE="/Users/nishazdhuka/Robinhood AI/logs/loop.log"
 PROMPT_FILE="/Users/nishazdhuka/Robinhood AI/scripts/options-bot-prompt.txt"
+
+# Guard: weekdays only, 8:30 AM – 3:00 PM CDT
+DOW=$(date +%u)   # 1=Mon … 7=Sun
+HHMM=$(date +%H%M)
+if [ "$DOW" -gt 5 ] || [ "$HHMM" -lt "0830" ] || [ "$HHMM" -ge "1500" ]; then
+  exit 0
+fi
 
 echo "--- $(date '+%Y-%m-%d %H:%M:%S') ---" >> "$LOGFILE"
 
