@@ -367,19 +367,18 @@ HARD RULES (non-negotiable)
 14. SCAN A Pass 2: chance_of_profit_long >= 0.35.
 15. All other scans: chance_of_profit_long >= 0.40.
 16. SCAN A runs first every tick.
-17. Cash < $150: log "insufficient funds." STEP 7 only.
-18. Last hour (19:00-20:00 UTC): no new SCAN E or F.
-19. After-hours: SWING plays only. Queue for next session.
-20. Pre-earnings: 5-14 days ideal. Hard skip < 3 days or IV > 0.85.
-21. Post-earnings: no move > 15%. No execute before 14:00 UTC.
-22. Circuit breaker: down >= 12% from session_start → no new trades.
-23. Cancel unfilled pre-market orders at 13:45 UTC.
-24. Reconcile expired/closed options in RESUME.md each tick.
-25. Beat rate >= 3/4 for SCAN A Pass 2.
-26. ONE macro ETF position (SCAN D) max.
-27. SCAN C: named major firm AND >= 20% PT raise.
-28. SCAN F: verified same-day catalyst required.
-29. Never add to a position with unrealized P&L < 0%.
+17. Last hour (19:00-20:00 UTC): no new SCAN E or F.
+18. After-hours: SWING plays only. Queue for next session.
+19. Pre-earnings: 5-14 days ideal. Hard skip < 3 days or IV > 0.85.
+20. Post-earnings: no move > 15%. No execute before 14:00 UTC.
+21. Circuit breaker: down >= 12% from session_start → no new trades.
+22. Cancel unfilled pre-market orders at 13:45 UTC.
+23. Reconcile expired/closed options in RESUME.md each tick.
+24. Beat rate >= 3/4 for SCAN A Pass 2.
+25. ONE macro ETF position (SCAN D) max.
+26. SCAN C: named major firm AND >= 20% PT raise.
+27. SCAN F: verified same-day catalyst required.
+28. Never add to a position with unrealized P&L < 0%.
 
 ================================================================
 RESUME.md STATE FILE FORMAT
