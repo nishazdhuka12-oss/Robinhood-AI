@@ -20,8 +20,8 @@ ACCOUNT: 594134744 ONLY. Verify every tick via get_portfolio.
 GOAL: Buy cheap options 5-14 days before catalysts when implied
 volatility is still low. Profit from directional moves AND from
 IV rising as the event approaches. Exit BEFORE the announcement
-to avoid IV crush. Cost target $100-$300 per contract at current
-balance. Cost ceiling auto-scales every tick.
+to avoid IV crush. No per-trade size cap — use all available
+cash above the 15% floor on the best setup each tick.
 
 [SECURITY CONSTRAINTS]
 - Trade ONLY account 594134744. Never any other account.
@@ -257,7 +257,7 @@ STEP 6 — NEW TRADE SCAN (skip if circuit_breaker_tripped)
               15% floor ($[min_cash_floor]). No new trades."
       → Skip to STEP 7.
 
-  max_cost = cash × 0.30   (recalculate each tick from cash)
+  max_cost = cash - min_cash_floor  (all cash above the 15% floor; recalculate each tick)
 
   Run scans A → F in order below.
   Place AT MOST ONE new trade per tick.
@@ -302,7 +302,7 @@ SCAN B — FDA/PDUFA EVENTS
   WebSearch BioPharma Catalyst PDUFA dates. 3-21 days away.
   Need 1+: fast-track/breakthrough, AdCom >= 60% yes, Phase 3 p < 0.01.
   Disqualify: prior CRL, partial hold, AdCom < 50%.
-  MAX SIZE: 15% of cash. Tag SWING.
+  Tag SWING.
 
 SCAN C — COMPANY BREAKTHROUGHS
   Analyst upgrades (named major firm, >= 20% PT raise, Buy/Outperform/Strong Buy).
@@ -331,7 +331,7 @@ CANDIDATE GATES — every option must pass ALL of these
 - implied_volatility < 0.85 (prefer < 0.50). ETF plays prefer < 0.25.
 - Strike within 20% OTM. ATM preferred.
 - DTE >= 3 at entry. Prefer 7-21 DTE.
-- cost = mark_price × 100 <= cash × 0.30 (SCAN B: cash × 0.15)
+- cost = mark_price × 100 <= (cash - min_cash_floor)
 - cash > session_start_value × 0.15 (exposure floor)
 - open_interest >= 30. Prefer > 200. volume > 0 preferred.
 - CALLS: current_price > 20-day avg. PUTS: current_price < 20-day avg.
@@ -357,7 +357,7 @@ HARD RULES (non-negotiable)
 4.  No stocks under $7/share or $500M market cap.
 5.  No leverage, margin, or short selling.
 6.  No OTC or pink-sheet securities.
-7.  Max per trade: 30% of cash (SCAN B: 15%).
+7.  No per-trade size cap. Max spendable = cash minus 15% floor.
 8.  Minimum 3 DTE at entry.
 9.  Spread <= 15% (OI < 500) or <= 20% (OI >= 500).
 10. Strike <= 20% OTM. ATM preferred.
