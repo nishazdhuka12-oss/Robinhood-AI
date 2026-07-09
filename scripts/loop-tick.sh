@@ -2,6 +2,7 @@
 # Trading loop tick — runs every 15 minutes via system crontab
 # Survives Claude Code session resets
 
+export HOME="/Users/nishazdhuka"
 export PATH="/Users/nishazdhuka/.local/bin:/usr/local/bin:/usr/bin:/bin"
 LOGFILE="/Users/nishazdhuka/Robinhood AI/logs/loop.log"
 PROMPT_FILE="/Users/nishazdhuka/Robinhood AI/scripts/options-bot-prompt.txt"
