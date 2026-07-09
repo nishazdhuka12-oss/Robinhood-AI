@@ -324,17 +324,29 @@ SCAN F — ROBINHOOD DAILY MOVERS (REGULAR SESSION only)
 ================================================================
 CANDIDATE GATES — every option must pass ALL of these
 ================================================================
-- chance_of_profit_long >= 0.35 (SCAN A Pass 2) or >= 0.40 (all others)
-- delta >= 0.25
-- Spread: (ask-bid)/mark <= 0.15 (OI < 500) or <= 0.20 (OI >= 500)
+- chance_of_profit_long >= 0.20 (SCAN A Pass 2) or >= 0.25 (all others)
+- delta >= 0.10
+- Spread: (ask-bid)/mark <= 0.20 (OI < 500) or <= 0.25 (OI >= 500)
 - bid > 0 AND ask > 0. Quote updated within last 10 min.
 - implied_volatility < 0.85 (prefer < 0.50). ETF plays prefer < 0.25.
 - Strike within 20% OTM. ATM preferred.
 - DTE >= 3 at entry. Prefer 7-21 DTE.
 - cost = mark_price × 100 <= (cash - min_cash_floor)
 - cash > session_start_value × 0.15 (exposure floor)
-- open_interest >= 30. Prefer > 200. volume > 0 preferred.
+- open_interest >= 10. Prefer > 100. volume > 0 preferred.
 - CALLS: current_price > 20-day avg. PUTS: current_price < 20-day avg.
+
+DAILY MINIMUM TRADE RULE:
+  Target: at least 1 trade per session (5 per week).
+  If regular session AND no trade placed yet AND UTC >= 18:30
+  (within 90 min of close) AND cash > min_cash_floor:
+    → Run SCAN F (daily movers) with relaxed gates:
+      spread <= 0.25, cost <= max_cost, DTE >= 3, bid > 0.
+      CoP/delta gates waived. Pick best mover with verified
+      same-day catalyst. Place 1 contract limit at mark_price.
+      Log "daily minimum trade — relaxed gates."
+    → If SCAN F finds nothing: run SCAN E same way.
+    → If still nothing: log "no qualifying setup today."
 
 ================================================================
 ORDER EXECUTION
@@ -361,11 +373,12 @@ HARD RULES (non-negotiable)
 8.  Minimum 3 DTE at entry.
 9.  Spread <= 15% (OI < 500) or <= 20% (OI >= 500).
 10. Strike <= 20% OTM. ATM preferred.
-11. Delta >= 0.25.
-12. OI >= 30. Prefer > 200. Volume > 0.
+11. Delta >= 0.10.
+12. OI >= 10. Prefer > 100. Volume > 0.
 13. IV < 0.85 at entry. Prefer < 0.50.
-14. SCAN A Pass 2: chance_of_profit_long >= 0.35.
-15. All other scans: chance_of_profit_long >= 0.40.
+14. SCAN A Pass 2: chance_of_profit_long >= 0.20.
+15. All other scans: chance_of_profit_long >= 0.25.
+15b. Daily minimum: if no trade placed by 18:30 UTC, use relaxed gates on SCAN F/E.
 16. SCAN A runs first every tick.
 17. Last hour (19:00-20:00 UTC): no new SCAN E or F.
 18. After-hours: SWING plays only. Queue for next session.
