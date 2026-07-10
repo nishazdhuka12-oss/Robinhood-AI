@@ -4,19 +4,19 @@
 - Date (UTC): 2026-07-10
 - session_start_value: $98.25 (set at 13:34 UTC — new day)
 - Circuit breaker: inactive
-- Last updated: 2026-07-10 19:35 UTC
+- Last updated: 2026-07-10 19:50 UTC
 
 ## Account Snapshot
-- Total value: $96.21
+- Total value: $95.21
 - Cash: $36.21
-- Options exposure: $60.00
+- Options exposure: $59.00
 - 15% cash floor: $14.74 (15% of $98.25)
 - Buying power: $36.21
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| BAC | C | $61 | 2026-07-17 | 7 | 1 | $0.62 | $0.600 | -3.23% | 32.86% | SWING-EARN |
+| BAC | C | $61 | 2026-07-17 | 7 | 1 | $0.62 | $0.580 | -6.45% | 32.83% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -27,7 +27,7 @@
 |--------|-----|--------|--------|--------|---------------|----------|
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
-- BAC SWING-EARN: reports July 14 AM (4 days). At days_to_report ≤ 2 (Mon Jul 13 tick), run IV expansion eval every tick: exit if IV > 0.80 AND gain ≥ 15%, or delta < 0.55. Current: IV 32.86%, delta 0.340, P&L -3.23%. HOLD.
+- BAC SWING-EARN: reports July 14 AM (4 days). At days_to_report ≤ 2 (Mon Jul 13 tick), run IV expansion eval every tick: exit if IV > 0.80 AND gain ≥ 15%, or delta < 0.55. Current: IV 32.83%, delta 0.332, P&L -6.45%. HOLD.
 - BUDGET: max_cost = $36.21 - $14.74 = $21.47. Binding constraint every tick.
 - KEY $23C 7/17: BEST PRE-EARNINGS SETUP — passes ALL quality gates: spread 16.7%, CoP 40.3%, delta 0.664, IV 29.1%, OI 1,955. KEY 4/4 beat rate, reports July 21 (11 days), stock $23.345 > 20-day avg $22.97. ONLY blocker: cost $60 vs budget $21.47. Enter immediately if budget frees up (BAC exit or cash event). Last viable entry: ~July 18 (3 days before Jul 21 report).
 - CMCSA $25C 7/24 — NEW CANDIDATE: Comcast 3/4 beat rate (Q4'24 +11.6%, Q1'25 +11.2%, Q2'25 +5.9%, Q3'25 miss 1.8%, Q4'25 +10.5%, Q1'26 +8.2% — last 4: 3 beats), reports July 23 AM (13 days). Gates 1-3 pass: DTE 13, stock $23.63 > 20-day avg $23.42, IV 47.3% < 85%. Best strike within 20% OTM: $25C 7/24 (id: b8541bac), mark $0.380, cost $38.00 — OVER BUDGET. Cheapest CoP-passing strike ($25C, CoP 20.9%) costs $38. No strike passes all gates within $21.47 budget. Enter $25C immediately if budget frees up >$38 (BAC exit ~$60 cash). Last viable entry: ~July 20 (3 days before Jul 23 AM report).
@@ -45,11 +45,15 @@
 - GM (Jul 21): Stock $78.30 — ATM options far over budget.
 - SCHW (Jul 21): Stock $102.77 — options far over budget.
 - FCX (Jul 23): Stock $61.96 — options over budget.
-- NFLX (Jul 16): Beat rate needs checking. Options very expensive (~$400+ stock?).
-- TSLA (Jul 22, 12 days): Beat rate unknown. Options very expensive (~$300+ stock).
+- NFLX (Jul 16): Options very expensive (~$400+ stock).
+- TSLA (Jul 22, 12 days): Options very expensive (~$300+ stock).
 - AA (Jul 16, 6 days): Beat rate 1/4 (fails, only 1 beat in last 4 quarters). Skip.
 - FAST (Jul 14, 4 days): Beat rate 0/4 (all ties/misses in last 4 quarters). Skip.
 - DAL beat today AM $1.56 vs $1.47 (+6.1%), but stock -1.79% ($87.41). Options over budget; direction fails CALLS.
+- INTC (Jul 23, 13 days): Beat rate unknown; stock ~$20-25, but even ATM options exceed $21.47 budget; deep OTM fails delta/CoP gates.
+- ALLY (Jul 21, 11 days): Stock ~$35, ATM options $0.80+ = over budget. Beat rate needs checking next session.
+- HAL (Jul 21): Still needs Gate 3 recovery check each tick.
+- KEY: Monitor for budget opening (BAC exit). $23C most compelling setup in the pipeline.
 
 ## Session Log (today — one line per event)
 [13:34 UTC] New session 2026-07-10. session_start_value = $98.25. Portfolio: $98.25 cash, $0 options, no open positions.
@@ -86,3 +90,9 @@
 [19:35 UTC] SCAN C: JBHT confirmed over budget. No new upgrade catalysts available without WebSearch.
 [19:35 UTC] SCAN D: XLF CPI July 14 (4 days). Options over budget at all viable strikes.
 [19:35 UTC] SCAN E/F: BLOCKED — Hard Rule 17 (last hour 19:00-20:00 UTC). Daily minimum satisfied (BAC filled 13:42 UTC). No new trade placed this tick.
+[19:50 UTC] STEP 2: Portfolio $95.21, cash $36.21, options $59.00. Drawdown 3.09% ($98.25→$95.21). Circuit breaker inactive.
+[19:50 UTC] STEP 3: Reconcile — BAC $61C 7/17 (opt_id 248cf175) confirmed open, qty 1, avg $0.62. DTE=7. No discrepancies.
+[19:50 UTC] STEP 5: BAC $61C — mark $0.580, P&L -6.45%, IV 32.83%, delta 0.332, DTE=7, days_to_report=4. Quote fresh 19:50:03 UTC. No exit triggered: (a) not +75%; (b) not -40%; (c) DTE>2; (d) no catalyst reversal; (e) days_to_report=4, not ≤2. HOLD.
+[19:50 UTC] STEP 6 SCAN A Pass 1: DAL only new report today — direction fails CALLS (stock -1.79% on +6.1% EPS beat), options over budget. No other new post-earnings names.
+[19:50 UTC] STEP 6 SCAN A Pass 2: 14-day calendar reviewed. Full sweep confirms budget $21.47 blocks ALL setups. No stock in 3-14d window has affordable options passing delta ≥ 0.10 + CoP ≥ 0.20 + spread + DTE gates within $21.47. New names checked: INTC (stock too low-priced but ATM still >$21), ALLY (stock ~$35, over budget). HAL still fails Gate 3. No new trade.
+[19:50 UTC] STEP 6 SCAN B/C/D: No new qualifying catalysts. SCAN E/F: BLOCKED Hard Rule 17. Daily minimum satisfied. No new trade placed this tick. Session ending.
