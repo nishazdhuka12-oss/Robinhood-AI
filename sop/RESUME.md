@@ -27,10 +27,11 @@
 |--------|-----|--------|--------|--------|---------------|----------|
 | — | — | — | — | — | — | — |
 
-## EOD STATUS — 2026-07-09
-- No fill today. XLF $55C cancelled (moved out of budget after rally). Scheduler now fixed.
-- OPEN OPPORTUNITY: XLF $55.5C 7/17 — CPI catalyst July 14 (4 days). Re-evaluate at open.
-- Scheduler: switched from cron to launchd (keychain access). Fires every 15 min 8:30AM–3PM CDT.
+## CARRY-FORWARD NOTES FOR NEXT TICK
+- PRIORITY SETUP: XLF $55.5C 7/17 (instrument d50b6c08). CPI July 14 catalyst. Mark ~$0.72. Re-quote at open and place if delta ≥ 0.25, CoP ≥ 0.25, spread ≤ 20%, cost ≤ max_cost.
+- MONITOR: SKHY (SK Hynix) IPO on Nasdaq today at $149. Check if tradable on Robinhood at open. If available with options, evaluate calls for SKHY IPO momentum play.
+- MU/SMH options ruled out — $1,000-5,000/contract, exceeds budget.
+- Scheduler fixed: launchd replaces cron. Fires every 15 min 8:30AM–3PM CDT weekdays.
 - No open positions. Cash $98.25. Circuit breaker: inactive.
 
 ## Session Log (today — one line per event)
