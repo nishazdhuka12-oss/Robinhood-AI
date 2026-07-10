@@ -28,9 +28,9 @@
 | — | — | — | — | — | — | — |
 
 ## EOD STATUS — 2026-07-09
-- No fill today. XLF $55C cancelled (moved out of budget); replacement XLF $55.5C blocked by auto-mode (needs user "yes place it").
-- OPEN OPPORTUNITY: XLF $55.5C 7/17 still valid tomorrow — CPI catalyst July 14 still 5 days out.
-- Cron auth broken all day: run `claude setup-token` in terminal before tomorrow's session.
+- No fill today. XLF $55C cancelled (moved out of budget after rally). Scheduler now fixed.
+- OPEN OPPORTUNITY: XLF $55.5C 7/17 — CPI catalyst July 14 (4 days). Re-evaluate at open.
+- Scheduler: switched from cron to launchd (keychain access). Fires every 15 min 8:30AM–3PM CDT.
 - No open positions. Cash $98.25. Circuit breaker: inactive.
 
 ## Session Log (today — one line per event)
