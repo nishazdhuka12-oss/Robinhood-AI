@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-15
 - session_start_value: $154.21
 - Circuit breaker: inactive
-- Last updated: 2026-07-15 18:03 UTC
+- Last updated: 2026-07-15 18:22 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -43,6 +43,7 @@
 [14:32 UTC] TICK 3: Portfolio $154.15, BP $36.21, no positions. max_cost = $13.08 (BP - floor $23.13). SCAN A Pass 1: Today AM beaters confirmed — MS +23.1%, ELV +20.2%, BNY +11.8%, BLK +10.8%, PGR +5.9%, MTB +14.6%, PNC +9.5%. All → CALLS. All ATM options >> $13.08 budget → BLOCKED. JBHT/UAL/SNV (Jul 15 PM reporters) actuals not yet available (09:32 AM CT). SCAN A Pass 2: KEY $115 blocked, T $43 blocked, all upcoming candidates (GOOGL/TSLA/TXN/IBM Jul 22; LMT/RTX/HON Jul 23; NOC/GM Jul 21) also blocked by budget. SCANS B-F: Budget blocks all. Daily minimum rule not triggered (UTC 14:32 < 18:30). NO TRADE PLACED. New candidates logged for Jul 16 evaluation. BAC settles Jul 16 → KEY $23C enters next session.
 [17:41 UTC] TICK 4 (12:41 CT): Portfolio $154.15, BP $36.21 (unsettled). max_cost = $13.08. SCAN A Pass 1 — ASML beat +10.6% Jul 15 AM → CALLS, stock >$800 → options >> budget BLOCKED. WFC (Jul 14 AM) beat +14.6% → CALLS, stock +1.76% from Jul 14 close ✓ but $86.79 → BLOCKED. C (Jul 14 AM) beat +18% → CALLS, stock +0.55% ✓ but $134 → BLOCKED. JBHT/UAL/SNV not yet reported (PM today). SCAN A Pass 2 — NOC 2/4 beat rate → Gate 2 FAIL (removed). COF 2/4 beat rate → Gate 2 FAIL (removed). GM 4/4 beat ✓ → CALLS, reports Jul 21 AM, but stock $77.39 → ATM options >> $13.08 → BLOCKED. GOOGL 4/4 beat ✓ → CALLS, reports Jul 22 PM, stock >> budget. TSLA 3/4 beat ✓ → CALLS, reports Jul 22 PM, high IV + stock >> budget. KEY $115 BLOCKED. T $43 BLOCKED. SCANS B-F: budget blocks all. Daily minimum not triggered (17:41 < 18:30). NO TRADE PLACED. BAC settles Jul 16 → full BP tomorrow.
 [18:03 UTC] TICK 5 (13:03 CT): Portfolio $154.15, BP $36.21 (unsettled — BAC settles Jul 16). max_cost = $13.08. SCAN A Pass 1 — Jul 15 AM reporters with actuals confirmed (BLK +10.8%, BNY +11.8%, PNC +9.5%, PGR +5.9%, ELV +20.2%, MS +23.1%, ASML +10.6%, MTB +14.6% — all CALLS candidates but options >> $13.08 budget). Jul 15 PM reporters JBHT/UAL/SNV: actuals NOT yet published at 13:03 CT (PM reporters release after market close ~20:00+ UTC). SCAN A Pass 2: KEY $115 BLOCKED, GM/GOOGL/TSLA/T all BLOCKED by BP. Additional upcoming names identified from calendar: DHR/MMM/SYF/EFX (Jul 21), NOW/CME/MCO/CSX/PHM (Jul 22), NSC/BX/NEM/FCX (Jul 23) — beat rates TBD, to evaluate Jul 16 with full BP. SCANS B-F: budget blocks all. Daily minimum rule: 18:30 UTC trigger not yet reached (18:03 UTC). Even at 18:30 UTC trigger, cost ≤ $13.08 blocks all viable options (no bid>0 option with spread ≤25% exists at ≤$0.13/share). NO TRADE PLACED. BAC settles Jul 16 → KEY $23C first execution next session.
+[18:22 UTC] TICK 6 (13:22 CT): Portfolio $154.15, BP $36.21 (unsettled — BAC settles Jul 16). max_cost = $13.08. SCAN A Pass 1 — JBHT/UAL/SNV actuals still null (PM reporters, release expected after 20:00 UTC / market close). Beat rates confirmed from earnings history: JBHT 2/4 (Gate 2 fails for SCAN A Pass 2; Pass 1 only if ≥5% tonight). UAL 1/4 (PUTS Gate 2 if miss ≥-5% tonight, Pass 1 candidate). SNV 4/4 ✓ (new high-priority — CALLS if beats ≥5% tonight; mcap $5-6B ✓, stock ~$45). Forward calendar checked Jul 16-28: Jul 16 reporters (UNH, GE, ABT, CFG, STT, USB, TSM, NFLX, ISRG) already in carry-forward. New Jul 20 reporters identified: STLD, DPZ, ZION, WRB, CCK, RYAAY — beat rates TBD for Jul 16 evaluation. SCAN A Pass 2: KEY $115 BLOCKED, all others BLOCKED by $13.08 budget. SCANS B-F: budget blocks all. Daily minimum rule: 18:22 < 18:30 threshold; preemptively confirmed that even at 18:30 trigger, $13.08 budget blocks all viable options (no bid>0 option with spread ≤25%, DTE≥3 at ≤$0.1308/sh). NO TRADE PLACED. BAC settles Jul 16 → full BP ~$154 → KEY $23C priority #1 at open.
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 ### FIRST PRIORITY — KEY $23C 8/21 (Enter Jul 16 — TOMORROW, BAC SETTLES)
@@ -106,9 +107,9 @@ Jul 23 reporters (DTE=7 from Jul 16):
 - HBAN (Huntington Bancshares): Jul 23 AM. Regional bank. Check beat rate + Gates Jul 16.
 
 ### POST-EARNINGS PASS 1 CHECKS FOR JUL 16 TICK (Check actuals at next session open)
-- JBHT (J.B. Hunt): Reports Jul 15 PM. Check actuals at Jul 16 open. est $1.71. If beat ≥5% → CALLS; if miss ≤-5% → PUTS. Stock ~$140-160, options likely >> budget for Jul 16 even with full BP unless OTM.
-- UAL (United Airlines): Reports Jul 15 PM. Check actuals Jul 16 open. est $1.81. If beat ≥5% → CALLS. Stock ~$85-100 → check OTM calls that fit ≤$131 max_cost.
-- SNV (Synovus Financial): Reports Jul 15 PM. Verify market cap ≥ $500M first. Check actuals Jul 16 open.
+- JBHT (J.B. Hunt): Reports Jul 15 PM. Beat rate history 2/4 (Q3'25 +19.7% ✓, Q4'25 +5.6% ✓, Q1'26 +2.8% miss, Q2'25 -1.5% miss). Check actuals Jul 16 open. est $1.71. If beat ≥5% → CALLS; if miss ≤-5% → PUTS. Stock ~$140-160, options likely >> budget for Jul 16 even with full BP unless deeply OTM.
+- UAL (United Airlines): Reports Jul 15 PM. Beat rate history 1/4 (Q1'26 +9.2% ✓ only; Q4'25 +4.7%, Q3'25 +4.5%, Q2'25 0% all miss). Check actuals Jul 16 open. est $1.81. If beat ≥5% → CALLS; if miss ≤-5% → PUTS. Stock ~$85-100 → check OTM that fits ≤$131 max_cost Jul 16.
+- SNV (Synovus Financial): Reports Jul 15 PM. *** HIGH PRIORITY *** Beat rate 4/4 (Q4'24 +8.7% ✓, Q1'25 +16.1% ✓, Q2'25 +18.4% ✓, Q3'25 +7.4% ✓). MCap $5-6B ✓, stock ~$45. est $1.39. Beat ≥5% (actual ≥ $1.46) → CALLS. Miss ≤-5% (actual ≤ $1.32) → PUTS. If beats: confirm stock ≤15% move since yesterday. Execute at 14:00 UTC if UTC ≥ 14:00 at check time; else add to watchlist. ATM options ~$45C at Jul 31 likely $50-150/contract — check fits within $131 max_cost on Jul 16.
 - GE (General Electric): Reports Jul 16 AM. Get actuals immediately at open; check stock move ≤15%. If beat ≥5% → CALLS. High stock price → check budget fit.
 - UNH (UnitedHealth): Reports Jul 16 AM. Check actuals at open. High stock price (~$270+) → options likely over budget.
 - TSM (TSMC): Reports Jul 16 AM. Check actuals. High stock price (~$180+) → check OTM.
@@ -116,6 +117,22 @@ Jul 23 reporters (DTE=7 from Jul 16):
 - ABT (Abbott Labs): Reports Jul 16 AM. est $1.28. Large-cap medical. Check actuals + options.
 - CFG (Citizens Financial): Reports Jul 16 AM. Regional bank. Potentially affordable options. Check actuals + gates.
 - NFLX (Netflix): Reports Jul 16 PM. High stock price → options likely over budget. Check actuals Jul 17.
+
+### NEW CANDIDATES FROM CALENDAR — Jul 17 AM reporters (SCAN A Pass 1 checks Jul 17)
+- RF (Regions Financial): Jul 17 AM. est $0.63. Regional bank. Check actuals + beat% Jul 17.
+- TFC (Truist Financial): Jul 17 AM. est $1.08. Large regional bank. Check actuals + beat% Jul 17.
+- TRV (Travelers Companies): Jul 17 AM. est $4.94. Large P&C insurer. Check actuals + beat% Jul 17.
+- FITB (Fifth Third Bancorp): Jul 17 AM. est $0.88. Regional bank. Check actuals + beat% Jul 17.
+- ALV (Autoliv): Jul 17 AM. est $2.43. Auto safety. Check actuals + beat% Jul 17.
+- CMA (Comerica): Jul 17 AM. est $1.38 (unverified date). Regional bank. Check Jul 17.
+
+### NEW CANDIDATES FROM CALENDAR — Jul 20 AM/PM reporters (SCAN A Pass 2 candidates from Jul 16)
+- STLD (Steel Dynamics): Jul 20 PM. Industrial metals. Check beat rate + Gates Jul 16.
+- DPZ (Domino's Pizza): Jul 20 AM. est $4.21. Consumer. Check beat rate + Gates Jul 16.
+- ZION (Zions Bancorporation): Jul 20 PM. est $1.56. Regional bank. Check beat rate + Gates Jul 16.
+- WRB (W.R. Berkley): Jul 20 PM. est $1.09. P&C insurance. Check beat rate + Gates Jul 16.
+- CCK (Crown Holdings): Jul 20 PM. est $2.15. Packaging. Check beat rate + Gates Jul 16.
+- RYAAY (Ryanair): Jul 20 AM. est $1.35. Airline ADR. Check beat rate + Gates Jul 16.
 
 ### OTHER CARRY-FORWARDS (Lower priority)
 - ALLY Aug 21: 4/4 beat rate, reports Jul 21 AM. Spread still fails (21-54%). Monitor.
