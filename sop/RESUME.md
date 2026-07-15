@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-15
 - session_start_value: $154.21
 - Circuit breaker: inactive
-- Last updated: 2026-07-15 14:32 UTC
+- Last updated: 2026-07-15 17:41 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -41,6 +41,7 @@
 [14:10 UTC] SCAN B-F SKIPPED: Budget constraint $13.08 max (BP $36.21 - floor $23.13) prevents all viable option trades. No quality stock option exists at ≤$0.13/share with delta ≥ 0.10 and spread ≤ 25%. Confirmed across CMCSA (deepest OTM checked $27C), T puts ($19P cheapest viable: delta 0.077 < 0.10, spread 57%). Budget is the sole limiting factor.
 [14:10 UTC] NO TRADE PLACED. BP = $36.21 (BAC proceeds $118 unsettled). BAC settles Jul 16 → BP ~$154 expected at next session open. KEY $23C ($115) and T $21P ($43) both become viable tomorrow. KEY takes first trade priority (4/4 beat > 1/4 beat). KEY must enter by Jul 18; T by Jul 18.
 [14:32 UTC] TICK 3: Portfolio $154.15, BP $36.21, no positions. max_cost = $13.08 (BP - floor $23.13). SCAN A Pass 1: Today AM beaters confirmed — MS +23.1%, ELV +20.2%, BNY +11.8%, BLK +10.8%, PGR +5.9%, MTB +14.6%, PNC +9.5%. All → CALLS. All ATM options >> $13.08 budget → BLOCKED. JBHT/UAL/SNV (Jul 15 PM reporters) actuals not yet available (09:32 AM CT). SCAN A Pass 2: KEY $115 blocked, T $43 blocked, all upcoming candidates (GOOGL/TSLA/TXN/IBM Jul 22; LMT/RTX/HON Jul 23; NOC/GM Jul 21) also blocked by budget. SCANS B-F: Budget blocks all. Daily minimum rule not triggered (UTC 14:32 < 18:30). NO TRADE PLACED. New candidates logged for Jul 16 evaluation. BAC settles Jul 16 → KEY $23C enters next session.
+[17:41 UTC] TICK 4 (12:41 CT): Portfolio $154.15, BP $36.21 (unsettled). max_cost = $13.08. SCAN A Pass 1 — ASML beat +10.6% Jul 15 AM → CALLS, stock >$800 → options >> budget BLOCKED. WFC (Jul 14 AM) beat +14.6% → CALLS, stock +1.76% from Jul 14 close ✓ but $86.79 → BLOCKED. C (Jul 14 AM) beat +18% → CALLS, stock +0.55% ✓ but $134 → BLOCKED. JBHT/UAL/SNV not yet reported (PM today). SCAN A Pass 2 — NOC 2/4 beat rate → Gate 2 FAIL (removed). COF 2/4 beat rate → Gate 2 FAIL (removed). GM 4/4 beat ✓ → CALLS, reports Jul 21 AM, but stock $77.39 → ATM options >> $13.08 → BLOCKED. GOOGL 4/4 beat ✓ → CALLS, reports Jul 22 PM, stock >> budget. TSLA 3/4 beat ✓ → CALLS, reports Jul 22 PM, high IV + stock >> budget. KEY $115 BLOCKED. T $43 BLOCKED. SCANS B-F: budget blocks all. Daily minimum not triggered (17:41 < 18:30). NO TRADE PLACED. BAC settles Jul 16 → full BP tomorrow.
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 ### FIRST PRIORITY — KEY $23C 8/21 (Enter Jul 16 — TOMORROW, BAC SETTLES)
@@ -63,17 +64,17 @@
 - UAL (United Airlines): est $1.81, reports Jul 15 PM. Stock ~$85-100 → OTM may fit ~$50 with full BP. Check Jul 16.
 - SNV (Synovus Financial): reports Jul 15 PM. Small-mid bank → verify market cap ≥ $500M.
 
-### NEW CANDIDATES DISCOVERED JUL 15 (Evaluate Jul 16 with full BP ~$154)
-- NOC (Northrop Grumman): Jul 21 AM (6 days). Defense. Check beat rate + Gates.
-- GM (General Motors): Jul 21 AM (6 days). Auto. Check beat rate + Gates.
-- COF (Capital One): Jul 21 PM (6 days). Financial. Check beat rate + Gates.
-- GOOGL (Alphabet): Jul 22 PM (7 days). Big tech. Check beat rate + Gates.
-- TSLA (Tesla): Jul 22 PM (7 days). EV. Check beat rate + Gates. High IV likely.
-- TXN (Texas Instruments): Jul 22 PM (7 days). Semiconductor. Check beat rate + Gates.
-- IBM: Jul 22 PM (7 days). Tech. Check beat rate + Gates.
-- LMT (Lockheed Martin): Jul 23 AM (8 days). Defense. Check beat rate + Gates.
-- RTX (Raytheon): Jul 23 AM (8 days). Defense. Check beat rate + Gates.
-- HON (Honeywell): Jul 23 AM (8 days). Industrial. Check beat rate + Gates.
+### NEW CANDIDATES (Beat rates confirmed Jul 15 — evaluate options Jul 16 with full BP ~$154)
+- GM (General Motors): 4/4 beat rate ✓ → CALLS. Reports Jul 21 AM (DTE=6 from Jul 16). Stock $77.39. Gate 3: need 20-day SMA (check Jul 16). Gate 4: check IV < 0.85. ATM options ~$1-2/sh → ~$100-200/contract. Verify spread, delta, CoP Jul 16.
+- GOOGL (Alphabet): 4/4 beat rate ✓ → CALLS. Reports Jul 22 PM (DTE=7 from Jul 16). Gate 3/4: check price vs SMA + IV. High stock price → check affordable strikes. Verify Jul 16.
+- TSLA (Tesla): 3/4 beat rate ✓ → CALLS. Reports Jul 22 PM (DTE=7 from Jul 16). WARNING: High IV typical → check Gate 4 (IV < 0.85). High stock price → check budget fit. Verify Jul 16.
+- TXN (Texas Instruments): Jul 22 PM (7 days from Jul 16). Check beat rate + all Gates Jul 16.
+- IBM: Jul 22 PM (7 days from Jul 16). Check beat rate + all Gates Jul 16. Reports Jul 22 PM (confirmed in calendar; reports Jul 22 but also check timing AM/PM).
+- LMT (Lockheed Martin): Jul 23 AM (8 days from Jul 16). Defense. Check beat rate + Gates Jul 16.
+- RTX (Raytheon): Jul 23 AM (8 days from Jul 16). Defense. Check beat rate + Gates Jul 16.
+- HON (Honeywell): Jul 23 AM (8 days from Jul 16). Industrial. Check beat rate + Gates Jul 16.
+- NOC: DISQUALIFIED — 2/4 beat rate (Gate 2 fail). Do not re-evaluate.
+- COF: DISQUALIFIED — 2/4 beat rate (Gate 2 fail). Do not re-evaluate.
 
 ### OTHER CARRY-FORWARDS (Lower priority)
 - ALLY Aug 21: 4/4 beat rate, reports Jul 21 AM. Spread still fails (21-54%). Monitor.
