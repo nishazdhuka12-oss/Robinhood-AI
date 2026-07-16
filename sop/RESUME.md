@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 17:49 UTC
+- Last updated: 2026-07-16 18:05 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -33,12 +33,15 @@
 ### ACTIVE ORDER — KEY $23C 8/21 (GFD, expires end of Jul 16 regular session)
 - Order ID: 6a58e15b-f915-4fad-9729-2d363f353c3e
 - Limit: $1.30/share ($130/contract), GFD, regular_hours
-- Mark at 17:31 UTC: $1.475 (bid $1.40 × 711, ask $1.55 × 1) — bid ABOVE our limit by $0.10; ask nearly gone (1 contract); bid size surged to 711
-- $1.30 is $0.10 below bid → fills only if KEY pulls back ~$0.35–0.40 in stock price
+- Mark at 18:05 UTC: $1.475 (bid $1.40 × 191, ask $1.55 × 221) — 8th consecutive tick unchanged
+- ASK SIDE SURGED: 221 contracts at $1.55 (was 1 last tick) — sellers now well-supplied at $1.55
+- BID SIDE THINNED: 191 × $1.40 (was 629 last tick)
+- $1.30 is $0.10 below bid, $0.175 below mark → fill requires ~$0.35–0.40 KEY stock pullback
 - Cannot raise limit: $1.35 × 100 = $135 > $131.03 budget cap
+- ~1:55 left in GFD window (expires ~20:00 UTC)
 - If UNFILLED by 20:00 UTC today (GFD expiry): RE-PLACE TOMORROW Jul 17 at mark (rounded to $0.05, within budget)
 - HARD DEADLINE: Jul 18 (3 days before Jul 21 AM earnings)
-- All gates confirmed: spread 6.9% ✓, delta 0.696 ✓, CoP 40.3% ✓, IV 29.1% ✓, DTE 36 ✓, OI 1168 ✓
+- All gates confirmed: spread 10.2% ✓, delta 0.681 ✓, CoP 39.6% ✓, IV 31.2% ✓, DTE 36 ✓, OI 1168 ✓
 - Beat rate 4/4, reports Jul 21 AM (5 days away Gate 1 ✓), CALLS (Gate 2 ✓), stock $23.78 > SMA $23.042 (Gate 3 ✓)
 - Tag SWING-EARN. EXIT before Jul 21 open (IV crush avoidance)
 
@@ -49,17 +52,17 @@
 - T deadline: Jul 18 (last viable day for DTE ≥ 3 at entry targeting Jul 31 expiry)
 - T $21P Jul 31 instrument: d84c315f-863b-405b-9637-064ddf4828ef. Re-verify spread/quote Jul 17.
 
-### SCAN A PASS 1 — CHECK AT NEXT TICK (Jul 17 open)
-- NFLX: reports Jul 16 PM. Check actuals Jul 17 open.
-- AA: reports Jul 16 PM. Alcoa ~$35-40/sh → ATM options might be in range. Check actuals.
-- ISRG: reports Jul 16 PM. Intuitive Surgical ~$500+ → options too expensive.
-- FNB: reports Jul 16 PM. First National Bank ~$14/sh → check actuals + gates.
-- RF (Regions Financial): Jul 17 AM, est $0.63 → check actuals at open
-- TFC (Truist Financial): Jul 17 AM, est $1.08 → check actuals at open
-- TRV (Travelers): Jul 17 AM, est $4.94 (likely expensive) → check actuals at open
-- FITB (Fifth Third): Jul 17 AM, est $0.88 → check actuals at open
-- CMA (Comerica): Jul 17 AM, est $1.38 (unverified date) → check actuals at open
-- ALV (Autoliv): Jul 17 AM, est $2.43 → check actuals at open
+### SCAN A PASS 1 — CHECK AT NEXT TICK
+- NFLX: reports Jul 16 PM (after market close today). Check actuals Jul 17 open.
+- AA: reports Jul 16 PM. Alcoa ~$35-40/sh → ATM options might be in range. Check actuals Jul 17.
+- ISRG: reports Jul 16 PM. Intuitive Surgical ~$500+ → options likely too expensive.
+- FNB: reports Jul 16 PM. First National Bank ~$14/sh → check actuals + gates Jul 17.
+- RF (Regions Financial): Jul 17 AM → check actuals at Jul 17 open
+- TFC (Truist Financial): Jul 17 AM → check actuals at Jul 17 open
+- TRV (Travelers): Jul 17 AM, est $4.94 (likely expensive) → check actuals at Jul 17 open
+- FITB (Fifth Third): Jul 17 AM → check actuals at Jul 17 open
+- CMA (Comerica): Jul 17 AM → check actuals at Jul 17 open
+- ALV (Autoliv): Jul 17 AM → check actuals at Jul 17 open
 
 ### SCAN A PASS 2 — UPCOMING HIGH-PRIORITY CANDIDATES (days_to_report 3-14)
 - ZION (Zions Bancorp): Jul 20 PM (4 days). Need beat rate → check Jul 17.
@@ -90,6 +93,7 @@
 - If KEY fills at $1.30: net cash ~$24.15 (just above floor). No additional trades until exit.
 - If KEY GFD expires unfilled at ~20:00 UTC: full budget ~$131.03 restored for Jul 17.
 - T $21P ($43) fits Jul 17 budget whether KEY filled or not.
+- Daily minimum at 18:30 UTC: budget above floor $0.99 → no qualifying setup possible while KEY pending (even relaxed gates require bid>0 = min $5/contract).
 
 ## Session Log (today — one line per event)
 [13:41 UTC] NEW SESSION 2026-07-16. session_start_value = $154.15. Circuit breaker inactive (drawdown 0%). min_cash_floor = $23.12. max_cost = $131.03. Prior session date 2026-07-15 → new day reset. Watchlist + log cleared.
@@ -116,3 +120,4 @@
 [17:15 UTC] TICK 12:15 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 5th consecutive tick unchanged), bid $1.40 × 210 (↑ from 179), ask $1.55 × 1 (↓ dramatically from 103 — ask nearly gone). Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 28.3% (↓), delta 0.713 (↑), CoP 41.0%, OI 1168, vol 44. Ask side drying up to 1 contract; bid holding 210. ~2:45 remaining for GFD. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. Daily minimum trade check active at 18:30 UTC if still no trade. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
 [17:31 UTC] TICK 12:31 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 6th consecutive tick unchanged), bid $1.40 × 711 (↑ sharply from 210), ask $1.55 × 1. Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 28.8%, delta 0.707, CoP 40.7%, OI 1168, vol 44. Bid size surged to 711 — strong buying interest, ask still at 1 contract. ~2:29 left in regular session for GFD. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. Daily minimum at 18:30 UTC: budget constrained ($0.99 above floor) even if triggered — no qualifying setup possible while KEY pending.
 [17:49 UTC] TICK 12:49 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 7th consecutive tick unchanged), bid $1.40 × 629 (↓ from 711), ask $1.55 × 1. Quote fresh 17:48 UTC. Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 28.8%, delta 0.707, CoP 40.7%, OI 1168, vol 44. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. ~1:11 left in regular session for GFD; re-place Jul 17 at mark if unfilled.
+[18:05 UTC] TICK 13:05 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 8th consecutive tick unchanged), bid $1.40 × 191 (↓ sharply from 629), ask $1.55 × 221 (↑ sharply from 1 — sellers flooding in). Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 31.2% (↑), delta 0.681, CoP 39.6%, OI 1168, vol 44. Ask surge to 221 contracts signals sellers actively offering at $1.55 — reduces fill probability at $1.30. ~1:55 left in GFD window. Daily minimum fires at 18:30 UTC but budget above floor $0.99 → no qualifying setup possible. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
