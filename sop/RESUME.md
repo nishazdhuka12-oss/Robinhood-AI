@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 17:31 UTC
+- Last updated: 2026-07-16 17:49 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -115,3 +115,4 @@
 [16:58 UTC] TICK 11:58 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 4th consecutive tick unchanged), bid $1.40 × 179 (↓ from 234), ask $1.55 × 103 (↑ from 76). Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 29.3%, delta 0.701, CoP 40.5%, OI 1168, vol 44. Bid size thinning (179 ↓ from 234); ask size building (103 ↑ from 76) — slight selling pressure. ~3 hrs left in regular session for GFD. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
 [17:15 UTC] TICK 12:15 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 5th consecutive tick unchanged), bid $1.40 × 210 (↑ from 179), ask $1.55 × 1 (↓ dramatically from 103 — ask nearly gone). Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 28.3% (↓), delta 0.713 (↑), CoP 41.0%, OI 1168, vol 44. Ask side drying up to 1 contract; bid holding 210. ~2:45 remaining for GFD. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. Daily minimum trade check active at 18:30 UTC if still no trade. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
 [17:31 UTC] TICK 12:31 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 6th consecutive tick unchanged), bid $1.40 × 711 (↑ sharply from 210), ask $1.55 × 1. Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 28.8%, delta 0.707, CoP 40.7%, OI 1168, vol 44. Bid size surged to 711 — strong buying interest, ask still at 1 contract. ~2:29 left in regular session for GFD. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. Daily minimum at 18:30 UTC: budget constrained ($0.99 above floor) even if triggered — no qualifying setup possible while KEY pending.
+[17:49 UTC] TICK 12:49 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady — 7th consecutive tick unchanged), bid $1.40 × 629 (↓ from 711), ask $1.55 × 1. Quote fresh 17:48 UTC. Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 28.8%, delta 0.707, CoP 40.7%, OI 1168, vol 44. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. ~1:11 left in regular session for GFD; re-place Jul 17 at mark if unfilled.
