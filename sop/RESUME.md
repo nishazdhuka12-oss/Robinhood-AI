@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 14:59 UTC
+- Last updated: 2026-07-16 15:18 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -33,7 +33,7 @@
 ### ACTIVE ORDER — KEY $23C 8/21 (GFD, expires end of Jul 16 regular session)
 - Order ID: 6a58e15b-f915-4fad-9729-2d363f353c3e
 - Limit: $1.30/share ($130/contract), GFD, regular_hours
-- Mark at 14:59 UTC: $1.45 (bid $1.40 × 482, ask $1.50 × 5) — bid ABOVE our limit by $0.10
+- Mark at 15:17 UTC: $1.525 (bid $1.50 × 89, ask $1.55 × 1) — bid ABOVE our limit by $0.20
 - $1.30 is $0.10 below bid → fills only if KEY pulls back ~$0.35–0.40 in stock price
 - Cannot raise limit: $1.35 × 100 = $135 > $131.03 budget cap
 - If UNFILLED by 20:00 UTC today (GFD expiry): RE-PLACE TOMORROW Jul 17 at mark (rounded to $0.05, within budget)
@@ -106,3 +106,4 @@
 [14:25 UTC] TICK 09:25 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Fresh quote: mark $1.375 (↓ from $1.40), bid $1.30 × 596 (↓ from $1.35 × 138), ask $1.45 × 3. BID NOW AT $1.30 — our limit is at the bid; fill depends on seller crossing spread. IV 28.1%, delta 0.691, OI 1168, spread 10.9% ✓. BP $24.11, above floor $0.99 → no new trades.
 [14:42 UTC] TICK 09:42 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark moved UP to $1.45 (↑ from $1.375), bid $1.40 × 604 (↑ from $1.30), ask $1.50 × 5. Our limit now $0.10 BELOW bid — fill requires ~$0.35–0.40 stock pullback. Cannot raise: $1.35 × 100 = $135 > budget cap. IV 28.8%, delta 0.699, OI 1168, spread 6.9% ✓. BP $24.11, above floor $0.99 → no new trades. Jul 16 PM reporters (NFLX/AA/ISRG/FNB) not yet reported → carry to next tick.
 [14:59 UTC] TICK 09:59 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.45 (steady), bid $1.40 × 482 (↓ from 604), ask $1.50 × 5. Limit $0.10 below bid; fill requires KEY stock pullback or seller crossing spread. IV 29.1%, delta 0.696, CoP 40.3%, OI 1168, vol 32. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
+[15:18 UTC] TICK 10:18 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark ROSE to $1.525 (↑ from $1.45), bid $1.50 × 89 (↑ from $1.40), ask $1.55 × 1. Limit now $0.20 BELOW bid — needs larger KEY stock pullback to fill. IV 30.1%, delta 0.703, CoP 40.5%, OI 1168, vol 42. Cannot raise limit: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
