@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 14:07 UTC
+- Last updated: 2026-07-16 14:25 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -111,3 +111,4 @@
 [13:48 UTC] CANCELLED prior KEY $23C order 6a58bf2a (limit $1.25, below bid $1.35 → unlikely to fill). Cancel confirmed at 13:46:55 UTC.
 [13:49 UTC] SCAN A Pass 2 — KEY $23C 8/21: review_option_order clean (no alerts, no WIDE_BID_ASK). Fees $0.04. Placed limit buy $1.30 GFD regular_hours. Order 6a58e15b unconfirmed/pending. Cost $130 ≤ max_cost $131.03 ✓. Budget committed: remaining above floor ~$1.03 → no further trades possible this tick.
 [14:07 UTC] TICK 09:06 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.40, bid $1.35 × 138 — needs ~$0.22 KEY stock pullback to fill. Cannot raise: $135 > budget cap. BP $24.11, after floor $0.99 → no new trades. PLD +6.5% beat (AM today) BLOCKED by budget. Jul 16 PM reporters (NFLX/AA/ISRG/FNB) actuals pending → carry to Jul 17.
+[14:25 UTC] TICK 09:25 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Fresh quote: mark $1.375 (↓ from $1.40), bid $1.30 × 596 (↓ from $1.35 × 138), ask $1.45 × 3. BID NOW AT $1.30 — our limit is at the bid; fill depends on seller crossing spread. IV 28.1%, delta 0.691, OI 1168, spread 10.9% ✓. BP $24.11, above floor $0.99 → no new trades.
