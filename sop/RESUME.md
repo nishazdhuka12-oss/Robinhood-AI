@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 14:42 UTC
+- Last updated: 2026-07-16 14:59 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -33,41 +33,33 @@
 ### ACTIVE ORDER — KEY $23C 8/21 (GFD, expires end of Jul 16 regular session)
 - Order ID: 6a58e15b-f915-4fad-9729-2d363f353c3e
 - Limit: $1.30/share ($130/contract), GFD, regular_hours
-- Mark at 14:42 UTC: $1.45 (bid $1.40 × 604, ask $1.50 × 5) — bid ABOVE our limit now by $0.10
+- Mark at 14:59 UTC: $1.45 (bid $1.40 × 482, ask $1.50 × 5) — bid ABOVE our limit by $0.10
 - $1.30 is $0.10 below bid → fills only if KEY pulls back ~$0.35–0.40 in stock price
 - Cannot raise limit: $1.35 × 100 = $135 > $131.03 budget cap
 - If UNFILLED by 20:00 UTC today (GFD expiry): RE-PLACE TOMORROW Jul 17 at mark (rounded to $0.05, within budget)
 - HARD DEADLINE: Jul 18 (3 days before Jul 21 AM earnings)
-- All gates confirmed: spread 7.1% ✓, delta 0.672 ✓, CoP 39.4% ✓, IV 30.3% ✓, DTE 36 ✓, OI 1168 ✓
+- All gates confirmed: spread 6.9% ✓, delta 0.696 ✓, CoP 40.3% ✓, IV 29.1% ✓, DTE 36 ✓, OI 1168 ✓
 - Beat rate 4/4, reports Jul 21 AM (5 days away Gate 1 ✓), CALLS (Gate 2 ✓), stock $23.78 > SMA $23.042 (Gate 3 ✓)
 - Tag SWING-EARN. EXIT before Jul 21 open (IV crush avoidance)
 
 ### SECOND PRIORITY — T $21P 7/31
 - Beat rate 1/4 → PUTS. Reports Jul 22 AM.
 - If KEY fills today: T must wait until KEY is exited profitably. Check Jul 17.
-- If KEY GFD expires unfilled: full budget ~$131.03 restored for Jul 17. T ($43) fits easily.
+- If KEY GFD expires unfilled at ~20:00 UTC: full budget ~$131.03 restored for Jul 17. T ($43) fits easily.
 - T deadline: Jul 18 (last viable day for DTE ≥ 3 at entry targeting Jul 31 expiry)
 - T $21P Jul 31 instrument: d84c315f-863b-405b-9637-064ddf4828ef. Re-verify spread/quote Jul 17.
 
 ### SCAN A PASS 1 — CHECK AT NEXT TICK (Jul 17 open)
-- NFLX: reports Jul 16 PM. High stock price → likely blocked by budget regardless.
+- NFLX: reports Jul 16 PM. Check actuals Jul 17 open.
 - AA: reports Jul 16 PM. Alcoa ~$35-40/sh → ATM options might be in range. Check actuals.
 - ISRG: reports Jul 16 PM. Intuitive Surgical ~$500+ → options too expensive.
 - FNB: reports Jul 16 PM. First National Bank ~$14/sh → check actuals + gates.
-
-### SCAN A PASS 1 — TODAY AM REPORTERS (all previously evaluated or blocked)
-- GE +9.2%, UNH +31.5%, TSM +14.4%, STT +12.7% → expensive options, BLOCKED
-- PLD +6.5% ✓ beat → stock ~$100+ → options >> $0.99 available budget → BLOCKED
-- USB +6.3% ✓ beat → budget committed to KEY → BLOCKED
-- CFG +4.8%, ABT +2.3%, MAN +4.2%, CBSH +4.8% → all < 5% threshold
-
-### SCAN A PASS 2 — JUL 17 AM REPORTERS (check as Pass 1 actuals Jul 17)
-- RF (Regions Financial): Jul 17 AM, est $0.63
-- TFC (Truist Financial): Jul 17 AM, est $1.08
-- TRV (Travelers): Jul 17 AM, est $4.94 (likely expensive)
-- FITB (Fifth Third): Jul 17 AM, est $0.88
-- CMA (Comerica): Jul 17 AM, est $1.38 (unverified date)
-- ALV (Autoliv): Jul 17 AM, est $2.43
+- RF (Regions Financial): Jul 17 AM, est $0.63 → check actuals at open
+- TFC (Truist Financial): Jul 17 AM, est $1.08 → check actuals at open
+- TRV (Travelers): Jul 17 AM, est $4.94 (likely expensive) → check actuals at open
+- FITB (Fifth Third): Jul 17 AM, est $0.88 → check actuals at open
+- CMA (Comerica): Jul 17 AM, est $1.38 (unverified date) → check actuals at open
+- ALV (Autoliv): Jul 17 AM, est $2.43 → check actuals at open
 
 ### SCAN A PASS 2 — UPCOMING HIGH-PRIORITY CANDIDATES (days_to_report 3-14)
 - ZION (Zions Bancorp): Jul 20 PM (4 days). Need beat rate → check Jul 17.
@@ -113,3 +105,4 @@
 [14:07 UTC] TICK 09:06 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.40, bid $1.35 × 138 — needs ~$0.22 KEY stock pullback to fill. Cannot raise: $135 > budget cap. BP $24.11, after floor $0.99 → no new trades. PLD +6.5% beat (AM today) BLOCKED by budget. Jul 16 PM reporters (NFLX/AA/ISRG/FNB) actuals pending → carry to Jul 17.
 [14:25 UTC] TICK 09:25 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Fresh quote: mark $1.375 (↓ from $1.40), bid $1.30 × 596 (↓ from $1.35 × 138), ask $1.45 × 3. BID NOW AT $1.30 — our limit is at the bid; fill depends on seller crossing spread. IV 28.1%, delta 0.691, OI 1168, spread 10.9% ✓. BP $24.11, above floor $0.99 → no new trades.
 [14:42 UTC] TICK 09:42 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark moved UP to $1.45 (↑ from $1.375), bid $1.40 × 604 (↑ from $1.30), ask $1.50 × 5. Our limit now $0.10 BELOW bid — fill requires ~$0.35–0.40 stock pullback. Cannot raise: $1.35 × 100 = $135 > budget cap. IV 28.8%, delta 0.699, OI 1168, spread 6.9% ✓. BP $24.11, above floor $0.99 → no new trades. Jul 16 PM reporters (NFLX/AA/ISRG/FNB) not yet reported → carry to next tick.
+[14:59 UTC] TICK 09:59 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.45 (steady), bid $1.40 × 482 (↓ from 604), ask $1.50 × 5. Limit $0.10 below bid; fill requires KEY stock pullback or seller crossing spread. IV 29.1%, delta 0.696, CoP 40.3%, OI 1168, vol 32. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
