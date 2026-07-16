@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 14:25 UTC
+- Last updated: 2026-07-16 14:42 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -33,8 +33,8 @@
 ### ACTIVE ORDER — KEY $23C 8/21 (GFD, expires end of Jul 16 regular session)
 - Order ID: 6a58e15b-f915-4fad-9729-2d363f353c3e
 - Limit: $1.30/share ($130/contract), GFD, regular_hours
-- Mark at 14:07 UTC: $1.40 (bid $1.35 × 138, ask $1.45 × 3)
-- $1.30 is $0.05 below bid → fills only if KEY pulls back ~$0.22 in stock price
+- Mark at 14:42 UTC: $1.45 (bid $1.40 × 604, ask $1.50 × 5) — bid ABOVE our limit now by $0.10
+- $1.30 is $0.10 below bid → fills only if KEY pulls back ~$0.35–0.40 in stock price
 - Cannot raise limit: $1.35 × 100 = $135 > $131.03 budget cap
 - If UNFILLED by 20:00 UTC today (GFD expiry): RE-PLACE TOMORROW Jul 17 at mark (rounded to $0.05, within budget)
 - HARD DEADLINE: Jul 18 (3 days before Jul 21 AM earnings)
@@ -112,3 +112,4 @@
 [13:49 UTC] SCAN A Pass 2 — KEY $23C 8/21: review_option_order clean (no alerts, no WIDE_BID_ASK). Fees $0.04. Placed limit buy $1.30 GFD regular_hours. Order 6a58e15b unconfirmed/pending. Cost $130 ≤ max_cost $131.03 ✓. Budget committed: remaining above floor ~$1.03 → no further trades possible this tick.
 [14:07 UTC] TICK 09:06 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.40, bid $1.35 × 138 — needs ~$0.22 KEY stock pullback to fill. Cannot raise: $135 > budget cap. BP $24.11, after floor $0.99 → no new trades. PLD +6.5% beat (AM today) BLOCKED by budget. Jul 16 PM reporters (NFLX/AA/ISRG/FNB) actuals pending → carry to Jul 17.
 [14:25 UTC] TICK 09:25 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Fresh quote: mark $1.375 (↓ from $1.40), bid $1.30 × 596 (↓ from $1.35 × 138), ask $1.45 × 3. BID NOW AT $1.30 — our limit is at the bid; fill depends on seller crossing spread. IV 28.1%, delta 0.691, OI 1168, spread 10.9% ✓. BP $24.11, above floor $0.99 → no new trades.
+[14:42 UTC] TICK 09:42 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark moved UP to $1.45 (↑ from $1.375), bid $1.40 × 604 (↑ from $1.30), ask $1.50 × 5. Our limit now $0.10 BELOW bid — fill requires ~$0.35–0.40 stock pullback. Cannot raise: $1.35 × 100 = $135 > budget cap. IV 28.8%, delta 0.699, OI 1168, spread 6.9% ✓. BP $24.11, above floor $0.99 → no new trades. Jul 16 PM reporters (NFLX/AA/ISRG/FNB) not yet reported → carry to next tick.
