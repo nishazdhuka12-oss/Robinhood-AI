@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-16
 - session_start_value: $154.15
 - Circuit breaker: inactive
-- Last updated: 2026-07-16 16:23 UTC
+- Last updated: 2026-07-16 16:41 UTC
 
 ## Account Snapshot
 - Total value: $154.15
@@ -33,7 +33,7 @@
 ### ACTIVE ORDER — KEY $23C 8/21 (GFD, expires end of Jul 16 regular session)
 - Order ID: 6a58e15b-f915-4fad-9729-2d363f353c3e
 - Limit: $1.30/share ($130/contract), GFD, regular_hours
-- Mark at 16:23 UTC: $1.475 (bid $1.40 × 213, ask $1.55 × 61) — bid ABOVE our limit by $0.10
+- Mark at 16:41 UTC: $1.475 (bid $1.40 × 234, ask $1.55 × 76) — bid ABOVE our limit by $0.10
 - $1.30 is $0.10 below bid → fills only if KEY pulls back ~$0.35–0.40 in stock price
 - Cannot raise limit: $1.35 × 100 = $135 > $131.03 budget cap
 - If UNFILLED by 20:00 UTC today (GFD expiry): RE-PLACE TOMORROW Jul 17 at mark (rounded to $0.05, within budget)
@@ -111,3 +111,4 @@
 [15:50 UTC] TICK 10:50 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark ticked DOWN to $1.50 (↓ from $1.525), bid $1.45 × 124 (↓ in size from 465), ask $1.55 × 189. Limit $0.15 below bid, $0.20 below mark. Spread 6.7% ✓, IV 30.2%, delta 0.696, CoP 40.2%, OI 1168, vol 43. Mark trending slightly lower — fill possible if KEY stock continues pullback. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
 [16:06 UTC] TICK 11:06 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (↓ from $1.50), bid $1.40 × 481 (flat size, down $0.05 from $1.45), ask $1.55 × 44. Limit $0.10 below bid, $0.175 below mark — gap narrowing. Spread 10.2% ✓, IV 29.85%, delta 0.695, CoP 40.23%, OI 1168, vol 43. Mark drifting lower since intraday high of $1.525 — fill possible on continued pullback. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
 [16:23 UTC] TICK 11:23 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady), bid $1.40 × 213 (↓ from 481), ask $1.55 × 61 (↑ size from 44). Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 29.6%, delta 0.698, CoP 40.3%, OI 1168, vol 44. Mark holding at $1.475 — bid size thinning (213 from 481) but no fill; fill requires KEY stock pullback. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
+[16:41 UTC] TICK 11:41 CT: KEY order 6a58e15b still pending (GFD, $1.30 limit). Mark $1.475 (steady), bid $1.40 × 234 (↑ from 213), ask $1.55 × 76 (↑ from 61). Limit $0.10 below bid, $0.175 below mark. Spread 10.2% ✓, IV 30.1%, delta 0.692, CoP 40.1%, OI 1168, vol 44. Mark holding flat at $1.475 for 3+ ticks — bid size recovering (234 from 213 low). No fill; fill requires KEY stock pullback. Cannot raise: $1.35 × 100 = $135 > budget cap $131.03. BP $24.11, above floor $0.99 → no new trades. GFD expires ~20:00 UTC today; re-place Jul 17 at mark if unfilled.
