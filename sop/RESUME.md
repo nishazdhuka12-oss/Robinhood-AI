@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-17
 - session_start_value: $157.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-17 16:01 UTC
+- Last updated: 2026-07-17 16:21 UTC
 
 ## Account Snapshot
 - Total value: $164.11 (+$7.00 / +4.5% session gain)
@@ -13,11 +13,12 @@
 - 15% cash floor: $23.57 (15% of $157.11)
 - Buying power: $24.11
 - max_cost: $0.54 (no new contracts affordable)
+- Last updated: 2026-07-17 16:21 UTC
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.40 | +7.7% | 32.7% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.40 | +7.7% | 33.0% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -168,3 +169,8 @@
 [16:01 UTC] STEP 4: Portfolio UP +4.5% from session start. No drawdown. Circuit breaker inactive.
 [16:01 UTC] STEP 5: KEY quote fresh (16:01:14 UTC) — mark $1.40, IV 32.75%, delta 0.6515. Bid $1.25×97 / Ask $1.55×591 (spread 21.4% — WARN on exit side). P&L +7.7%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
 [16:01 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not yet applicable (UTC<18:30).
+[16:21 UTC] STEP 2: Portfolio total $164.11 (+$7.00/+4.5% session), cash $24.11, options $140.00. No change.
+[16:21 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed. 0 pending orders. State matches.
+[16:21 UTC] STEP 4: Portfolio UP +4.5% from session start. No drawdown. Circuit breaker inactive.
+[16:21 UTC] STEP 5: KEY quote fresh (16:18:40 UTC) — mark $1.40, IV 33.0%, delta 0.649. Bid $1.25×102 / Ask $1.55×913 (spread 21.4% — WARN on exit side). P&L +7.7%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
+[16:21 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not applicable (UTC<18:30).
