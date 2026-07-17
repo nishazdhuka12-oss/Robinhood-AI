@@ -4,12 +4,12 @@
 - Date (UTC): 2026-07-17
 - session_start_value: $157.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-17 13:58 UTC
+- Last updated: 2026-07-17 14:15 UTC
 
 ## Account Snapshot
-- Total value: $174.11 (+$17.00 / +10.8% session gain)
+- Total value: $172.11 (+$15.00 / +9.5% session gain)
 - Cash: $24.11
-- Options exposure: $150.00 (KEY $23C 8/21 × 1 contract, mark $1.50)
+- Options exposure: $148.00 (KEY $23C 8/21 × 1 contract, portfolio mark $1.48; live quote mark $1.50)
 - 15% cash floor: $23.57 (15% of $157.11)
 - Buying power: $24.11
 - max_cost: $0.54 (no new contracts affordable)
@@ -17,7 +17,7 @@
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.50 | +15.4% | 30.9% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.50 | +15.4% | 31.6% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -34,55 +34,82 @@
 ### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN)
 - Filled 2026-07-17 at 13:31 UTC, order 6a59e190-b069-47c4-b44d-a32c1b080333
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
-- Cost: $1.30/sh ($130 total). Mark 13:57 UTC: $1.50/sh. P&L +15.4%
-- Bid $1.35 × 790 / Ask $1.65 × 832 (spread 20.0%)
-- IV 30.91%, delta 0.692, CoP 40.1%, OI 1192, volume 9
+- Cost: $1.30/sh ($130 total). Live mark 14:15 UTC: $1.50/sh. P&L +15.4%
+- Bid $1.45 × 100 / Ask $1.55 × 427 (spread 6.5% — tight)
+- IV 31.58%, delta 0.686, CoP 39.8%, OI 1192, volume 10
 - KEY reports Jul 21 AM. days_to_report = 4 today (Jul 17).
 - **SWING-EARN IV eval triggers Jul 19 (days_to_report ≤ 2):**
   - EXIT if: IV > 0.80 AND pnl_pct >= 0.15, OR delta < 0.55
-  - HOLD THROUGH if ALL: beat_rate=4/4 ✓, delta≥0.55, pnl_pct<0.15, no (a)-(d)
-  - Standard exits always apply: (a) ≥75% profit, (b) ≤-40% loss, (c) DTE≤2
+  - HOLD THROUGH EARNINGS only if ALL: beat_rate=4/4 ✓, delta≥0.55, pnl_pct<0.15, none of (a)-(d) triggered.
+  - After announcement (Jul 21 AM): apply (a)-(d). Catalyst reversed → close immediately.
 - Beat rate 4/4 → hold-through eligible if conditions met on Jul 19
-- After announcement (Jul 21 AM): apply (a)-(d), catalyst reversed → close immediately
-- NOTE: On Jul 19 if pnl_pct >= 0.15 AND IV > 0.80 → EXIT. Currently pnl=+15.4% — watch closely.
+- CRITICAL NOTE Jul 19: pnl currently +15.4%. If IV > 0.80 at days_to_report=2 → EXIT rule triggers (IV>0.80 AND pnl_pct>=0.15). Watch carefully.
+- Standard exits: (a) ≥75% → $2.275/sh; (b) ≤-40% → $0.78/sh; (c) DTE≤2 → Aug 19
 
 ### BUDGET STATUS
 - session_start_value $157.11, min_cash_floor $23.57, max_cost $0.54
-- Cash unchanged at $24.11. No new trades possible until KEY exits.
-- Budget unlocks only when KEY exits or cash increases from a closed position.
+- Cash $24.11 — unchanged. No new trades possible until KEY exits or position gains close.
+- Budget unlocks only when KEY exits (cash returns to ~$280+) or unexpected cash infusion.
 
 ### SCAN A PASS 1 — BLOCKED BY BUDGET (log for reference)
+**Jul 15-16 reporters (window closes today Jul 17):**
+- **STT** (State Street): Jul 16 AM, est $3.24 actual $3.65 → +12.7% beat → CALLS. Budget blocked.
+- **UNH** (UnitedHealth): Jul 16 AM, est $4.85 actual $6.38 → +31.5% beat → CALLS. Stock ~$300+. Budget blocked.
+- **TSM** (Taiwan Semi): Jul 16 AM, est $3.77 actual $4.31 → +14.3% beat → CALLS. Stock ~$200+. Budget blocked.
+- **GE**: Jul 16 AM, est $1.85 actual $2.02 → +9.2% beat → CALLS. Budget blocked.
+- **USB** (U.S. Bancorp): Jul 16 AM, est $1.27 actual $1.35 → +6.3% beat → CALLS. Budget blocked.
+- **PLD** (Prologis): Jul 16 AM, est $1.53 actual $1.63 → +6.5% beat → CALLS. Budget blocked.
 - **RF** (Regions Financial): Jul 17 AM, est $0.63 actual $0.68 → +7.9% beat → CALLS. Budget blocked.
 - **TFC** (Truist Financial): Jul 17 AM, est $1.08 actual $1.23 → +13.9% beat → CALLS. Budget blocked.
-- **TRV** (Travelers): Jul 17 AM, est $4.94 actual $10.04 → +103.2% beat → CALLS. Stock ~$275 + budget blocked.
+- **TRV** (Travelers): Jul 17 AM, est $4.94 actual $10.04 → +103.2% beat → CALLS. Stock ~$275. Budget blocked.
 - **FITB** (Fifth Third): Jul 17 AM, est $0.88 actual $1.02 → +15.9% beat → CALLS. Budget blocked.
-- **CMA** (Comerica): Jul 17 AM — check next tick if actual populated. Est $1.38. Budget blocked regardless.
 - **AA** (Alcoa): Jul 16 PM, est $2.35 actual $2.12 → -9.8% miss → PUTS. Budget blocked.
-- **NFLX**: Jul 16 PM, +1.3% → < 5% skip.
-- **FNB**: Jul 16 PM, 0% → skip.
-- **ISRG**: Jul 16 PM, +16.2% beat → stock $500+ BLOCKED.
-- Window closes today (Jul 17) for Jul 15 reporters: MS +23.1% CALLS → stock $115+ + budget blocked.
+- **CMA**: Jul 17 AM — actual still null (unverified), est $1.38. Budget blocked regardless.
+- NFLX +1.3%, FNB 0%, ISRG +16.2% (stock $500+), MS +23.1% (window closed) — skipped or blocked.
 
 ### SCAN A PASS 2 — HIGH-PRIORITY UPCOMING (budget-permitting)
-- **STLD** (Steel Dynamics): Jul 20 PM (3 days). Est $3.68. Need beat rate → check.
-- **WRB** (W.R. Berkley): Jul 20 PM (3 days). Est $1.09. Need beat rate → check.
-- **WTFC** (Wintrust Financial): Jul 20 PM (3 days). Est $3.17. Need beat rate → check.
-- **ZION** (Zions Bancorp): Jul 20 PM (3 days). Est $1.56. Need beat rate → check.
-- **GM** (General Motors): Jul 21 AM (4 days). Est $3.15. Beat rate 4/4 → CALLS. Stock $77 — options affordable? Check.
-- **T** (AT&T): Jul 22 AM (5 days). Est $0.59. Beat rate 1/4 → PUTS. Deadline Jul 19 (DTE≥3). Budget must unlock.
-- **TSLA**: Jul 22 PM (5 days). Beat rate 3/4 → CALLS. WARNING: high IV likely. Check Gate 4.
-- **GOOGL**: Jul 22 PM (5 days). Beat rate 4/4 → CALLS. High stock price — check affordable strikes.
-- **IBM**: Jul 22 PM (5 days). Need beat rate → check.
-- **TXN** (Texas Instruments): Jul 22 PM (5 days). Est $1.92. Need beat rate → check.
-- **HON** (Honeywell): Jul 23 AM (6 days). Est $2.42. Need beat rate → check.
-- **LMT** (Lockheed Martin): Jul 23 AM (6 days). Est $7.23. Need beat rate → check.
-- **RTX** (Raytheon): Jul 23 AM (6 days). Est $1.66. Need beat rate → check.
+**Jul 20 (3 days — deadline today to enter, DTE≥3 constraint):**
+- **STLD** (Steel Dynamics): Jul 20 PM. Est $3.68. Need beat rate ≥3/4 → CALLS.
+- **WRB** (W.R. Berkley): Jul 20 PM. Est $1.09. Need beat rate → CALLS.
+- **WTFC** (Wintrust Financial): Jul 20 PM. Est $3.17. Need beat rate → CALLS.
+- **ZION** (Zions Bancorp): Jul 20 PM. Est $1.56. Need beat rate → CALLS.
+- All budget-blocked regardless.
+
+**Jul 21 (4 days):**
+- **KEY**: OUR POSITION. Already in.
+- **GM** (General Motors): Jul 21 AM. Est $3.15. Beat rate 4/4 → CALLS. Stock $77. Budget blocked.
+- **CB** (Chubb): Jul 21 AM. Need beat rate → check when budget permits.
+- **MMM** (3M): Jul 21 AM. Need beat rate → check.
+
+**Jul 22 (5 days):**
+- **T** (AT&T): Jul 22 AM. Est $0.59. Beat rate 1/4 → PUTS. Deadline Jul 19 (DTE≥3). Budget blocked.
+- **TSLA**: Jul 22 PM. Beat rate 3/4 → CALLS. HIGH IV likely.
+- **GOOGL/GOOG**: Jul 22 PM. Beat rate 4/4 → CALLS. High stock price.
+- **IBM**: Jul 22 PM. Need beat rate → check.
+- **TXN** (Texas Instruments): Jul 22 PM. Est $1.92. Need beat rate → check.
+- **PM** (Philip Morris): Jul 22 AM. Need beat rate → check.
+- **CME Group**: Jul 22 AM. Need beat rate → check.
+
+**Jul 23 (6 days):**
+- **HON** (Honeywell): Jul 23 AM. Est $2.42. Need beat rate → check.
+- **LMT** (Lockheed Martin): Jul 23 AM. Est $7.23. Need beat rate → check.
+- **RTX** (Raytheon): Jul 23 AM. Est $1.66. Need beat rate → check.
+- **INTC** (Intel): Jul 23 AM. Need beat rate → check.
+- **TMUS** (T-Mobile): Jul 23 AM. Need beat rate → check.
+
+**Jul 24 (7 days):**
+- **AXP** (AmEx): Jul 24 AM. Need beat rate → check.
+- **NEE** (NextEra): Jul 24 AM. Need beat rate → check.
+- **VZ** (Verizon): Jul 24 AM. Need beat rate → check.
+- **SLB** (Schlumberger): Jul 24 AM. Need beat rate → check.
 
 ### KEY EARNINGS DEADLINE CALENDAR
-- Jul 19: SWING-EARN eval (days_to_report = 2). Assess exit vs hold-through. P&L currently +15.4% — if IV>0.80 at that point, exit condition is met.
-- Jul 20: Last day to enter T $21P Jul 31 (DTE = 11 → qualifies). Last day for STLD/ZION/WTFC/WRB pre-earnings plays.
-- Jul 21 AM: KEY reports. Exit before open if not holding through.
-- Jul 22: Last day for TSLA/GOOGL/IBM/TXN pre-earnings entries (DTE ≥ 3 on their expirations).
+- **Jul 19**: SWING-EARN eval triggers (days_to_report = 2). Assess exit vs hold-through. P&L +15.4% → if IV>0.80, exit condition met.
+- **Jul 20**: Last day to enter STLD/ZION/WTFC/WRB pre-earnings plays (DTE≥3). Also last day for T Jul 31P entries.
+- **Jul 21 AM**: KEY reports. Pre-announcement decision needed Jul 19 per SWING-EARN eval.
+- **Jul 22**: TSLA/GOOGL/IBM/TXN/T report.
+- **Jul 23**: HON/LMT/RTX/INTC/TMUS report.
+- **Jul 24**: AXP/NEE/VZ/SLB report.
 
 ### DISQUALIFIED (do not re-evaluate)
 - NOC: 2/4 beat rate → Gate 2 fail
@@ -91,7 +118,6 @@
 - AAL: Gate 3 conflict (price below SMA → PUTS, beat rate → CALLS)
 - HAL: All strikes fail spread 50-65%
 - CMCSA: Spread 33% fails ≤25% gate
-- BAC: PERMANENTLY CLOSED +90.3% P&L. No re-entry.
 
 ## Session Log (today — one line per event)
 [13:31 UTC] NEW SESSION 2026-07-17. NEW DAY RESET: session_start_value = $157.11. Circuit breaker inactive. min_cash_floor = $23.57. max_cost = $0.54.
@@ -106,3 +132,10 @@
 [13:58 UTC] STEP 4: Portfolio UP +10.8% from session start. No drawdown. Circuit breaker inactive.
 [13:58 UTC] STEP 5: KEY mark $1.50 (updated 13:57 UTC), cost $1.30, P&L +15.4%. IV 30.91%, delta 0.692. DTE 35. days_to_report=4. No exits triggered (a)-(d). SWING-EARN eval not yet (days_to_report>2, triggers Jul 19).
 [13:58 UTC] STEP 6: max_cost $0.54 — no contract affordable. All scans budget-blocked. No new trade.
+[14:15 UTC] STEP 2: Portfolio total $172.11 (+$15.00/+9.5% session), cash $24.11, options $148.00. Slight pullback from $174.11 high.
+[14:15 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (instrument c6c36034). 0 pending orders. State matches.
+[14:15 UTC] STEP 4: Portfolio UP +9.5% from session start ($157.11). No drawdown. Circuit breaker inactive.
+[14:15 UTC] STEP 5: KEY quote fresh (14:15:31 UTC) — mark $1.50, IV 31.58%, delta 0.686. P&L +15.4%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (needs days_to_report≤2, triggers Jul 19).
+[14:15 UTC] SCAN A PASS 1: New Jul 16 beats — STT +12.7%, UNH +31.5%, TSM +14.3%, GE +9.2%, USB +6.3%, PLD +6.5% → all CALLS candidates, all BUDGET BLOCKED ($0.54 max_cost). CMA actual still null.
+[14:15 UTC] SCAN A PASS 2: Calendar confirmed Jul 20-24 reporters (STLD/ZION/WTFC/WRB/GM/GOOGL/TSLA/IBM/TXN/T/HON/LMT/RTX etc.) — all BUDGET BLOCKED.
+[14:15 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not yet applicable (UTC<18:30).
