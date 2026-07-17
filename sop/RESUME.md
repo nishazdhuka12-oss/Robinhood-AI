@@ -4,12 +4,12 @@
 - Date (UTC): 2026-07-17
 - session_start_value: $157.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-17 14:15 UTC
+- Last updated: 2026-07-17 14:35 UTC
 
 ## Account Snapshot
-- Total value: $172.11 (+$15.00 / +9.5% session gain)
+- Total value: $169.11 (+$12.00 / +7.6% session gain)
 - Cash: $24.11
-- Options exposure: $148.00 (KEY $23C 8/21 × 1 contract, portfolio mark $1.48; live quote mark $1.50)
+- Options exposure: $145.00 (KEY $23C 8/21 × 1 contract, mark $1.45)
 - 15% cash floor: $23.57 (15% of $157.11)
 - Buying power: $24.11
 - max_cost: $0.54 (no new contracts affordable)
@@ -17,7 +17,7 @@
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.50 | +15.4% | 31.6% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.45 | +11.5% | 30.2% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -34,16 +34,16 @@
 ### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN)
 - Filled 2026-07-17 at 13:31 UTC, order 6a59e190-b069-47c4-b44d-a32c1b080333
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
-- Cost: $1.30/sh ($130 total). Live mark 14:15 UTC: $1.50/sh. P&L +15.4%
-- Bid $1.45 × 100 / Ask $1.55 × 427 (spread 6.5% — tight)
-- IV 31.58%, delta 0.686, CoP 39.8%, OI 1192, volume 10
+- Cost: $1.30/sh ($130 total). Live mark 14:35 UTC: $1.45/sh. P&L +11.5%
+- Bid $1.35 × 347 / Ask $1.55 × 393 (spread 13.8% — tight)
+- IV 30.21%, delta 0.689, CoP 40.0%, OI 1192, volume 20
 - KEY reports Jul 21 AM. days_to_report = 4 today (Jul 17).
 - **SWING-EARN IV eval triggers Jul 19 (days_to_report ≤ 2):**
   - EXIT if: IV > 0.80 AND pnl_pct >= 0.15, OR delta < 0.55
   - HOLD THROUGH EARNINGS only if ALL: beat_rate=4/4 ✓, delta≥0.55, pnl_pct<0.15, none of (a)-(d) triggered.
   - After announcement (Jul 21 AM): apply (a)-(d). Catalyst reversed → close immediately.
 - Beat rate 4/4 → hold-through eligible if conditions met on Jul 19
-- CRITICAL NOTE Jul 19: pnl currently +15.4%. If IV > 0.80 at days_to_report=2 → EXIT rule triggers (IV>0.80 AND pnl_pct>=0.15). Watch carefully.
+- NOTE: P&L pulled back to +11.5% (from +15.4% high). If IV remains ~30% on Jul 19, exit condition (IV>0.80 AND pnl≥0.15) unlikely to trigger — hold-through increasingly likely if delta ≥ 0.55.
 - Standard exits: (a) ≥75% → $2.275/sh; (b) ≤-40% → $0.78/sh; (c) DTE≤2 → Aug 19
 
 ### BUDGET STATUS
@@ -104,7 +104,7 @@
 - **SLB** (Schlumberger): Jul 24 AM. Need beat rate → check.
 
 ### KEY EARNINGS DEADLINE CALENDAR
-- **Jul 19**: SWING-EARN eval triggers (days_to_report = 2). Assess exit vs hold-through. P&L +15.4% → if IV>0.80, exit condition met.
+- **Jul 19**: SWING-EARN eval triggers (days_to_report = 2). Assess exit vs hold-through. P&L +11.5% → at current IV ~30%, hold-through likely if delta ≥ 0.55.
 - **Jul 20**: Last day to enter STLD/ZION/WTFC/WRB pre-earnings plays (DTE≥3). Also last day for T Jul 31P entries.
 - **Jul 21 AM**: KEY reports. Pre-announcement decision needed Jul 19 per SWING-EARN eval.
 - **Jul 22**: TSLA/GOOGL/IBM/TXN/T report.
@@ -139,3 +139,8 @@
 [14:15 UTC] SCAN A PASS 1: New Jul 16 beats — STT +12.7%, UNH +31.5%, TSM +14.3%, GE +9.2%, USB +6.3%, PLD +6.5% → all CALLS candidates, all BUDGET BLOCKED ($0.54 max_cost). CMA actual still null.
 [14:15 UTC] SCAN A PASS 2: Calendar confirmed Jul 20-24 reporters (STLD/ZION/WTFC/WRB/GM/GOOGL/TSLA/IBM/TXN/T/HON/LMT/RTX etc.) — all BUDGET BLOCKED.
 [14:15 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not yet applicable (UTC<18:30).
+[14:35 UTC] STEP 2: Portfolio total $169.11 (+$12.00/+7.6% session gain), cash $24.11, options $145.00. Pullback from $172.11.
+[14:35 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed. 0 pending orders. State matches.
+[14:35 UTC] STEP 4: Portfolio UP +7.6% from session start. No drawdown. Circuit breaker inactive.
+[14:35 UTC] STEP 5: KEY quote fresh (14:35:17 UTC) — mark $1.45, IV 30.21%, delta 0.689. P&L +11.5%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
+[14:35 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not yet applicable (UTC<18:30).
