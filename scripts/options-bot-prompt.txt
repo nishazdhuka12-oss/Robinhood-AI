@@ -151,15 +151,15 @@ DAILY MINIMUM: If REGULAR session + no trade placed + UTC>=18:30 +
 CANDIDATE GATES — every option must pass ALL
 ================================================================
 - CoP long >= 0.20 (SCAN A Pass 2) or >= 0.25 (all others)
-- delta >= 0.10
+- delta >= 0.20
 - spread (ask-bid)/mark <= 0.15 (OI<500) or <= 0.20 (OI>=500)
 - bid>0, ask>0, quote updated within 10 min
 - IV < 0.85 (prefer <0.50). SCAN D: prefer <0.25
 - strike within 20% OTM. ATM preferred
-- DTE >= 3 at entry. Prefer 7-21
+- DTE >= 3 at entry. Never enter at DTE 0, 1, or 2. Prefer 7-21
 - cost = mark×100 <= max_cost
 - cash > min_cash_floor
-- OI >= 10 (prefer >100), volume > 0
+- OI >= 100 (prefer >500), volume >= 50 preferred (> 0 hard min)
 
 ================================================================
 ORDER EXECUTION
@@ -182,10 +182,10 @@ HARD RULES (non-negotiable)
 4.  No stocks under $7/share or $500M market cap.
 5.  No leverage, margin, or short selling.
 6.  max_cost = cash minus 15% floor. No per-trade size cap.
-7.  Min 3 DTE at entry (Hard Rule 8).
+7.  Min 3 DTE at entry. Never enter at DTE 0, 1, or 2.
 8.  Spread: <=15% (OI<500) or <=20% (OI>=500).
 9.  Strike <= 20% OTM. ATM preferred.
-10. Delta >= 0.10. OI >= 10.
+10. Delta >= 0.20. OI >= 100 (prefer >500). Volume >= 50 preferred.
 11. IV < 0.85 at entry.
 12. SCAN A Pass 2: CoP >= 0.20. All others: CoP >= 0.25.
 13. SCAN A runs first every tick.
