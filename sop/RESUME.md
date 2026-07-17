@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-17
 - session_start_value: $157.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-17 14:35 UTC
+- Last updated: 2026-07-17 14:52 UTC
 
 ## Account Snapshot
 - Total value: $169.11 (+$12.00 / +7.6% session gain)
@@ -17,7 +17,7 @@
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.45 | +11.5% | 30.2% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.45 | +11.5% | 30.3% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -144,3 +144,8 @@
 [14:35 UTC] STEP 4: Portfolio UP +7.6% from session start. No drawdown. Circuit breaker inactive.
 [14:35 UTC] STEP 5: KEY quote fresh (14:35:17 UTC) — mark $1.45, IV 30.21%, delta 0.689. P&L +11.5%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
 [14:35 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not yet applicable (UTC<18:30).
+[14:52 UTC] STEP 2: Portfolio total $169.11 (+$12.00/+7.6% session), cash $24.11, options $145.00. No change from prior tick.
+[14:52 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed. 0 pending orders. State matches.
+[14:52 UTC] STEP 4: Portfolio UP +7.6% from session start. No drawdown. Circuit breaker inactive.
+[14:52 UTC] STEP 5: KEY quote fresh (14:52:24 UTC) — mark $1.45, IV 30.35%, delta 0.687. P&L +11.5%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
+[14:52 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not yet applicable (UTC<18:30).
