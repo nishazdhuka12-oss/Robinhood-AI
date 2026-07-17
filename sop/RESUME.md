@@ -4,21 +4,21 @@
 - Date (UTC): 2026-07-17
 - session_start_value: $157.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-17 17:42 UTC
+- Last updated: 2026-07-17 17:58 UTC
 
 ## Account Snapshot
-- Total value: $159.11 (+$2.00 / +1.3% session gain)
+- Total value: $157.11 (0% session gain — at session start value)
 - Cash: $24.11
-- Options exposure: $135.00 (KEY $23C 8/21 × 1 contract, mark $1.35)
+- Options exposure: $133.00 (KEY $23C 8/21 × 1 contract, mark $1.33)
 - 15% cash floor: $23.57 (15% of $157.11)
 - Buying power: $24.11
 - max_cost: $0.54 (no new contracts affordable)
-- Last updated: 2026-07-17 17:42 UTC
+- Last updated: 2026-07-17 17:58 UTC
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.35 | +3.8% | 32.5% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.33 | +2.3% | 34.0% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -199,3 +199,8 @@
 [17:42 UTC] STEP 4: Portfolio UP +1.3% from session start. No drawdown. Circuit breaker inactive.
 [17:42 UTC] STEP 5: KEY quote fresh (17:40:04 UTC) — mark $1.35, IV 32.73%, delta 0.640. Bid $1.20×342 / Ask $1.50×1108 (spread 22.2% — WARN exit side; OI≥500 gate ≤20% exceeded). P&L +3.8%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
 [17:42 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not applicable (UTC<18:30).
+[17:58 UTC] STEP 2: Portfolio total $157.11 (0% session gain — at start value), cash $24.11, options $133.00 (mark $1.33). Slight pullback from $1.35.
+[17:58 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (instrument c6c36034). 0 pending orders. State matches.
+[17:58 UTC] STEP 4: Portfolio at session start value. No drawdown. Circuit breaker inactive.
+[17:58 UTC] STEP 5: KEY quote fresh (17:59:08 UTC) — mark $1.33 (adj), IV 33.95%, delta 0.6237. Bid $1.15×182 / Ask $1.50×1197 (spread 26.3% — WARN exit side; OI≥500 gate ≤20% exceeded, applies to new entries only). P&L +2.3%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
+[17:58 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. No new trade. Daily minimum not applicable (UTC<18:30).
