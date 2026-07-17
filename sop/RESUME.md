@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-17
 - session_start_value: $157.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-17 18:33 UTC
+- Last updated: 2026-07-17 18:53 UTC
 
 ## Account Snapshot
 - Total value: $144.11 (-8.3% session — KEY pulled back to $1.20)
@@ -13,12 +13,12 @@
 - 15% cash floor: $23.57 (15% of $157.11)
 - Buying power: $24.11
 - max_cost: $0.54 (no new contracts affordable)
-- Last updated: 2026-07-17 18:33 UTC
+- Last updated: 2026-07-17 18:53 UTC
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.20 | -7.7% | 29.3% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 35 | 1 | $1.30 | $1.20 | -7.7% | 29.8% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -214,3 +214,8 @@
 [18:33 UTC] STEP 4: Drawdown 8.27% (($157.11-$144.11)/$157.11). Below 12% threshold. Circuit breaker inactive.
 [18:33 UTC] STEP 5: KEY quote fresh (18:33:36 UTC) — mark $1.20, IV 29.26%, delta 0.637. Bid $1.15×71 / Ask $1.25×18 (spread 8.3% ✓). P&L -7.7%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
 [18:33 UTC] STEP 6: DAILY MINIMUM triggered (REGULAR + UTC≥18:30 + no trade today + cash>floor). Running SCAN F then SCAN E with relaxed gates — max_cost $0.54 makes mark×100≤$0.54 impossible for any real contract. Budget blocks daily minimum. No qualifying setup today.
+[18:53 UTC] STEP 2: Portfolio total $144.11 (-8.3% session), cash $24.11, options $120.00 (mark $1.20). No change from prior tick.
+[18:53 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (instrument c6c36034). 0 pending orders. State matches.
+[18:53 UTC] STEP 4: Drawdown 8.28% — below 12% threshold. Circuit breaker inactive.
+[18:53 UTC] STEP 5: KEY quote fresh (18:52:01 UTC) — mark $1.20, IV 29.84%, delta 0.631. Bid $1.15×174 / Ask $1.25×138 (spread 8.3% ✓). P&L -7.7%. DTE 35. days_to_report=4. Exits (a)-(d): NONE triggered. SWING-EARN eval not yet (triggers Jul 19). HOLD.
+[18:53 UTC] STEP 6: max_cost $0.54 — budget blocks all scans. Daily minimum previously logged 18:33 UTC. No qualifying setup today.
