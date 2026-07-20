@@ -3,13 +3,13 @@
 ## Session
 - Date (UTC): 2026-07-20
 - session_start_value: $147.11
-- Circuit breaker: ⚠️ ACTIVE (drawdown 13.6% ≥ 12% — no new trades; exits only)
-- Last updated: 2026-07-20 14:38 UTC
+- Circuit breaker: ⚠️ ACTIVE (drawdown 12.23% ≥ 12% — no new trades; exits only)
+- Last updated: 2026-07-20 14:47 UTC
 
 ## Account Snapshot
-- Total value: $127.11
+- Total value: $129.11
 - Cash: $24.11
-- Options exposure: $102.50 (KEY $23C 8/21 × 1, mark $1.025)
+- Options exposure: $105.00 (KEY $23C 8/21 × 1, mark $1.05)
 - 15% cash floor: $22.07 (15% of $147.11)
 - Buying power: $24.11
 - max_cost: N/A — circuit breaker active
@@ -17,7 +17,7 @@
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.025 | -21.2% | 29.1% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.05 | -19.2% | 29.0% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -31,48 +31,45 @@
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
-### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TOMORROW
+### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TOMORROW AM
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
-- Cost: $1.30/sh ($130 total). Last mark: $1.08 (adj). P&L ~-16.9%.
+- Cost: $1.30/sh ($130 total). Last mark: $1.05. P&L -19.2%.
 - KEY reports Jul 21 AM. days_to_report = 1 → SWING-EARN eval ACTIVE every tick today.
 - **PULL FRESH QUOTE AT EACH TICK — do not use stale pre-market data for SWING-EARN eval.**
 - EXIT if: (IV > 0.80 AND pnl_pct >= 0.15) OR delta < 0.55
 - HOLD THROUGH EARNINGS only if ALL: beat_rate=4/4 ✓, delta≥0.55, pnl_pct<0.15, none of (a)-(d) triggered.
-- Last known (14:29 UTC): IV 31.1% (well below 0.80), delta 0.5965 (≥0.55), P&L -16.9% (<15%) → HOLD THROUGH EARNINGS confirmed.
-- After Jul 21 AM announcement: apply (a)-(d). Catalyst reversed → close immediately.
+- Last known (14:47 UTC): IV 29.0% (well below 0.80), delta 0.609 (≥0.55), P&L -19.2% (<15%) → HOLD THROUGH EARNINGS confirmed.
+- After Jul 21 AM announcement: apply (a)-(d) immediately. Catalyst reversed → close immediately.
 - Standard exits: (a) ≥75% → $2.275/sh; (b) ≤-40% → $0.78/sh; (c) DTE≤2 → Aug 19.
-- ⚠️ DRAWDOWN WARNING: session drawdown 10.20% — circuit breaker trips at 12% ($17.65 more drop in total value).
+- ⚠️ CIRCUIT BREAKER ACTIVE: drawdown 12.23%. Exits only until new session day.
 
 ### BUDGET STATUS
-- session_start_value $147.11, min_cash_floor $22.07, max_cost $2.04
-- max_cost $2.04 → options mark ≤ $0.02/sh → blocks all meaningful contracts.
-- Budget unlocks fully when KEY exits (cash returns ~$130 + any P&L).
+- session_start_value $147.11, min_cash_floor $22.07, max_cost blocked (CB active)
+- Budget unlocks when KEY exits or on new session day (Jul 21).
+- On Jul 21: if KEY exits AM, cash ~$129.11 + P&L. Then scan for pre-earnings entries.
 
-### SCAN A PASS 2 — PIPELINE (budget currently blocked; notes for when KEY exits)
-**Jul 21 (days_to_report=1 today → Gate 1 FAIL — too late to enter):**
-- KEY: already in. GM, CB, MMM: Gate 1 fails (DTR=1).
+### SCAN A PASS 2 — PIPELINE (notes for when CB clears / KEY exits Jul 21)
+**Jul 21 (today forward):**
+- KEY: reports AM → apply (a)-(d) post-announcement. Budget unlocks.
+- GM, CB, MMM: DTR=0 or 1 on Jul 21 → Gate 1 FAIL, skip.
 
-**Jul 22 (DTR=2 today → Gate 1 FAIL):**
-- TSLA, GOOGL, IBM, TXN (PM), T (AM, beat_rate 1/4 → PUTS), PM, CME.
+**Jul 22 (DTR=1 on Jul 21 → Gate 1 FAIL):**
+- TSLA, GOOGL, IBM, TXN (PM), T (beat_rate 1/4 → PUTS if entering), PM, CME.
+- Note: T 1/4 beat rate = PUTS per SCAN A Pass 2 gate. All Gate 1 fail on Jul 21 (DTR=1).
 
-**Jul 23 (DTR=3 today → Gate 1 ✓ — ACTIONABLE if budget permits):**
-- HON (Honeywell): Jul 23 AM. Est $2.42. Need beat rate → verify.
-- LMT (Lockheed Martin): Jul 23 AM. Est $7.23. Need beat rate → verify.
-- RTX (Raytheon): Jul 23 AM. Est $1.66. Need beat rate → verify.
-- INTC (Intel): Jul 23 AM. Need beat rate → verify.
-- TMUS (T-Mobile): Jul 23 AM. Need beat rate → verify.
-- **→ All require KEY to exit first (budget $2.04 → blocks all). Re-evaluate post-KEY.**
+**Jul 23 (DTR=2 on Jul 21 → Gate 1 FAIL — too late):**
+- HON, LMT, RTX, INTC, TMUS: ALL Gate 1 fail (need DTR 3-14). Entry window was Jul 20; missed.
 
-**Jul 24 (DTR=4 today → Gate 1 ✓):**
-- AXP, NEE, VZ, SLB: Need beat rates → verify.
+**Jul 24 (DTR=3 on Jul 21 → Gate 1 ✓ — ACTIONABLE Jul 21):**
+- AXP: verify beat rate, price vs 20d avg, IV.
+- NEE: verify beat rate, price vs 20d avg, IV.
+- VZ: verify beat rate, price vs 20d avg, IV.
+- SLB: verify beat rate, price vs 20d avg, IV.
+- → All require fresh earnings calendar + IV verification on Jul 21.
 
-### KEY EARNINGS CALENDAR (today forward)
-- **Jul 20 (today)**: SWING-EARN eval all day. STLD/WRB/WTFC/ZION report PM (budget blocked, no entry).
-- **Jul 21 AM**: KEY reports. Apply (a)-(d) immediately. Catalyst reversed → close. Budget unlocks.
-- **Jul 21 (post-KEY exit)**: Scan for HON/LMT/RTX/INTC/TMUS pre-earnings entries (DTR=2, Gate 1 fails same day — missed window).
-- **Jul 22**: HON/LMT/RTX/INTC/TMUS (if entry Jul 20–21 possible) + post-earnings: TSLA/GOOGL/IBM.
-- **Jul 23**: HON/LMT/RTX/INTC/TMUS report AM.
-- **Jul 24**: AXP/NEE/VZ/SLB report AM.
+**POST-EARNINGS (Jul 21, REGULAR session UTC ≥ 14:00):**
+- KEY itself: if (a) or (b) or (d) triggers at open, handle as exit per STEP 5.
+- TSLA/GOOGL/IBM/TXN/T/PM/CME (reporting Jul 22 AM): Pass 1 eligible if eps.actual populated.
 
 ### DISQUALIFIED (do not re-evaluate)
 - NOC: 2/4 beat rate
@@ -118,3 +115,8 @@
 [14:38 UTC] STEP 4: ⚠️ CIRCUIT BREAKER TRIPPED — drawdown 13.6% ≥ 12%. No new trades. Exits only.
 [14:38 UTC] STEP 5: KEY quote FRESH (14:38:13 UTC) — mark $1.025 (adj $1.030), IV 29.1%, delta 0.601. Bid $0.95×499 / Ask $1.10×138 (spread 14.6% ✓). P&L -21.2%. DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.291 < 0.80 → exit cond 1 NOT met. Delta 0.601 ≥ 0.55 → exit cond 2 NOT met. Hold-through: beat_rate 4/4 ✓, delta 0.601 ✓, P&L -21.2% < 15% ✓, no (a)-(d) ✓ → HOLD THROUGH EARNINGS (Jul 21 AM). Stop loss floor: $0.78 mark (-40%).
 [14:38 UTC] STEP 6: Circuit breaker active — no new trades.
+[14:47 UTC] STEP 2: Portfolio $129.11 (↑$2), cash $24.11, options $105.00 (KEY mark $1.05). Drawdown 12.23%.
+[14:47 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (c6c36034). 0 pending orders. State matches.
+[14:47 UTC] STEP 4: ⚠️ CIRCUIT BREAKER ACTIVE — drawdown 12.23% ≥ 12%. No new trades. Exits only.
+[14:47 UTC] STEP 5: KEY quote FRESH (14:47:20 UTC) — mark $1.05, IV 29.0%, delta 0.609. Bid $1.00×323 / Ask $1.10×39 (spread 9.5% ✓). P&L -19.2%. DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.290 < 0.80 → exit cond 1 NOT met. Delta 0.609 ≥ 0.55 → exit cond 2 NOT met. Hold-through: beat_rate 4/4 ✓, delta 0.609 ✓, P&L -19.2% < 15% ✓, no (a)-(d) ✓ → HOLD THROUGH EARNINGS (Jul 21 AM).
+[14:47 UTC] STEP 6: Circuit breaker active — no new trades.
