@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-20
 - session_start_value: $147.11
 - Circuit breaker: ⚠️ ACTIVE (tripped 14:38 UTC — drawdown 13.6%; one-way latch, resets on new day)
-- Last updated: 2026-07-20 15:57 UTC
+- Last updated: 2026-07-20 16:14 UTC
 
 ## Account Snapshot
 - Total value: $132.11
@@ -17,7 +17,7 @@
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.075 | -16.9% | 30.2% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.075 | -16.9% | 30.3% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -33,12 +33,12 @@
 
 ### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TOMORROW AM
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
-- Cost: $1.30/sh ($130 total). Last mark: $1.10 (15:40 UTC). P&L -15.4%.
+- Cost: $1.30/sh ($130 total). Last mark: $1.075 (16:14 UTC). P&L -16.9%.
 - KEY reports Jul 21 AM. days_to_report = 1 → SWING-EARN eval ACTIVE every tick today.
 - **PULL FRESH QUOTE AT EACH TICK — do not use stale pre-market data for SWING-EARN eval.**
 - EXIT if: (IV > 0.80 AND pnl_pct >= 0.15) OR delta < 0.55
 - HOLD THROUGH EARNINGS only if ALL: beat_rate=4/4 ✓, delta>=0.55, pnl_pct<0.15, none of (a)-(d) triggered.
-- Last known (15:57 UTC): IV 30.2% (well below 0.80), delta 0.605 (≥0.55), P&L -16.9% (<15%) → HOLD THROUGH EARNINGS confirmed.
+- Last known (16:14 UTC): IV 30.3% (well below 0.80), delta 0.605 (≥0.55), P&L -16.9% (<15%) → HOLD THROUGH EARNINGS confirmed.
 - After Jul 21 AM announcement: apply (a)-(d) immediately. Catalyst reversed → close immediately.
 - Standard exits: (a) ≥75% → $2.275/sh; (b) ≤-40% → $0.78/sh; (c) DTE≤2 → Aug 19.
 - ⚠️ CIRCUIT BREAKER ACTIVE: tripped 14:38 UTC. Exits only until new session day (Jul 21).
@@ -122,7 +122,7 @@
 [14:47 UTC] STEP 6: Circuit breaker active — no new trades.
 [15:04 UTC] STEP 2: Portfolio $129.11, cash $24.11, options $105.00 (KEY mark $1.05). Drawdown 12.24%.
 [15:04 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (c6c36034). 0 pending orders. State matches.
-[15:04 UTC] STEP 4: ⚠️ CIRCUIT BREAKER ACTIVE — drawdown 12.24% ≥ 12%. No new trades. Exits only.
+[15:04 UTC] STEP 4: ⚠️ CIRCUIT BREAKER ACTIVE (tripped 14:38 UTC — one-way latch). Current drawdown 12.24%.
 [15:04 UTC] STEP 5: KEY quote FRESH (15:04:22 UTC) — mark $1.05, IV 28.6%, delta 0.612. Bid $1.00×304 / Ask $1.10×3 (spread 9.5% ✓). P&L -19.2%. DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.286 < 0.80 → exit cond 1 NOT met. Delta 0.612 ≥ 0.55 → exit cond 2 NOT met. Hold-through: beat_rate 4/4 ✓, delta 0.612 ✓, P&L -19.2% < 15% ✓, no (a)-(d) ✓ → HOLD THROUGH EARNINGS (Jul 21 AM).
 [15:04 UTC] STEP 6: Circuit breaker active — no new trades.
 [15:22 UTC] STEP 2: Portfolio $137.11 (↑$8), cash $24.11, options $110.00 (KEY mark $1.10). Drawdown 6.80% (recovered; CB remains active — one-way latch).
@@ -140,3 +140,8 @@
 [15:57 UTC] STEP 4: ⚠️ CIRCUIT BREAKER ACTIVE (tripped 14:38 UTC — one-way latch). Current drawdown 10.20%.
 [15:57 UTC] STEP 5: KEY quote FRESH (15:57:59 UTC) — mark $1.075 (adj $1.080), IV 30.2%, delta 0.605. Bid $1.00×411 / Ask $1.15×224 (spread 13.9% ✓). P&L -16.9%. DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.302 < 0.80 → exit cond 1 NOT met. Delta 0.605 ≥ 0.55 → exit cond 2 NOT met. Hold-through: beat_rate 4/4 ✓, delta 0.605 ✓, P&L -16.9% < 15% ✓, no (a)-(d) ✓ → HOLD THROUGH EARNINGS (KEY reports Jul 21 AM).
 [15:57 UTC] STEP 6: Circuit breaker active — no new trades.
+[16:14 UTC] STEP 2: Portfolio $132.11, cash $24.11, options $108.00 (KEY mark $1.075). Drawdown 10.20% (recovering; CB one-way latch active).
+[16:14 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (c6c36034). 0 pending orders. State matches.
+[16:14 UTC] STEP 4: ⚠️ CIRCUIT BREAKER ACTIVE (tripped 14:38 UTC — one-way latch). Current drawdown 10.20%.
+[16:14 UTC] STEP 5: KEY quote FRESH (16:14:42 UTC) — mark $1.075 (adj $1.080), IV 30.3%, delta 0.605. Bid $1.00×399 / Ask $1.15×214 (spread 13.95% ✓). P&L -16.9%. DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.303 < 0.80 → exit cond 1 NOT met. Delta 0.605 ≥ 0.55 → exit cond 2 NOT met. Hold-through: beat_rate 4/4 ✓, delta 0.605 ✓, P&L -16.9% < 15% ✓, no (a)-(d) ✓ → HOLD THROUGH EARNINGS (KEY reports Jul 21 AM).
+[16:14 UTC] STEP 6: Circuit breaker active — no new trades.
