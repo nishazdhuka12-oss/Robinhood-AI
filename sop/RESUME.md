@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-20
 - session_start_value: $147.11
 - Circuit breaker: inactive
-- Last updated: 2026-07-20 11:13 UTC
+- Last updated: 2026-07-20 13:35 UTC
 
 ## Account Snapshot
 - Total value: $147.11
@@ -17,9 +17,7 @@
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.23* | -5.4%* | 32.2%* | SWING-EARN |
-
-*stale — last updated 2026-07-17 19:59 UTC. Fresh quote at 8:30 AM CT open.
+| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.23 | -5.4% | 32.7% | SWING-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -88,5 +86,10 @@
 [11:13 UTC] STEP 2: Portfolio total $147.11, cash $24.11, options $123.00 (KEY mark stale). BP $24.11.
 [11:13 UTC] STEP 3 RECONCILE: 1 open position confirmed (KEY $23C 8/21 × 1, avg $1.30, instrument c6c36034). 0 pending orders. State matches.
 [11:13 UTC] STEP 4: Drawdown 0% (new session). Circuit breaker inactive.
-[11:13 UTC] STEP 5: KEY quote STALE (updated 2026-07-17 19:59 UTC — 63h ago). Pre-market protocol: skip P&L exits (a/b) on stale data. DTE=32 → no exit (c). SWING-EARN eval fires (days_to_report=1). Last data: IV 32.2% < 0.80, delta 0.627 ≥ 0.55 → no exit. Hold-through criteria met on last data. DEFER final SWING-EARN decision to fresh quote at 8:30 AM CT open.
-[11:13 UTC] STEP 6: max_cost $2.04. Pre-market — all scans budget-blocked (mark ≤ $0.02/sh impossible). No qualifying setup.
+[11:13 UTC] STEP 5: KEY quote STALE (updated 2026-07-17 19:59 UTC — 63h ago). Pre-market: skip P&L exits on stale data. DTE=32 → no exit (c). SWING-EARN eval deferred to open.
+[11:13 UTC] STEP 6: max_cost $2.04. Pre-market — all scans budget-blocked. No qualifying setup.
+[13:35 UTC] STEP 2: Portfolio total $147.11, cash $24.11, options $123.00. BP $24.11.
+[13:35 UTC] STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed. 0 pending orders. State matches.
+[13:35 UTC] STEP 4: Drawdown 0%. Circuit breaker inactive.
+[13:35 UTC] STEP 5: KEY quote FRESH (13:35:04 UTC) — mark $1.225 (adj $1.230), IV 32.7%, delta 0.623. Bid $1.05×408 / Ask $1.40×454 (spread 28.6% at open — wide, normal). P&L -5.4%. DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.327 < 0.80 → exit cond 1 NOT met. Delta 0.623 ≥ 0.55 → exit cond 2 NOT met. Hold-through criteria: beat_rate 4/4 ✓, delta 0.623 ✓, P&L -5.4% < 15% ✓, no (a)-(d) ✓ → HOLD THROUGH EARNINGS (Jul 21 AM).
+[13:35 UTC] STEP 6: max_cost $2.04 — budget blocks all scans. No new trade.
