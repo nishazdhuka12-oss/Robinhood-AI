@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-21
 - session_start_value: $129.11
 - Circuit breaker: inactive (reset on new day)
-- Last updated: 2026-07-21 05:30 UTC (est)
+- Last updated: 2026-07-21 13:15 UTC
 
 ## Account Snapshot
 - Total value: $129.11
@@ -36,8 +36,8 @@
 ### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TODAY AM — JUL 21
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
 - Cost: $1.30/sh ($130 total). Last mark (Jul 20 close): $1.050. P&L -19.2%.
-- KEY reports TODAY (Jul 21 AM). eps.actual = null as of pre-market — announcement pending.
-- Beat rate: 6/6 consecutive beats (Q4'24–Q1'26). Est Q2'26: $0.42/sh.
+- KEY reports TODAY (Jul 21 AM). eps.actual = $0.44 (BEAT +4.8% vs $0.42 est). 7th consecutive beat.
+- Beat rate: 7/7 consecutive beats (Q4'24–Q2'26). Catalyst NOT reversed.
 - **FIRST TICK AFTER ANNOUNCEMENT (eps.actual populated): Apply (a)-(d) immediately.**
   - (a) mark ≥ $2.275 (+75%) → take profit: sell limit @ mark, gtc
   - (b) mark ≤ $0.78 (-40%) → stop loss: sell limit @ mark, gtc
@@ -173,3 +173,4 @@
 [19:45 UTC] SESSION CLOSE: Regular session ends 20:00 UTC. KEY $23C 8/21 held into earnings (Jul 21 AM). CB resets on new day Jul 21. AH check: 0 GTC sells pending, 0 GFD buys to re-validate. No action required AH.
 [~05:30 UTC 2026-07-21] NEW DAY RESET — 2026-07-21. session_start_value = $129.11. CB reset to inactive. min_cash_floor = $19.37. max_cost = $4.74. KEY eps.actual = null — announcement not yet released (pending AM, est $0.42). Beat rate 6/6 historical. Pre-market: stale quote (Jul 20 close $1.050, delta 0.596). Deferred all exits to fresh quote at 8:30 AM CT open.
 [~11:00 UTC 2026-07-21] KEY Q2 2026 EARNINGS ANNOUNCED: actual $0.44 vs est $0.42 → BEAT +4.8%. 7th consecutive beat. Catalyst NOT reversed (bullish ✓). Post-earnings rules applied: (a) P&L ≥75% — stale, pending live quote; (b) P&L ≤-40% — not at risk; (c) DTE 31 — no; (d) catalyst reversed — NO. → HOLD. Awaiting live option quote at 8:30 AM CT open to evaluate (a)/(b).
+[13:15 UTC 2026-07-21] PRE-OPEN TICK (8:15 AM CT — 15 min to open). STEP 2: Portfolio $129.11, cash $24.11, options $105.00. BP $24.11. CB inactive (reset new day). STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (c6c36034). All other positions (BAC, XLF, SPY) qty=0 — expired. 0 pending orders. STEP 4: Drawdown 0%. CB inactive. STEP 5: KEY quote STALE (updated_at 2026-07-20 19:59 UTC). Mark $1.050, IV 30.7%, delta 0.595. Key stock pre-market: $23.09 (bid $22.70/ask $23.10, vs $23.32 close). Post-earnings: (a) mark≥$2.275 NOT met; (b) mark≤$0.78 NOT met (stale — skip per SOP); (c) DTE 31 — no; (d) catalyst NOT reversed (EPS beat ✓). → HOLD, deferred to live quote at 13:30 UTC open. STEP 6: Pre-market — skip scans. Next tick: 13:30 UTC open.
