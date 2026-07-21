@@ -1,23 +1,25 @@
 # OPTIONS TRADING BOT v4.3 — Account 594134744
 
 ## Session
-- Date (UTC): 2026-07-20
-- session_start_value: $147.11
-- Circuit breaker: ⚠️ ACTIVE (tripped 14:38 UTC — drawdown 13.6%; one-way latch, resets on new day)
-- Last updated: 2026-07-20 19:45 UTC
+- Date (UTC): 2026-07-21
+- session_start_value: $129.11
+- Circuit breaker: inactive (reset on new day)
+- Last updated: 2026-07-21 05:30 UTC (est)
 
 ## Account Snapshot
-- Total value: $127.11
+- Total value: $129.11
 - Cash: $24.11
-- Options exposure: $103.00 (KEY $23C 8/21 × 1, mark $1.030 adj)
-- 15% cash floor: $22.07 (15% of $147.11)
+- Options exposure: $105.00 (KEY $23C 8/21 × 1, last mark $1.050 — STALE Jul 20 close)
+- 15% cash floor: $19.37 (15% of $129.11)
 - Buying power: $24.11
-- max_cost: N/A — circuit breaker active
+- max_cost: $4.74 (cash $24.11 − floor $19.37)
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 32 | 1 | $1.30 | $1.030 | -20.8% | 29.5% | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 31 | 1 | $1.30 | $1.050* | -19.2%* | 30.6%* | SWING-EARN |
+
+*stale — Jul 20 close. Refresh at 8:30 AM CT open.
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -31,22 +33,23 @@
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
-### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TOMORROW AM → JULY 21
+### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TODAY AM — JUL 21
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
-- Cost: $1.30/sh ($130 total). Last mark: $1.025/$1.030 adj (19:44 UTC). P&L -20.8% (adj).
-- KEY reports Jul 21 AM. days_to_report = 1 → SWING-EARN HOLD confirmed through close of Jul 20.
-- **ON JUL 21 FIRST TICK AFTER ANNOUNCEMENT: Apply (a)-(d) immediately.**
-  - (a) mark ≥ $2.275 (+75%) → take profit (sell limit @ mark, gtc)
-  - (b) mark ≤ $0.78 (-40%) → stop loss (sell limit @ mark, gtc)
-  - (c) DTE ≤ 2 → N/A (DTE=32 through Aug 21)
-  - (d) Catalyst reversed: if KEY EPS miss (actual < 0 direction for calls) → close immediately
-- After Jul 21 announcement, standard exits apply. Catalyst reversed if eps.actual is a significant miss or negative surprise.
-- ⚠️ CIRCUIT BREAKER RESETS on new session day Jul 21. Budget unlocks after reset.
+- Cost: $1.30/sh ($130 total). Last mark (Jul 20 close): $1.050. P&L -19.2%.
+- KEY reports TODAY (Jul 21 AM). eps.actual = null as of pre-market — announcement pending.
+- Beat rate: 6/6 consecutive beats (Q4'24–Q1'26). Est Q2'26: $0.42/sh.
+- **FIRST TICK AFTER ANNOUNCEMENT (eps.actual populated): Apply (a)-(d) immediately.**
+  - (a) mark ≥ $2.275 (+75%) → take profit: sell limit @ mark, gtc
+  - (b) mark ≤ $0.78 (-40%) → stop loss: sell limit @ mark, gtc
+  - (c) DTE ≤ 2 → N/A (DTE=31)
+  - (d) Catalyst reversed: eps.actual < estimate by ≥5% → close immediately regardless of P&L
+- Pre-market: skip P&L exits on stale data. Pull fresh quote at 8:30 AM CT open.
+- Also check SWING-EARN: if IV > 0.80 AND P&L ≥ 15% → exit. If delta < 0.55 → exit.
 
 ### BUDGET STATUS
-- session_start_value $147.11, min_cash_floor $22.07, max_cost blocked (CB active Jul 20)
-- **On Jul 21: CB resets. New session_start_value = total_value at first tick.**
-- If KEY exits AM (fill ~$0.78–$2.275+), cash replenishes. Recalculate max_cost on Jul 21.
+- session_start_value $129.11, min_cash_floor $19.37, max_cost $4.74
+- max_cost $4.74 → can afford options up to mark $0.047/sh × 100. Tight but possible for cheap OTM contracts.
+- If KEY exits at open, cash replenishes to ~$133+. max_cost recalculates with new total_value.
 
 ### SCAN A PASS 2 — PIPELINE FOR JUL 21 (after CB resets and KEY resolves)
 **DTR=3 on Jul 21 → Gate 1 ✓ — ACTIONABLE JUL 21 (if cash available):**
@@ -168,3 +171,4 @@
 [19:45 UTC] STEP 5: KEY quote FRESH (19:44:46 UTC) — mark $1.025 (adj $1.030), IV 29.47%, delta 0.5985. Bid $1.00×63 / Ask $1.05×22 (spread 4.9% ✓). OI 1221 ✓, Vol 441 ✓. P&L -20.8% (adj). DTE 32. days_to_report=1. SWING-EARN EVAL: IV 0.295 < 0.80 → exit cond 1 NOT met. Delta 0.5985 ≥ 0.55 → exit cond 2 NOT met. Hold-through: beat_rate 4/4 ✓, delta 0.5985 ✓, P&L -20.8% < 15% ✓, no (a)-(d) ✓ → SWING-EARN HOLD confirmed through close. Hold into KEY earnings Jul 21 AM.
 [19:45 UTC] STEP 6: Circuit breaker active — no new trades.
 [19:45 UTC] SESSION CLOSE: Regular session ends 20:00 UTC. KEY $23C 8/21 held into earnings (Jul 21 AM). CB resets on new day Jul 21. AH check: 0 GTC sells pending, 0 GFD buys to re-validate. No action required AH.
+[~05:30 UTC 2026-07-21] NEW DAY RESET — 2026-07-21. session_start_value = $129.11. CB reset to inactive. min_cash_floor = $19.37. max_cost = $4.74. KEY eps.actual = null — announcement not yet released (pending AM, est $0.42). Beat rate 6/6 historical. Pre-market: stale quote (Jul 20 close $1.050, delta 0.596). Deferred all exits to fresh quote at 8:30 AM CT open.
