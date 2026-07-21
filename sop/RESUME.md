@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-21
 - session_start_value: $129.11
 - Circuit breaker: ACTIVE (tripped 13:40 UTC — drawdown 23.3%, one-way latch)
-- Last updated: 2026-07-21 20:21 UTC (15:21 CT — session closed)
+- Last updated: 2026-07-21 18:37 UTC (13:37 CT)
 
 ## Account Snapshot
 - Total value: $99.05 (all cash — KEY position CLOSED)
@@ -196,3 +196,4 @@
 [17:46 UTC 2026-07-21] TICK (12:46 CT) — REGULAR session. CB ACTIVE (23.3% drawdown, one-way latch). API confirmed: total $99.05, cash $99.05, options $0, BP $24.11. 0 open positions, 0 pending orders. State clean. No exits (no positions). No new trades (CB). Heartbeat only. Session closes ~20:00 UTC (~2h14min).
 [18:02 UTC 2026-07-21] TICK (13:02 CT) — REGULAR session. CB ACTIVE (23.3% drawdown, one-way latch). API confirmed: total $99.05, cash $99.05, options $0, BP $24.11. 0 open positions, 0 pending orders. State clean. No exits (no positions). No new trades (CB). Heartbeat only. Session closes ~20:00 UTC (~58min).
 [18:18 UTC 2026-07-21] TICK (13:18 CT) — REGULAR session. CB ACTIVE (23.3% drawdown, one-way latch). API confirmed: total $99.05, cash $99.05, options $0, BP $24.11. 0 open positions, 0 pending orders. State clean. No exits (no positions). No new trades (CB). Heartbeat only. Session closes ~20:00 UTC (~1h42min).
+[18:37 UTC 2026-07-21] TICK (13:37 CT) — REGULAR session. CB ACTIVE (23.3% drawdown, one-way latch). API confirmed: total $99.05, cash $99.05, options $0, BP $24.11 (T+1). 0 open positions, 0 pending orders. No exits (no positions). No new trades (CB). Heartbeat only. Session closes ~20:00 UTC (~1h23min).
