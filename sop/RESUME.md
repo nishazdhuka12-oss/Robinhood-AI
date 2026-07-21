@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-21
 - session_start_value: $129.11
 - Circuit breaker: ACTIVE (tripped 13:40 UTC — drawdown 23.3%, one-way latch)
-- Last updated: 2026-07-21 14:34 UTC (09:34 CT)
+- Last updated: 2026-07-21 14:51 UTC (09:51 CT)
 
 ## Account Snapshot
 - Total value: $99.05 (all cash — KEY position CLOSED)
@@ -174,3 +174,4 @@
 [13:42 UTC 2026-07-21] RECONCILE UPDATE: confirmed via get_option_orders — order 6a5f76bf state=confirmed, pending_qty=1 (not yet filled). Review quote (13:40:10 UTC) showed mark slipped to $0.70 (bid $0.55×1526 / ask $0.85×600, spread 42.9%). Second place attempt at $0.70 rejected — position fully committed to open order. WIDE_BID_ASK on SELL → logged, proceed per SOP. CB drawdown revised: ($129.11 − $94.11) / $129.11 = 27.1%. Active exit order at $0.75 above current mark $0.70 — fill contingent on price recovery. STEP 6: CB active — no new trades.
 [13:59 UTC 2026-07-21] FILL CONFIRMED (8:59 AM CT tick). ORDER 6a5f76bf FILLED: KEY $23C 8/21 × 1 sold at $0.75, execution 13:42:49 UTC. Proceeds $75.00 − $0.04 fees = $74.96. Portfolio total $99.05, cash $99.05, options $0. Buying power $24.11 (T+1 — full settlement Jul 22). Drawdown 23.3% ($129.11 → $99.05). CB remains active one-way latch. STEP 3: 0 open positions, 0 pending orders. STEP 4: CB active. STEP 5: No positions. STEP 6: CB active — no new trades. Jul 21 session closed out. Next action: Jul 22 new day reset.
 [14:34 UTC 2026-07-21] TICK (09:34 CT) — REGULAR session. CB ACTIVE (23.3% drawdown, one-way latch). API confirmed: total $99.05, cash $99.05, options $0, BP $24.11. 0 open positions, 0 pending orders. State clean. No exits (no positions). No new trades (CB). Session remains closed out.
+[14:51 UTC 2026-07-21] TICK (09:51 CT) — REGULAR session. CB ACTIVE (23.3% drawdown, one-way latch). API confirmed: total $99.05, cash $99.05, options $0, BP $24.11. 0 open positions, 0 confirmed orders. State clean. No exits (no positions). No new trades (CB). Session closed out — heartbeat only.
