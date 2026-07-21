@@ -3,69 +3,64 @@
 ## Session
 - Date (UTC): 2026-07-21
 - session_start_value: $129.11
-- Circuit breaker: ACTIVE (tripped 13:40 UTC — drawdown 20.9%)
-- Last updated: 2026-07-21 13:40 UTC
+- Circuit breaker: ACTIVE (tripped 13:40 UTC — drawdown 27.1% as of 13:42 UTC, one-way latch)
+- Last updated: 2026-07-21 13:42 UTC
 
 ## Account Snapshot
-- Total value: $102.11 (live — options repriced at open)
+- Total value: ~$94.11 (cash $24.11 + options $70.00 at mark $0.70 per 13:40:10 UTC quote)
 - Cash: $24.11
-- Options exposure: $75.00 (KEY $23C 8/21 × 1, mark $0.750 — FRESH 13:39 UTC)
+- Options exposure: $70.00 (KEY $23C 8/21 × 1, mark $0.70 — FRESH 13:40:10 UTC)
 - 15% cash floor: $19.37 (15% of $129.11 session_start_value)
 - Buying power: $24.11
-- max_cost: $4.74 (cash $24.11 − floor $19.37) — CB ACTIVE, no new trades
-- Circuit breaker: ACTIVE — drawdown 20.9% (total $102.11 vs start $129.11)
+- max_cost: N/A — CB ACTIVE, no new trades
+- Circuit breaker: ACTIVE — drawdown 27.1% ($129.11 → $94.11)
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 31 | 1 | $1.30 | $0.750 | -42.3% | 27.6% | SWING-EARN — SELL PENDING |
+| KEY | C | $23.00 | 2026-08-21 | 31 | 1 | $1.30 | $0.70 | -46.2% | 26.7% | SWING-EARN ⚠️ CLOSING |
 
-⚠️ GTC SELL ORDER LIVE: order_id=6a5f76bf-b889-4f2d-adfe-d9884cf26e19, limit $0.75, unconfirmed. Two triggers: (b) P&L -42.3% ≤ -40% (stop loss) + SWING-EARN delta 0.521 < 0.55.
+⚠️ GTC SELL ORDER CONFIRMED: order_id=6a5f76bf-b889-4f2d-adfe-d9884cf26e19, limit $0.75, state=confirmed, pending_qty=1. Two triggers: (b) P&L -46.2% ≤ -40% (stop loss) + SWING-EARN delta 0.510 < 0.55. Market at 13:40:10 UTC: bid $0.55×1526 / ask $0.85×600 / mark $0.70. Order at $0.75 is ABOVE current mark — fill requires price recovery. If unfilled next tick, evaluate replace_option_order at current mark.
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
 |--------|-----|-----------|-------|-------------|----------|
-(none)
+(none — CB active, no new entries this session)
 
 ## Pending Orders (queued, not yet filled)
 | Ticker | C/P | Strike | Expiry | Limit$ | Queued at UTC | Order ID |
 |--------|-----|--------|--------|--------|---------------|----------|
-| KEY | C | $23.00 | 2026-08-21 | $0.75 SELL GTC | 13:40 UTC | 6a5f76bf-b889-4f2d-adfe-d9884cf26e19 |
+| KEY | C | $23.00 | 2026-08-21 | $0.75 SELL GTC | 13:40:15 UTC | 6a5f76bf-b889-4f2d-adfe-d9884cf26e19 |
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
-### KEY $23C 8/21 — ACTIVE POSITION (SWING-EARN) ⚠️ EARNINGS TODAY AM — JUL 21
+### KEY EXIT IN PROGRESS ⚠️
 - Instrument: c6c36034-240f-4196-87c3-c978a5605270
-- Cost: $1.30/sh ($130 total). Last mark (Jul 20 close): $1.050. P&L -19.2%.
-- KEY reports TODAY (Jul 21 AM). eps.actual = $0.44 (BEAT +4.8% vs $0.42 est). 7th consecutive beat.
-- Beat rate: 7/7 consecutive beats (Q4'24–Q2'26). Catalyst NOT reversed.
-- **FIRST TICK AFTER ANNOUNCEMENT (eps.actual populated): Apply (a)-(d) immediately.**
-  - (a) mark ≥ $2.275 (+75%) → take profit: sell limit @ mark, gtc
-  - (b) mark ≤ $0.78 (-40%) → stop loss: sell limit @ mark, gtc
-  - (c) DTE ≤ 2 → N/A (DTE=31)
-  - (d) Catalyst reversed: eps.actual < estimate by ≥5% → close immediately regardless of P&L
-- Pre-market: skip P&L exits on stale data. Pull fresh quote at 8:30 AM CT open.
-- Also check SWING-EARN: if IV > 0.80 AND P&L ≥ 15% → exit. If delta < 0.55 → exit.
+- GTC sell limit $0.75 confirmed (order ID 6a5f76bf, placed agentic 13:40:15 UTC).
+- Market at 13:40:10 UTC: bid $0.55, ask $0.85, mark $0.70. Order is ABOVE mark — may need lowering.
+- **NEXT TICK:** Check get_option_orders state. If filled → close position, recalc portfolio, no new trades (CB active). If unfilled → get fresh quote, if mark ≤ $0.65 consider replace_option_order to lower limit closer to mark. Order is_replaceable=true.
+- Do NOT cancel without immediately re-submitting.
+- KEY stock beat earnings ($0.44 vs $0.42). Stock was ~$23.09 pre-market vs $23.32 close. Option IV crush post-earnings explains mark decline ($1.05→$0.70). Underlying may stabilize intraday.
 
-### BUDGET STATUS
-- session_start_value $129.11, min_cash_floor $19.37, max_cost $4.74
-- max_cost $4.74 → can afford options up to mark $0.047/sh × 100. Tight but possible for cheap OTM contracts.
-- If KEY exits at open, cash replenishes to ~$133+. max_cost recalculates with new total_value.
+### CIRCUIT BREAKER STATUS
+- CB tripped Jul 21 session: drawdown 27.1% (session_start $129.11, total ~$94.11 at mark $0.70).
+- CB is ONE-WAY LATCH — stays active all session regardless of recovery.
+- No new trades for remainder of Jul 21 session.
+- CB resets on NEW DAY (Jul 22). session_start_value resets to total_value at first Jul 22 tick.
 
-### SCAN A PASS 2 — PIPELINE FOR JUL 21 (after CB resets and KEY resolves)
-**DTR=3 on Jul 21 → Gate 1 ✓ — ACTIONABLE JUL 21 (if cash available):**
-- AXP: verify beat rate, price vs 20d avg, IV, spread
-- NEE: verify beat rate, price vs 20d avg, IV, spread
-- VZ: verify beat rate, price vs 20d avg, IV, spread
-- SLB: verify beat rate, price vs 20d avg, IV, spread
-- → All require fresh earnings calendar + IV verification on Jul 21 first tick.
+### BUDGET AFTER KEY CLOSES
+- If fills at $0.75: proceeds $75 − $0.04 fees = $74.96. Cash → $24.11 + $74.96 = $99.07. Total ~$99.07.
+- If fills at $0.70: proceeds $70 − $0.04 fees = $69.96. Cash → $24.11 + $69.96 = $94.07. Total ~$94.07.
+- Jul 22 new session: session_start_value ~$94-$99. min_cash_floor ~$14-$15. max_cost ~$79-$84. Budget restores significantly — SCAN A/B/C/D all become viable.
 
-**POST-EARNINGS (Jul 21, REGULAR session UTC ≥ 14:00) — Pass 1 candidates:**
-- TSLA, GOOGL, IBM, TXN, T, PM, CME: reporting Jul 22 AM → eligible for Pass 1 if eps.actual populated by market open Jul 21 (check actual). Direction per beat/miss. Stock move ≤ 15% gate.
-- KEY itself: exit per (a)-(d) in STEP 5 — not a new entry.
+### SCAN A PIPELINE FOR JUL 22 (when CB resets)
+**Post-earnings Pass 1 — stocks that reported Jul 21 AM:**
+- AXP, NEE, VZ, SLB: verify eps.actual populated, beat/miss ≥5%, stock move ≤15%, REGULAR UTC≥14:00.
+- KEY: do NOT re-enter (position just closed).
 
-**DTR=1 on Jul 21 → Gate 1 FAIL (skip):** GM, CB, MMM.
-**DTR=2 on Jul 21 → Gate 1 FAIL (skip):** TSLA, GOOGL, IBM, TXN, T, PM, CME (pre-earnings entry too late).
+**Pre-earnings Pass 2 — DTR 3-14 on Jul 22:**
+- TSLA, GOOGL, IBM, TXN, T, PM, CME, AMZN, META, MSFT: check fresh earnings calendar, beat rate, IV, spread.
+- Re-run all gates fresh at first Jul 22 tick.
 
 ### DISQUALIFIED (do not re-evaluate)
 - NOC: 2/4 beat rate
@@ -176,3 +171,4 @@
 [~11:00 UTC 2026-07-21] KEY Q2 2026 EARNINGS ANNOUNCED: actual $0.44 vs est $0.42 → BEAT +4.8%. 7th consecutive beat. Catalyst NOT reversed (bullish ✓). Post-earnings rules applied: (a) P&L ≥75% — stale, pending live quote; (b) P&L ≤-40% — not at risk; (c) DTE 31 — no; (d) catalyst reversed — NO. → HOLD. Awaiting live option quote at 8:30 AM CT open to evaluate (a)/(b).
 [13:15 UTC 2026-07-21] PRE-OPEN TICK (8:15 AM CT — 15 min to open). STEP 2: Portfolio $129.11, cash $24.11, options $105.00. BP $24.11. CB inactive (reset new day). STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (c6c36034). All other positions (BAC, XLF, SPY) qty=0 — expired. 0 pending orders. STEP 4: Drawdown 0%. CB inactive. STEP 5: KEY quote STALE (updated_at 2026-07-20 19:59 UTC). Mark $1.050, IV 30.7%, delta 0.595. Key stock pre-market: $23.09 (bid $22.70/ask $23.10, vs $23.32 close). Post-earnings: (a) mark≥$2.275 NOT met; (b) mark≤$0.78 NOT met (stale — skip per SOP); (c) DTE 31 — no; (d) catalyst NOT reversed (EPS beat ✓). → HOLD, deferred to live quote at 13:30 UTC open. STEP 6: Pre-market — skip scans. Next tick: 13:30 UTC open.
 [13:40 UTC 2026-07-21] OPEN TICK (8:40 AM CT). STEP 2: Portfolio $102.11, cash $24.11, options $75.00 (KEY mark $0.750). Drawdown 20.9%. STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed. 0 pending orders. State matches. STEP 4: ⚠️ CIRCUIT BREAKER TRIPPED — drawdown 20.9% ≥ 12%. No new trades. Exits only. STEP 5: KEY quote FRESH (13:39 UTC) — mark $0.750, adj_mark $0.750, IV 27.6%, delta 0.521. Bid $0.55×1756 / Ask $0.95×1106 (spread 53.3% — WIDE_BID_ASK on sell, logged, proceeding per SOP). P&L -42.3%. POST-EARNINGS EXIT TRIGGERS: (b) P&L -42.3% ≤ -40% → STOP LOSS ✓. SWING-EARN delta 0.521 < 0.55 → EXIT ✓. (d) Catalyst NOT reversed (EPS beat $0.44 vs $0.42 est). ACTION: sell limit $0.75 GTC placed. Order ID 6a5f76bf-b889-4f2d-adfe-d9884cf26e19. State: unconfirmed. STEP 6: CB active — no new trades.
+[13:42 UTC 2026-07-21] RECONCILE UPDATE: confirmed via get_option_orders — order 6a5f76bf state=confirmed, pending_qty=1 (not yet filled). Review quote (13:40:10 UTC) showed mark slipped to $0.70 (bid $0.55×1526 / ask $0.85×600, spread 42.9%). Second place attempt at $0.70 rejected — position fully committed to open order. WIDE_BID_ASK on SELL → logged, proceed per SOP. CB drawdown revised: ($129.11 − $94.11) / $129.11 = 27.1%. Active exit order at $0.75 above current mark $0.70 — fill contingent on price recovery. STEP 6: CB active — no new trades.
