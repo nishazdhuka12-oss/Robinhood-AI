@@ -3,23 +3,24 @@
 ## Session
 - Date (UTC): 2026-07-21
 - session_start_value: $129.11
-- Circuit breaker: inactive (reset on new day)
-- Last updated: 2026-07-21 13:15 UTC
+- Circuit breaker: ACTIVE (tripped 13:40 UTC — drawdown 20.9%)
+- Last updated: 2026-07-21 13:40 UTC
 
 ## Account Snapshot
-- Total value: $129.11
+- Total value: $102.11 (live — options repriced at open)
 - Cash: $24.11
-- Options exposure: $105.00 (KEY $23C 8/21 × 1, last mark $1.050 — STALE Jul 20 close)
-- 15% cash floor: $19.37 (15% of $129.11)
+- Options exposure: $75.00 (KEY $23C 8/21 × 1, mark $0.750 — FRESH 13:39 UTC)
+- 15% cash floor: $19.37 (15% of $129.11 session_start_value)
 - Buying power: $24.11
-- max_cost: $4.74 (cash $24.11 − floor $19.37)
+- max_cost: $4.74 (cash $24.11 − floor $19.37) — CB ACTIVE, no new trades
+- Circuit breaker: ACTIVE — drawdown 20.9% (total $102.11 vs start $129.11)
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| KEY | C | $23.00 | 2026-08-21 | 31 | 1 | $1.30 | $1.050* | -19.2%* | 30.6%* | SWING-EARN |
+| KEY | C | $23.00 | 2026-08-21 | 31 | 1 | $1.30 | $0.750 | -42.3% | 27.6% | SWING-EARN — SELL PENDING |
 
-*stale — Jul 20 close. Refresh at 8:30 AM CT open.
+⚠️ GTC SELL ORDER LIVE: order_id=6a5f76bf-b889-4f2d-adfe-d9884cf26e19, limit $0.75, unconfirmed. Two triggers: (b) P&L -42.3% ≤ -40% (stop loss) + SWING-EARN delta 0.521 < 0.55.
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at |
@@ -29,7 +30,7 @@
 ## Pending Orders (queued, not yet filled)
 | Ticker | C/P | Strike | Expiry | Limit$ | Queued at UTC | Order ID |
 |--------|-----|--------|--------|--------|---------------|----------|
-(none)
+| KEY | C | $23.00 | 2026-08-21 | $0.75 SELL GTC | 13:40 UTC | 6a5f76bf-b889-4f2d-adfe-d9884cf26e19 |
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
@@ -174,3 +175,4 @@
 [~05:30 UTC 2026-07-21] NEW DAY RESET — 2026-07-21. session_start_value = $129.11. CB reset to inactive. min_cash_floor = $19.37. max_cost = $4.74. KEY eps.actual = null — announcement not yet released (pending AM, est $0.42). Beat rate 6/6 historical. Pre-market: stale quote (Jul 20 close $1.050, delta 0.596). Deferred all exits to fresh quote at 8:30 AM CT open.
 [~11:00 UTC 2026-07-21] KEY Q2 2026 EARNINGS ANNOUNCED: actual $0.44 vs est $0.42 → BEAT +4.8%. 7th consecutive beat. Catalyst NOT reversed (bullish ✓). Post-earnings rules applied: (a) P&L ≥75% — stale, pending live quote; (b) P&L ≤-40% — not at risk; (c) DTE 31 — no; (d) catalyst reversed — NO. → HOLD. Awaiting live option quote at 8:30 AM CT open to evaluate (a)/(b).
 [13:15 UTC 2026-07-21] PRE-OPEN TICK (8:15 AM CT — 15 min to open). STEP 2: Portfolio $129.11, cash $24.11, options $105.00. BP $24.11. CB inactive (reset new day). STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed (c6c36034). All other positions (BAC, XLF, SPY) qty=0 — expired. 0 pending orders. STEP 4: Drawdown 0%. CB inactive. STEP 5: KEY quote STALE (updated_at 2026-07-20 19:59 UTC). Mark $1.050, IV 30.7%, delta 0.595. Key stock pre-market: $23.09 (bid $22.70/ask $23.10, vs $23.32 close). Post-earnings: (a) mark≥$2.275 NOT met; (b) mark≤$0.78 NOT met (stale — skip per SOP); (c) DTE 31 — no; (d) catalyst NOT reversed (EPS beat ✓). → HOLD, deferred to live quote at 13:30 UTC open. STEP 6: Pre-market — skip scans. Next tick: 13:30 UTC open.
+[13:40 UTC 2026-07-21] OPEN TICK (8:40 AM CT). STEP 2: Portfolio $102.11, cash $24.11, options $75.00 (KEY mark $0.750). Drawdown 20.9%. STEP 3 RECONCILE: KEY $23C 8/21 × 1 confirmed. 0 pending orders. State matches. STEP 4: ⚠️ CIRCUIT BREAKER TRIPPED — drawdown 20.9% ≥ 12%. No new trades. Exits only. STEP 5: KEY quote FRESH (13:39 UTC) — mark $0.750, adj_mark $0.750, IV 27.6%, delta 0.521. Bid $0.55×1756 / Ask $0.95×1106 (spread 53.3% — WIDE_BID_ASK on sell, logged, proceeding per SOP). P&L -42.3%. POST-EARNINGS EXIT TRIGGERS: (b) P&L -42.3% ≤ -40% → STOP LOSS ✓. SWING-EARN delta 0.521 < 0.55 → EXIT ✓. (d) Catalyst NOT reversed (EPS beat $0.44 vs $0.42 est). ACTION: sell limit $0.75 GTC placed. Order ID 6a5f76bf-b889-4f2d-adfe-d9884cf26e19. State: unconfirmed. STEP 6: CB active — no new trades.
