@@ -77,3 +77,4 @@ AT SESSION OPEN (13:30 UTC): Pull option chains for V first (DTR=6, most urgent)
 [07:32 UTC 2026-07-22] NEW DAY RESET — 2026-07-22. session_start_value = $99.05. CB reset to inactive. min_cash_floor = $14.86. max_cost = $84.19. Cash $99.05 — T+1 settled, full BP restored. 0 positions, 0 orders.
 [06:15 UTC 2026-07-22] PRE-MARKET SCAN A ANALYSIS COMPLETE — Pass 2 pipeline: V/META/MSFT/AAPL/MA pass Gates 1-3. QCOM disqualified (G2/G3 conflict). AXP/NEE/VZ/SLB DTR=2 skip. T/PM/CME pass 1 candidates at session open. Waiting for live option quotes at 13:30 UTC.
 [07:15 UTC 2026-07-22] CLOSED session check — 0 positions, 0 orders, $99.05 cash, CB inactive. No action. Chaining wakeup toward 13:30 UTC open.
+[07:18 UTC 2026-07-22] ScheduleWakeup blocked by transient classifier error — launchd agent will fire at 13:30 CT open; pipeline state in CARRY-FORWARD notes is ready.
