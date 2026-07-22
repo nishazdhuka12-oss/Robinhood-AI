@@ -4,7 +4,7 @@
 - Date (UTC): 2026-07-22
 - session_start_value: $99.05
 - Circuit breaker: inactive (reset on new day)
-- Last updated: 2026-07-22 11:15 UTC (06:15 CT)
+- Last updated: 2026-07-22 13:36 UTC (08:36 CT)
 
 ## Account Snapshot
 - Total value: $99.05
@@ -20,10 +20,10 @@
 (none)
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC REGULAR session)
-| Ticker | C/P | Direction | Beat% | Report date | Added at |
-|--------|-----|-----------|-------|-------------|----------|
-| T      | C   | CALLS     | +10.2% (est $0.59, act $0.65) | 2026-07-22 AM | 11:15 UTC |
-| PM     | C   | CALLS     | +7.3% (est $2.05, act $2.20)  | 2026-07-22 AM | 11:15 UTC |
+| Ticker | C/P | Direction | Beat% | Report date | Added at | Trade plan |
+|--------|-----|-----------|-------|-------------|----------|------------|
+| T      | C   | CALLS     | +10.2% (est $0.59, act $0.65) | 2026-07-22 AM | 11:15 UTC | Jul31 $23C lim $0.65 GFD × 1 contract — inst 2fc41dc8 — ALL GATES PASS |
+| PM     | C   | CALLS     | +7.3% (est $2.05, act $2.20)  | 2026-07-22 AM | 11:15 UTC | BUDGET FAIL — PM ATM calls ~$400+/contract >> max_cost $84.19 → DROP |
 
 ## Pending Orders (queued, not yet filled)
 | Ticker | C/P | Strike | Expiry | Limit$ | Queued at UTC | Order ID |
@@ -81,3 +81,4 @@ AT SESSION OPEN (13:30 UTC): Pull option chains for V first (DTR=6, most urgent)
 [07:18 UTC 2026-07-22] ScheduleWakeup blocked by transient classifier error — launchd agent will fire at 13:30 CT open; pipeline state in CARRY-FORWARD notes is ready.
 [10:08 UTC 2026-07-22] PRE-MARKET heartbeat — $99.05 cash, 0 pos, CB inactive. T/PM/CME eps.actual still null (not yet reported). No option quotes (stale). Waiting 13:30 UTC open.
 [11:15 UTC 2026-07-22] SCAN A PASS 1 — T reported +10.2% beat ($0.65 vs $0.59 est), stock +3.3% pre-mkt → CALLS watchlist. PM reported +7.3% beat ($2.20 vs $2.05 est), stock -0.3% pre-mkt → CALLS watchlist. CME 0.0% beat → SKIP. Both added to watchlist for execution at 14:00 UTC REGULAR session.
+[13:36 UTC 2026-07-22] REGULAR SESSION OPEN — STEP 2: $99.05 cash, CB inactive. T +4.90% ($23.354), PM +4.07% ($195.685) — both stock moves ≤15% ✓. Gate checks complete: T Jul31 $23C ALL PASS (spread 18.75%, delta 0.59, IV 0.35, OI 4406, cost $64, CoP 0.37). PM budget-fail (ATM calls ~$400+/contract). Pass 2 shortlist (V/META/MSFT/AAPL/MA) ALL budget-fail ($300-1000+/contract >> $84.19 max_cost). ONLY viable trade: T. Awaiting 14:00 UTC to execute watchlist.
