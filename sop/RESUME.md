@@ -3,75 +3,70 @@
 ## Session
 - Date (UTC): 2026-07-22
 - session_start_value: $99.05
-- Circuit breaker: inactive
-- Last updated: 2026-07-22 14:15 UTC (09:15 CT)
+- Circuit breaker: **ACTIVE** (tripped at 14:33 UTC — drawdown 14.17%)
+- Last updated: 2026-07-22 14:33 UTC (09:33 CT)
 
 ## Account Snapshot
-- Total value: $99.05
-- Cash: $99.05
-- Options exposure: $0 (1 contract pending fill)
+- Total value: $85.01
+- Cash: $44.01
+- Options exposure: $41.00 (1× T Jul31 $23C mark $0.41)
 - 15% cash floor: $14.86 (15% of $99.05)
-- Buying power: $99.05
-- max_cost: $84.19 (cash $99.05 − floor $14.86)
-- Effective remaining max_cost (after T pending): $29.19 ($84.19 − $55 premium)
+- Buying power: $44.01
+- Drawdown from session start: 14.17% → CB ACTIVE, no new trades
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-(none — T order pending fill)
+| T | C | $23 | 2026-07-31 | 9 | 1 | $0.55 | $0.41 | −25.45% | 0.323 | POST-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at | Trade plan |
 |--------|-----|-----------|-------|-------------|----------|------------|
-(cleared — T order placed 14:15 UTC)
+(empty)
 
 ## Pending Orders (queued, not yet filled)
 | Ticker | C/P | Strike | Expiry | Limit$ | Queued at UTC | Order ID |
 |--------|-----|--------|--------|--------|---------------|----------|
-| T | C | $23 | Jul31 | $0.55 | 14:15 UTC | 6a60d083-6778-4970-bbf6-3fdddfb5c113 |
+(none)
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
 ### SESSION STATE
-- session_start_value: $99.05. CB inactive. min_cash_floor: $14.86.
-- Cash $99.05, 0 confirmed positions, 1 pending order (T Jul31 $23C lim $0.55 GFD).
-- Effective remaining max_cost after T: $29.19 — no known candidates fit under this budget.
+- session_start_value: $99.05. **CB ACTIVE** (drawdown 14.17% ≥ 12%). min_cash_floor: $14.86.
+- Cash $44.01, 1 open position (T Jul31 $23C), 0 pending orders.
+- No new trades until CB is cleared (requires total_value to recover to > $87.56 = $99.05 × 0.88).
+- CB resets at NEW DAY (UTC date change → 2026-07-23).
 
-### T ORDER — MONITOR FILL
-- Order ID: 6a60d083-6778-4970-bbf6-3fdddfb5c113
-- T Jul31 $23C, 1 contract, limit $0.55, GFD regular_hours
-- Instrument: 2fc41dc8-6305-46ce-8df0-8dfb985eed45
-- Placed 14:15 UTC. State: unconfirmed at placement.
-- Quote at order time: bid $0.51 / ask $0.55 / mark $0.53 / IV 0.327 / delta 0.544 / OI 4406 / vol 921
-- Spread: 7.55% ✓. All gates passed. Fees: $0.04.
-- GFD — expires unfilled at 19:59 UTC if not filled.
-- If FILLED: update to Open Positions. Cost/sh = $0.55. Tag: SWING-EARN (earnings beat, IV expansion play).
-  - Exit rules: pnl ≥75% take profit, pnl ≤-40% stop loss, DTE≤2 time decay, catalyst reversed.
-  - Earnings beat +10.2% ($0.65 vs $0.59 est). Days to report already passed (this is Pass 1).
-  - This is a POST-EARNINGS momentum play — NOT a pre-earnings IV play. No SWING-EARN IV eval.
-  - Hold for directional move. Standard STEP 5 exits apply.
-- If UNFILLED (GFD expires): re-validate gates at next tick. If spread still ≤20% and other gates pass, re-queue. Else drop T.
+### T POSITION — HOLD (no exits triggered)
+- T Jul31 $23C, qty 1, opened 2026-07-22 14:15:31 UTC
+- Cost/sh: $0.55. Mark: $0.41 (adjusted). P&L: −25.45%
+- option_id: 2fc41dc8-6305-46ce-8df0-8dfb985eed45
+- Tag: POST-EARN (SCAN A Pass 1 — T beat +10.2%, $0.65 vs $0.59 est)
+- NO SWING-EARN IV eval — this is post-earnings momentum, not pre-earnings IV play
+- Exit rules (standard): pnl ≥75% take profit | pnl ≤−40% stop loss | DTE≤2 time decay | catalyst reversed
+- Current P&L −25.45%: none of (a)-(d) triggered → HOLD
+- DTE 9 days (Jul 31 expiry) — no time decay urgency
+- IV 0.323, delta 0.469, OI 4406, vol 2052
 
-### SCAN A PASS 2 — ALL BUDGET-FAIL (unchanged)
-- V (Jul28 DTR=6, 4/4 beats): ATM calls ~$300+/contract >> $29.19 → skip
-- META (Jul29 DTR=7, 4/4 beats): ATM calls ~$1000+/contract → skip
-- MSFT (Jul29 DTR=7, 4/4 beats): ATM calls ~$400+/contract → skip
-- AAPL (Jul30 DTR=8, 4/4 beats): ATM calls ~$300+/contract → skip
-- MA (Jul30 DTR=8, 4/4 beats): ATM calls ~$500+/contract → skip
+### CIRCUIT BREAKER
+- Tripped at 14:33 UTC today. Drawdown 14.17% from $99.05 → $85.01.
+- No new trades for remainder of session.
+- Resets on NEW DAY (2026-07-23 UTC). Session_start_value will reset to new total value.
 
-### DISQUALIFIED (do not re-evaluate)
+### DISQUALIFIED — DO NOT RE-EVALUATE (prior ticks)
 - NOC, COF, SCHW: 2/4 beat rate
 - AAL: Gate 3 conflict
-- HAL: Spread fail
-- CMCSA: Spread fail
+- HAL, CMCSA: spread fail
 - KEY: catalyst exhausted
-- QCOM: Gate 2/3 conflict Jul 22
-- TSLA, GOOGL, IBM, TXN: report Jul 22 PM → Pass 1 on Jul 23
+- QCOM: Gate 2/3 conflict
+- TSLA, GOOGL, IBM, TXN: report Jul 22 PM → Pass 1 eval on Jul 23 (new day)
 
-### SCANS B–F
-- No qualifying setups identified in prior ticks. Budget too tight ($29.19) for most setups.
-- Re-run SCANS B–D at each tick if budget allows.
-- SCAN F (daily movers): run at UTC ≥18:30 if no trade confirmed filled and budget > floor.
+### NEXT TICK PRIORITIES
+1. STEP 2: Confirm total_value — if somehow > $87.56, CB may be lifted (recalculate drawdown)
+2. STEP 5: Get T quote. Check (a)-(d) exits. DTE will be 9 or 8.
+3. CB active → STEP 6 skipped
+4. If NEW DAY (2026-07-23): reset session_start_value to new total_value, CB → inactive
+5. Jul 23: Run SCAN A Pass 1 on TSLA/GOOGL/IBM/TXN post-earnings (reported Jul 22 PM)
 
 ## Session Log (today — one line per event)
 [07:32 UTC] NEW DAY RESET — 2026-07-22. session_start_value = $99.05. CB reset to inactive. min_cash_floor = $14.86. max_cost = $84.19. Cash $99.05 — T+1 settled, full BP restored. 0 positions, 0 orders.
@@ -84,3 +79,4 @@
 [13:40 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed via API. STEP 5: T Jul31 $23C re-quoted live: bid $0.55 / ask $0.70 / mark $0.625 / spread 24.0% — FAILS ≤20% gate at 13:39 UTC. Typical early-session wide spread. Still pre-14:00 UTC execution window. No trades placed. Awaiting 14:00 UTC to re-verify spread and execute T if gates pass.
 [13:56 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed. CB 0.0% inactive. T Jul31 $23C quote (13:57 UTC): bid $0.49 / ask $0.60 / mark $0.545 / spread 20.18% — still marginally fails ≤20% gate by 0.18% (OI=4406 ≥500). Mark moved down from $0.625 → $0.545. Volume 776. All other gates pass. Scheduling wakeup at 14:00 UTC for final spread check and execution. Updated limit price to $0.55.
 [14:14 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed. CB 0.0% inactive. STEP 5: 0 open positions, nothing to manage. STEP 6: T watchlist execution window open (UTC≥14:00). T Jul31 $23C re-quoted (14:14 UTC): bid $0.51 / ask $0.55 / mark $0.53 / spread 7.55% ✓ / delta 0.527 / IV 0.345 / CoP 0.344 / OI 4406 / vol 921. ALL GATES PASS. review_option_order: no alerts, fees $0.04. ORDER PLACED: 1× T Jul31 $23C limit $0.55 GFD — order ID 6a60d083-6778-4970-bbf6-3fdddfb5c113 — state unconfirmed. STEP 7: RESUME updated and committed.
+[14:33 UTC] TICK — STEP 3: T order confirmed FILLED at 14:15:31 UTC. Position: 1× T Jul31 $23C cost $0.55. STEP 4: CB TRIPPED — total_value $85.01 vs session_start $99.05, drawdown 14.17% ≥ 12%. STEP 5: T mark $0.41 (adj), P&L −25.45%. No exit triggers (a)-(d). HOLD. STEP 6: SKIPPED — CB active. No new trades.
