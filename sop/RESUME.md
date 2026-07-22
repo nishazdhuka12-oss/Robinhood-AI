@@ -4,56 +4,60 @@
 - Date (UTC): 2026-07-22
 - session_start_value: $99.05
 - Circuit breaker: inactive
-- Last updated: 2026-07-22 13:57 UTC (08:57 CT)
+- Last updated: 2026-07-22 14:15 UTC (09:15 CT)
 
 ## Account Snapshot
 - Total value: $99.05
 - Cash: $99.05
-- Options exposure: $0
+- Options exposure: $0 (1 contract pending fill)
 - 15% cash floor: $14.86 (15% of $99.05)
 - Buying power: $99.05
 - max_cost: $84.19 (cash $99.05 − floor $14.86)
+- Effective remaining max_cost (after T pending): $29.19 ($84.19 − $55 premium)
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-(none)
+(none — T order pending fill)
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at | Trade plan |
 |--------|-----|-----------|-------|-------------|----------|------------|
-| T | C | CALLS | +10.2% (est $0.59, act $0.65) | 2026-07-22 AM | 11:15 UTC | Jul31 $23C lim $0.55 GFD × 1 — inst 2fc41dc8-6305-46ce-8df0-8dfb985eed45 — RE-VERIFY SPREAD AT 14:00 UTC |
+(cleared — T order placed 14:15 UTC)
 
 ## Pending Orders (queued, not yet filled)
 | Ticker | C/P | Strike | Expiry | Limit$ | Queued at UTC | Order ID |
 |--------|-----|--------|--------|--------|---------------|----------|
-(none)
+| T | C | $23 | Jul31 | $0.55 | 14:15 UTC | 6a60d083-6778-4970-bbf6-3fdddfb5c113 |
 
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
 ### SESSION STATE
-- session_start_value: $99.05. CB inactive. min_cash_floor: $14.86. max_cost: $84.19.
-- Cash $99.05, 0 positions, 0 orders.
+- session_start_value: $99.05. CB inactive. min_cash_floor: $14.86.
+- Cash $99.05, 0 confirmed positions, 1 pending order (T Jul31 $23C lim $0.55 GFD).
+- Effective remaining max_cost after T: $29.19 — no known candidates fit under this budget.
 
-### T WATCHLIST — EXECUTE AT 14:00 UTC
-- Stock: ~$23.35 (+4.9% from $22.26 close) — stock move gate ✓ (≤15%)
-- Option: T Jul31 $23C — inst 2fc41dc8-6305-46ce-8df0-8dfb985eed45
-- Last quote (13:57 UTC): bid $0.49 / ask $0.60 / mark $0.545 / IV 0.334 / delta 0.549 / OI 4406 / vol 776
-- Spread at 13:57: 20.18% — marginally FAILS ≤20% gate (OI≥500). Trending toward pass.
-- AT 14:00 UTC: re-pull quote. If spread ≤ 20% AND all other gates still pass → review_option_order → place_option_order limit $0.55 GFD × 1 contract.
-- If spread still > 20% at 14:00 UTC: log fail, DROP from watchlist.
-- Limit price: $0.55 (mark $0.545 rounded to nearest $0.05; mark < $3.00 rule)
-- Gates to re-check at 14:00 UTC: spread ≤20%, delta ≥0.20, IV <0.85, DTE ≥3, cost ≤max_cost, CoP ≥0.20
+### T ORDER — MONITOR FILL
+- Order ID: 6a60d083-6778-4970-bbf6-3fdddfb5c113
+- T Jul31 $23C, 1 contract, limit $0.55, GFD regular_hours
+- Instrument: 2fc41dc8-6305-46ce-8df0-8dfb985eed45
+- Placed 14:15 UTC. State: unconfirmed at placement.
+- Quote at order time: bid $0.51 / ask $0.55 / mark $0.53 / IV 0.327 / delta 0.544 / OI 4406 / vol 921
+- Spread: 7.55% ✓. All gates passed. Fees: $0.04.
+- GFD — expires unfilled at 19:59 UTC if not filled.
+- If FILLED: update to Open Positions. Cost/sh = $0.55. Tag: SWING-EARN (earnings beat, IV expansion play).
+  - Exit rules: pnl ≥75% take profit, pnl ≤-40% stop loss, DTE≤2 time decay, catalyst reversed.
+  - Earnings beat +10.2% ($0.65 vs $0.59 est). Days to report already passed (this is Pass 1).
+  - This is a POST-EARNINGS momentum play — NOT a pre-earnings IV play. No SWING-EARN IV eval.
+  - Hold for directional move. Standard STEP 5 exits apply.
+- If UNFILLED (GFD expires): re-validate gates at next tick. If spread still ≤20% and other gates pass, re-queue. Else drop T.
 
-### SCAN A PASS 2 — ALL BUDGET-FAIL
-- V (Jul28 DTR=6, 4/4 beats): ATM calls ~$300+/contract >> $84.19 → skip
+### SCAN A PASS 2 — ALL BUDGET-FAIL (unchanged)
+- V (Jul28 DTR=6, 4/4 beats): ATM calls ~$300+/contract >> $29.19 → skip
 - META (Jul29 DTR=7, 4/4 beats): ATM calls ~$1000+/contract → skip
 - MSFT (Jul29 DTR=7, 4/4 beats): ATM calls ~$400+/contract → skip
 - AAPL (Jul30 DTR=8, 4/4 beats): ATM calls ~$300+/contract → skip
 - MA (Jul30 DTR=8, 4/4 beats): ATM calls ~$500+/contract → skip
-
-### PM — DROPPED
-- Budget fail: ATM calls ~$400+/contract >> $84.19
 
 ### DISQUALIFIED (do not re-evaluate)
 - NOC, COF, SCHW: 2/4 beat rate
@@ -64,11 +68,10 @@
 - QCOM: Gate 2/3 conflict Jul 22
 - TSLA, GOOGL, IBM, TXN: report Jul 22 PM → Pass 1 on Jul 23
 
-### POST-14:00 UTC — SCAN A PASS 2 NEW CANDIDATES
-- If T trade executes, check remaining budget for any Pass 2 candidates
-- Budget after T: $99.05 − $55 (T) − $14.86 (floor) = $29.19 remaining max_cost
-- No known Pass 2 candidates fit under $29.19 (all $300+/contract)
-- Run SCANS B-F if T executes and budget allows
+### SCANS B–F
+- No qualifying setups identified in prior ticks. Budget too tight ($29.19) for most setups.
+- Re-run SCANS B–D at each tick if budget allows.
+- SCAN F (daily movers): run at UTC ≥18:30 if no trade confirmed filled and budget > floor.
 
 ## Session Log (today — one line per event)
 [07:32 UTC] NEW DAY RESET — 2026-07-22. session_start_value = $99.05. CB reset to inactive. min_cash_floor = $14.86. max_cost = $84.19. Cash $99.05 — T+1 settled, full BP restored. 0 positions, 0 orders.
@@ -80,3 +83,4 @@
 [13:36 UTC] REGULAR SESSION OPEN — STEP 2: $99.05 cash, CB inactive. T +4.90% ($23.354), PM +4.07% ($195.685) — both stock moves ≤15% ✓. Gate checks complete: T Jul31 $23C ALL PASS (spread 18.75%, delta 0.59, IV 0.35, OI 4406, cost $64, CoP 0.37). PM budget-fail (ATM calls ~$400+/contract). Pass 2 shortlist (V/META/MSFT/AAPL/MA) ALL budget-fail ($300-1000+/contract >> $84.19 max_cost). ONLY viable trade: T. Awaiting 14:00 UTC to execute watchlist.
 [13:40 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed via API. STEP 5: T Jul31 $23C re-quoted live: bid $0.55 / ask $0.70 / mark $0.625 / spread 24.0% — FAILS ≤20% gate at 13:39 UTC. Typical early-session wide spread. Still pre-14:00 UTC execution window. No trades placed. Awaiting 14:00 UTC to re-verify spread and execute T if gates pass.
 [13:56 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed. CB 0.0% inactive. T Jul31 $23C quote (13:57 UTC): bid $0.49 / ask $0.60 / mark $0.545 / spread 20.18% — still marginally fails ≤20% gate by 0.18% (OI=4406 ≥500). Mark moved down from $0.625 → $0.545. Volume 776. All other gates pass. Scheduling wakeup at 14:00 UTC for final spread check and execution. Updated limit price to $0.55.
+[14:14 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed. CB 0.0% inactive. STEP 5: 0 open positions, nothing to manage. STEP 6: T watchlist execution window open (UTC≥14:00). T Jul31 $23C re-quoted (14:14 UTC): bid $0.51 / ask $0.55 / mark $0.53 / spread 7.55% ✓ / delta 0.527 / IV 0.345 / CoP 0.344 / OI 4406 / vol 921. ALL GATES PASS. review_option_order: no alerts, fees $0.04. ORDER PLACED: 1× T Jul31 $23C limit $0.55 GFD — order ID 6a60d083-6778-4970-bbf6-3fdddfb5c113 — state unconfirmed. STEP 7: RESUME updated and committed.
