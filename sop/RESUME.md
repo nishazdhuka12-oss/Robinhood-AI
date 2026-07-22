@@ -3,21 +3,21 @@
 ## Session
 - Date (UTC): 2026-07-22
 - session_start_value: $99.05
-- Circuit breaker: **ACTIVE** (tripped at 14:33 UTC — drawdown 14.17%)
-- Last updated: 2026-07-22 14:33 UTC (09:33 CT)
+- Circuit breaker: inactive (drawdown 9.13% — lifted this tick)
+- Last updated: 2026-07-22 15:10 UTC (10:10 CT)
 
 ## Account Snapshot
-- Total value: $85.01
+- Total value: $90.01
 - Cash: $44.01
-- Options exposure: $41.00 (1× T Jul31 $23C mark $0.41)
+- Options exposure: $46.00 (1× T Jul31 $23C mark $0.46)
 - 15% cash floor: $14.86 (15% of $99.05)
 - Buying power: $44.01
-- Drawdown from session start: 14.17% → CB ACTIVE, no new trades
+- Drawdown from session start: 9.13% → CB INACTIVE
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost/sh | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|---------|------|------|----|-----|
-| T | C | $23 | 2026-07-31 | 9 | 1 | $0.55 | $0.41 | −25.45% | 0.323 | POST-EARN |
+| T | C | $23 | 2026-07-31 | 9 | 1 | $0.55 | $0.46 | −16.36% | 0.313 | POST-EARN |
 
 ## Post-Earnings Watchlist (execute at 14:00 UTC)
 | Ticker | C/P | Direction | Beat% | Report date | Added at | Trade plan |
@@ -32,26 +32,31 @@
 ## CARRY-FORWARD NOTES FOR NEXT TICK
 
 ### SESSION STATE
-- session_start_value: $99.05. **CB ACTIVE** (drawdown 14.17% ≥ 12%). min_cash_floor: $14.86.
+- session_start_value: $99.05. CB INACTIVE (drawdown 9.13% < 12%). min_cash_floor: $14.86. max_cost: $29.15.
 - Cash $44.01, 1 open position (T Jul31 $23C), 0 pending orders.
-- No new trades until CB is cleared (requires total_value to recover to > $87.56 = $99.05 × 0.88).
-- CB resets at NEW DAY (UTC date change → 2026-07-23).
+- Budget constraint ($29.15 = $0.29/share max) is the primary limiter for new trades this session.
 
 ### T POSITION — HOLD (no exits triggered)
 - T Jul31 $23C, qty 1, opened 2026-07-22 14:15:31 UTC
-- Cost/sh: $0.55. Mark: $0.41 (adjusted). P&L: −25.45%
+- Cost/sh: $0.55. Mark: $0.46. P&L: −16.36% (improved from −25.45% prior tick)
 - option_id: 2fc41dc8-6305-46ce-8df0-8dfb985eed45
 - Tag: POST-EARN (SCAN A Pass 1 — T beat +10.2%, $0.65 vs $0.59 est)
-- NO SWING-EARN IV eval — this is post-earnings momentum, not pre-earnings IV play
 - Exit rules (standard): pnl ≥75% take profit | pnl ≤−40% stop loss | DTE≤2 time decay | catalyst reversed
-- Current P&L −25.45%: none of (a)-(d) triggered → HOLD
+- Current P&L −16.36%: none of (a)-(d) triggered → HOLD
 - DTE 9 days (Jul 31 expiry) — no time decay urgency
-- IV 0.323, delta 0.469, OI 4406, vol 2052
+- IV 0.313, delta 0.512, OI 4406, vol 2576
 
-### CIRCUIT BREAKER
-- Tripped at 14:33 UTC today. Drawdown 14.17% from $99.05 → $85.01.
-- No new trades for remainder of session.
-- Resets on NEW DAY (2026-07-23 UTC). Session_start_value will reset to new total value.
+### TLT PRE-FOMC PLAY — CLOSEST CANDIDATE (monitor next tick)
+- Catalyst: FOMC July 29, 2026 (7 days away). Rate hike probability 46.5% (rising). SCAN D ✓
+- Direction: PUTS (rate hike → bonds fall → TLT down)
+- TLT current: $83.575. IV: 10.18%–10.78% (extremely low ✓)
+- Best option evaluated: TLT $83P Jul 31 — ALL gates PASS except cost $30.00 > $29.15 (over by $0.85)
+  - id: a23bfb72-1ee4-4d94-9c28-b0706b1bcc33
+  - delta -0.320 ✓ | IV 0.1078 ✓ | OI 7057 ✓ | vol 72 ✓ | spread 3.4% ✓ | CoP 0.253 ✓ | cost $30.00 ❌
+- Runner-up: TLT $83P Jul 29 — cost $25.00 ✓ but CoP 0.241 < 0.25 ❌ (fails by 0.009); vol 14 (low)
+  - id: 3bf1f712-8a6f-4893-bf26-8cd95e12fd44
+- Trigger for entry: If TLT $83P Jul 31 mark drops to $0.265 or below (rounds to $0.25 at limit → cost $25 ✓) while all other gates hold → QUALIFY. Re-quote each tick.
+- Note: Do NOT hold through FOMC announcement on Jul 29. Exit by Jul 28 EOD.
 
 ### DISQUALIFIED — DO NOT RE-EVALUATE (prior ticks)
 - NOC, COF, SCHW: 2/4 beat rate
@@ -60,13 +65,28 @@
 - KEY: catalyst exhausted
 - QCOM: Gate 2/3 conflict
 - TSLA, GOOGL, IBM, TXN: report Jul 22 PM → Pass 1 eval on Jul 23 (new day)
+- OTLK: market cap $218M < $500M + stock $1.41 < $7 (double-disqualified)
+- CAPR: prior CRL issued by FDA (even though subsequently lifted — rule is binary)
+- FBP $30C Aug 21: delta 0.155 < 0.20 | OI 11 < 100 | spread 133% | CoP 0.124 (all fail)
+- PEGA: SCAN A Pass 1 PUTS eligible (Q2 miss −10.3%, report Jul 21 PM, stock −13.7% ≤15% ✓) — but options too expensive at $26.715 (ATM puts ~$80-100/contract >> $29.15 budget). Log miss; re-evaluate if stock drops to ~$8-10 range (unlikely).
+- HCSG: stock DOWN −4.6% despite beat → direction conflict
+- IRDM: stock UP +1.3% despite miss → direction conflict
+- EQNR: stock UP +5.1% despite miss → direction conflict
+- AGNC: $11C Jul 31 spread 33% ❌ | CoP 0.209 ❌; $10.5C Jul 31 cost $30 > $29.15 ❌ | vol 2 ❌
+- SMCI: IV >> 0.85 after +24.6% move (IV gate fails); options too expensive
+- ADTN: IV >> 0.85 after −17.2% move (IV gate fails)
+- PATH: no verified same-day catalyst found
+
+### SCAN A PASS 2 — NEXT TICK
+- BKR (Baker Hughes): reporting Jul 26 PM (4 days). Beat rate check needed. Stock ~$35-40 (budget likely fails).
+- AZN, NUE, UHS: reporting Jul 27 — all likely over budget.
+- Continue checking each tick for any cheap-stock pre-earnings play.
 
 ### NEXT TICK PRIORITIES
-1. STEP 2: Confirm total_value — if somehow > $87.56, CB may be lifted (recalculate drawdown)
-2. STEP 5: Get T quote. Check (a)-(d) exits. DTE will be 9 or 8.
-3. CB active → STEP 6 skipped
-4. If NEW DAY (2026-07-23): reset session_start_value to new total_value, CB → inactive
-5. Jul 23: Run SCAN A Pass 1 on TSLA/GOOGL/IBM/TXN post-earnings (reported Jul 22 PM)
+1. STEP 5: Re-quote T Jul31 $23C. Check exits (a)-(d). DTE will be 9.
+2. STEP 6: Re-quote TLT $83P Jul 31 (id: a23bfb72). If mark ≤ $0.265 → limit $0.25 → cost $25 → PLACE (SCAN D). Otherwise no trade.
+3. Daily minimum at 18:30 UTC: SCAN F/E with relaxed gates (CoP/delta waived, spread ≤ 0.25, DTE ≥ 3, bid > 0). IV gate (< 0.85) still applies. Budget still $29.15.
+4. Jul 23 NEW DAY: reset session_start_value, CB inactive. Run SCAN A Pass 1 on TSLA/GOOGL/IBM/TXN post-earnings.
 
 ## Session Log (today — one line per event)
 [07:32 UTC] NEW DAY RESET — 2026-07-22. session_start_value = $99.05. CB reset to inactive. min_cash_floor = $14.86. max_cost = $84.19. Cash $99.05 — T+1 settled, full BP restored. 0 positions, 0 orders.
@@ -80,3 +100,4 @@
 [13:56 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed. CB 0.0% inactive. T Jul31 $23C quote (13:57 UTC): bid $0.49 / ask $0.60 / mark $0.545 / spread 20.18% — still marginally fails ≤20% gate by 0.18% (OI=4406 ≥500). Mark moved down from $0.625 → $0.545. Volume 776. All other gates pass. Scheduling wakeup at 14:00 UTC for final spread check and execution. Updated limit price to $0.55.
 [14:14 UTC] TICK — STEP 2: $99.05 cash, 0 pos confirmed. CB 0.0% inactive. STEP 5: 0 open positions, nothing to manage. STEP 6: T watchlist execution window open (UTC≥14:00). T Jul31 $23C re-quoted (14:14 UTC): bid $0.51 / ask $0.55 / mark $0.53 / spread 7.55% ✓ / delta 0.527 / IV 0.345 / CoP 0.344 / OI 4406 / vol 921. ALL GATES PASS. review_option_order: no alerts, fees $0.04. ORDER PLACED: 1× T Jul31 $23C limit $0.55 GFD — order ID 6a60d083-6778-4970-bbf6-3fdddfb5c113 — state unconfirmed. STEP 7: RESUME updated and committed.
 [14:33 UTC] TICK — STEP 3: T order confirmed FILLED at 14:15:31 UTC. Position: 1× T Jul31 $23C cost $0.55. STEP 4: CB TRIPPED — total_value $85.01 vs session_start $99.05, drawdown 14.17% ≥ 12%. STEP 5: T mark $0.41 (adj), P&L −25.45%. No exit triggers (a)-(d). HOLD. STEP 6: SKIPPED — CB active. No new trades.
+[15:10 UTC] TICK — STEP 2: total_value $90.01 (options recovered $41→$46), cash $44.01. STEP 3: T Jul31 $23C confirmed, mark $0.46, P&L −16.36%. STEP 4: CB LIFTED — drawdown 9.13% < 12%. STEP 5: T exits — (a) ≥75%: NO (b) ≤−40%: NO (c) DTE=9: NO (d) catalyst reversed: NO → HOLD. STEP 6: FULL SCANS A-F run. SCAN A Pass 1 (Jul 20-22): FBP beat +14.8% (options all fail gates), PEGA miss −10.3% (options >$80/contract >> budget), HCSG/IRDM/EQNR direction conflicts. SCAN B: OTLK disqualified (mktcap/price), CAPR disqualified (prior CRL). SCAN C: SMCI 8-K guidance raise but IV >> 0.85 post +24.6% move. SCAN D: TLT $83P Jul 31 all gates pass but cost $30.00 > $29.15 (over by $0.85); $83P Jul 29 cost $25 ✓ but CoP 0.241 < 0.25. SCAN F: ADTN IV too high, PATH no catalyst, PEGA budget fail. No qualifying trade — budget $29.15 binding constraint. Logging "no qualifying setup — budget constraint."
