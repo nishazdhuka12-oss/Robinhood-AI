@@ -1,41 +1,41 @@
 # OPTIONS TRADING BOT v4.3 — Account 594134744
 
 ## Session
-- Date (UTC): 2026-07-29
-- session_start_value: $73.95
+- Date (UTC): 2026-07-30
+- session_start_value: $71.91
 - Circuit breaker: inactive
-- Last updated: 2026-07-29 19:32 UTC (14:32 CT)
+- Last updated: 2026-07-30 13:41 UTC (08:41 CT)
 
 ## Account Snapshot
-- Total value: $73.95
-- Cash: $73.95 (buying power $73.95)
-- Options exposure: $0
-- 15% cash floor: $11.09 (15% of $73.95)
-- Drawdown from session start: 0% → CB inactive
+- Total value: $70.91
+- Cash: $13.91 (buying power $13.91)
+- Options exposure: $57 (TLT mark $0.57)
+- 15% cash floor: $10.79 (15% of $71.91)
+- Drawdown from session start: 1.4% → CB inactive
 
 ## Open Positions
-(none — TLT order pending fill)
+| Ticker | C/P | Strike | Expiry | DTE | Qty | Cost | Mark | P&L% | IV | Tag |
+|--------|-----|--------|--------|-----|-----|------|------|------|----|-----|
+| TLT | P | 82.5 | 2026-08-07 | 8 | 1 | $0.60 | $0.57 | -5.0% | 0.153 | SWING |
 
 ## Post-Earnings Watchlist
 (empty)
 
 ## Pending Orders
-|Ticker|C/P|Strike|Expiry|Limit$|QueuedUTC|OrderID|
-|TLT|P|82.5|2026-08-07|0.60|19:32 UTC|6a6a5560-6c8c-4dc1-b282-3bde66772d2a|
+(none)
 
 ## Carry-Forward
-1. SESSION 2026-07-29: start $73.95, CB inactive, floor $11.09. Budget $62.86.
-2. TLT $82.5P 8/7 PENDING $0.60 GFD — FOMC hawkish hold (3 dissenters) catalyst, TLT -1.65% today.
-3. PLTR Aug3 PM 4/4 beats $124 — options $230+ over budget. Monitor.
-4. XLE $62C Aug21 mark=$0.68 ($68 cost, $5.14 over budget) — Iran conflict, oil $88 Brent.
-5. TSN Aug3 AM 3/4 beats — options too expensive (~$100+/contract). Monitor.
-6. WMB Aug3 PM 1/4 beats → pre-IV PUTS candidate (DTR=5). Need option quote next tick.
-7. Post-earn >15% move fail: MANH +25.4%, HURN +31.9%, LII -19.9%, LMND -25.5%.
-8. AZN +73%beat +2.1%move, BKR +33%beat +4.8%move — pass move gate, options over budget.
+1. SESSION 2026-07-30: start $71.91, CB inactive, floor $10.79. Budget $3.12 (too tight to trade).
+2. TLT $82.5P 8/7 HOLD | cost $0.60 mark $0.57 P&L -5% DTE=8. FOMC hawkish hold catalyst intact.
+3. PLTR 08-03 PM 4/4 beats → CALLS pre-IV DTE=4. Over budget ($3.12 max). Monitor.
+4. WMB 08-03 PM 1/4 beats → PUTS pre-IV DTE=4. Over budget. Monitor.
+5. TSN 08-03 AM 3/4 beats → CALLS pre-IV DTE=4. Over budget. Monitor.
+6. 07-30 post-earn beats: REGN+38%, PWR+30%, HSY+33%, VLO+28%, EME+25% → CALLS pending. All fail cost $3.12.
+7. 07-30 post-earn misses: BIP-119%, MT-27%, AEP-9%, EXC-12% → PUTS pending. All fail cost $3.12.
+8. DAILY MIN: UTC≥18:30 REGULAR no trade → Scan F/E relaxed. Still unlikely at $3.12 budget.
 
 ## Session Log
-[13:49 UTC] NEW DAY RESET 2026-07-29. start=$73.95. CB inactive. Floor $11.09.
-[14:14 UTC] S6 scan A-F complete. No trade. All fail cost or CoP within $62.86 budget.
-[14:50 UTC] S6 scan A-F tick2. No trade. A: AMKR move-24.7% FAIL. E: XLE $5.14 over budget.
-[18:00 UTC] FOMC HOLD 9-3 (3.5-3.75%). Dissenters: Hammack/Kashkari/Logan (hike). TLT -1.65%.
-[19:32 UTC] PLACED TLT $82.5P 8/7 1ct @$0.60 GFD. Scan D/FOMC hawkish hold. ID:6a6a5560.
+[13:41 UTC] NEW DAY RESET 2026-07-30. start=$71.91. CB inactive. Floor $10.79. Budget $3.12.
+[13:41 UTC] TLT fill confirmed (6a6a5560). $82.5P 8/7 qty=1 cost=$0.60 mark=$0.57 P&L=-5%.
+[13:41 UTC] S5: TLT P&L -5% — no exit triggered (thresholds: +75%/-40%/DTE≤2). HOLD.
+[13:41 UTC] S6 A-F: all fail cost gate ($3.12 max). No trade.
