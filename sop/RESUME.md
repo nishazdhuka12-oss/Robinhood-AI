@@ -4,19 +4,19 @@
 - Date (UTC): 2026-07-30
 - session_start_value: $71.91
 - Circuit breaker: inactive
-- Last updated: 2026-07-30 15:39 UTC (10:39 CT)
+- Last updated: 2026-07-30 15:58 UTC (10:58 CT)
 
 ## Account Snapshot
-- Total value: $79.91 (cash $13.91 + live mark $66.00)
+- Total value: $75.91 (cash $13.91 + live mark $62.00)
 - Cash: $13.91 (buying power $13.91)
-- Options exposure: $66.00 (TLT live mark $0.660)
+- Options exposure: $62.00 (TLT live mark $0.620)
 - 15% cash floor: $10.79 (15% of $71.91)
-- Drawdown from session start: -11.1% (UP $8) → CB inactive
+- Drawdown from session start: -5.6% (UP $4) → CB inactive
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|------|------|------|----|-----|
-| TLT | P | 82.5 | 2026-08-07 | 8 | 1 | $0.60 | $0.660 | +10.0% | 0.158 | SWING |
+| TLT | P | 82.5 | 2026-08-07 | 8 | 1 | $0.60 | $0.620 | +3.3% | 0.155 | SWING |
 
 ## Post-Earnings Watchlist
 (empty)
@@ -25,13 +25,13 @@
 (none)
 
 ## Carry-Forward
-1. TLT $82.5P 8/7 HOLD | cost $0.60 mark $0.660 P&L +10% DTE=8. FOMC hawkish intact.
-2. AAPL/AMZN report tonight PM → post-earn opps next tick. Cost-fail at $3.12 budget.
-3. PLTR 08-03 PM 4/4 beats → CALLS pre-IV DTE=4. Over budget.
-4. WMB 08-03 PM 1/4 beats → PUTS pre-IV DTE=4. Over budget.
-5. TSN 08-03 AM 3/4 beats → CALLS pre-IV DTE=4. Over budget.
-6. AM post-earn beats cost-fail: KKR+20% REGN+38% HII+38% MA+6% BMY+27% PWR+30% IDCC+212%.
-7. AM post-earn misses cost-fail: GPI-13% ALNY-8% BLDR-9% + SIRI/MT/STNG/BXMT prior.
+1. TLT $82.5P 8/7 HOLD | cost $0.60 mark $0.620 P&L +3.3% DTE=8. FOMC hawkish intact.
+2. TLT price $82.745 (dn from $82.85). Put catalyst intact, no reversal.
+3. AAPL/AMZN PM tonight → post-earn next tick. Cost-fail likely at $3.12 budget.
+4. PLTR 08-03 PM 4/4 beats → CALLS pre-IV DTE=4. Over budget.
+5. WMB 08-03 PM 1/4 beats → PUTS pre-IV DTE=4. Over budget.
+6. TSN 08-03 AM 3/4 beats → CALLS pre-IV DTE=4. Over budget.
+7. Notable 08-04: CAT/MCD/BKNG/AMD/AMGN/MRK pre-IV. Over budget.
 8. Budget $3.12 (<min $5 contract). Unlock: TLT exit +75% or new session reset.
 
 ## Session Log
@@ -47,3 +47,4 @@
 [15:01 UTC] TLT $0.650 +8% HOLD DTE=8. AMZN/AAPL PM watchlisted. All A-F cost-fail ($3.12).
 [15:21 UTC] TLT $0.710 +18% HOLD DTE=8. AAPL/AMZN report PM. A-F cost-fail ($3.12).
 [15:39 UTC] TLT $0.660 +10% HOLD DTE=8. A-F cost-fail ($3.12). AAPL/AMZN report PM tonight.
+[15:58 UTC] TLT $0.620 +3.3% HOLD DTE=8. 149 today AM beats checked all cost-fail. A-F cost-fail ($3.12).
