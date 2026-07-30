@@ -4,19 +4,19 @@
 - Date (UTC): 2026-07-30
 - session_start_value: $71.91
 - Circuit breaker: inactive
-- Last updated: 2026-07-30 15:01 UTC (10:00 CT)
+- Last updated: 2026-07-30 15:21 UTC (10:21 CT)
 
 ## Account Snapshot
-- Total value: $78.91 (portfolio API $76.91; live option mark $0.65 → $65)
+- Total value: $84.91 (cash $13.91 + live mark $71.00)
 - Cash: $13.91 (buying power $13.91)
-- Options exposure: $65.00 (TLT live mark $0.650)
+- Options exposure: $71.00 (TLT live mark $0.710)
 - 15% cash floor: $10.79 (15% of $71.91)
-- Drawdown from session start: -9.7% (UP $7) → CB inactive
+- Drawdown from session start: -19.5% (UP $13) → CB inactive
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|------|------|------|----|-----|
-| TLT | P | 82.5 | 2026-08-07 | 8 | 1 | $0.60 | $0.650 | +8.3% | 0.153 | SWING |
+| TLT | P | 82.5 | 2026-08-07 | 8 | 1 | $0.60 | $0.710 | +18.3% | 0.158 | SWING |
 
 ## Post-Earnings Watchlist
 (empty)
@@ -25,7 +25,7 @@
 (none)
 
 ## Carry-Forward
-1. TLT $82.5P 8/7 HOLD | cost $0.60 mark $0.650 P&L +8.3% DTE=8. FOMC hawkish intact.
+1. TLT $82.5P 8/7 HOLD | cost $0.60 mark $0.710 P&L +18.3% DTE=8. FOMC hawkish intact.
 2. AAPL/AMZN report tonight PM → post-earn opps next tick. Cost-fail at $3.12 budget.
 3. PLTR 08-03 PM 4/4 beats → CALLS pre-IV DTE=4. Over budget.
 4. WMB 08-03 PM 1/4 beats → PUTS pre-IV DTE=4. Over budget.
@@ -45,3 +45,4 @@
 [14:25 UTC] TLT $0.565 P&L -6% HOLD. CNK+29% BXMT-18% post-earn fail (spread+cost). All A-F cost-fail.
 [14:45 UTC] TLT $0.540 P&L -10% HOLD. A-F cost-fail ($3.12). No trade.
 [15:01 UTC] TLT $0.650 +8% HOLD DTE=8. AMZN/AAPL PM watchlisted. All A-F cost-fail ($3.12).
+[15:21 UTC] TLT $0.710 +18% HOLD DTE=8. AAPL/AMZN report PM. A-F cost-fail ($3.12).
