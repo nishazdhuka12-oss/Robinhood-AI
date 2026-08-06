@@ -1,22 +1,22 @@
 # OPTIONS TRADING BOT v4.3 — Account 594134744
 
 ## Session
-- Date (UTC): 2026-08-05
-- session_start_value: $118.85
-- Circuit breaker: inactive
-- Last updated: 2026-08-05 22:29 UTC (17:29 CT)
+- Date (UTC): 2026-08-06
+- session_start_value: $117.81
+- Circuit breaker: inactive (drawdown 0.0%)
+- Last updated: 2026-08-06 16:15 UTC (11:15 CT)
 
 ## Account Snapshot
-- Total value: $118.85 (pre-fill; GFD order pending)
-- Cash: $118.85
-- Options exposure: $0 (pending fill)
-- 15% cash floor: $17.83 (15% of $118.85)
-- Drawdown from session start: 0% → CB inactive
+- Total value: $117.81 (pre-TLT fill; GFD order pending)
+- Cash: $68.81 (→ ~$28.81 after TLT fill)
+- Options exposure: XLE $49 mark; TLT $40 pending
+- 15% cash floor: $17.67 (15% of $117.81)
+- Drawdown from session start: 0.0% → CB inactive
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|------|------|------|----|-----|
-| — | — | — | — | — | — | — | — | — | — | — |
+| XLE | P | $56 | 2026-08-21 | 15 | 1 | $0.50 | $0.49 | -2% | 0.34 | SWING |
 
 ## Post-Earnings Watchlist
 | Ticker | C/P | Dir | Beat% | ReportDate | Added |
@@ -26,21 +26,19 @@
 ## Pending Orders
 | Ticker | C/P | Strike | Expiry | Limit$ | QueuedUTC | OrderID |
 |--------|-----|--------|--------|--------|-----------|---------|
-| XLE | P | $56 | 2026-08-21 | $0.70 | 22:29 | 6a73b961-dd5c-4edb-b554-d274c43b1956 |
+| TLT | C | $83 | 2026-08-14 | $0.40 | 16:15 | 6a74b30b-0b0b-4f7d-a49d-80b1f5e9d368 |
 
 ## Carry-Forward
-1. XLE $56P 8/21 GFD $0.70 queued (6a73b961) — check fill status; may need re-entry if expired.
-2. Catalyst: Iran peace deal (CNBC) + weak ADP 44K → oil down, XLE -2.1%. Tag SWING.
-3. NFP release Friday 8/7 — key macro catalyst; watch TLT/GLD for Scan D.
-4. 8/5 PM reporters (MCK, MSI, HUBS, EXPE, ZG, MET) — check for beats next tick Scan A1.
-5. Post-earn PLTR +26% move (fails ≤15%); ZBRA +28% (fails). AMGN +6.4% but options too expensive.
-6. Hard budget reality: $101 max cost → need options ≤$1.01/contract mark.
+1. TLT $83C 8/14 GFD $0.40 (6a74b30b) — check fill next tick; NFP 8/7 AM catalyst.
+2. XLE $56P 8/21 cost $0.50, mark ~$0.49, P&L -2%. Hold. Iran peace+ADP thesis.
+3. NFP 8/7 AM: weak → TLT up (hold). Strong → TLT call cat-reversed, exit immediately.
+4. Post-fill cash: ~$11 max additional. Near floor; likely no more trades today.
+5. Post-earn budget-blocked: ALL +79%, MSI +17%, EXPE +14%, AMD +7% (opts $5-20+/contract).
 
 ## Session Log
-[19:23 UTC] NEW DAY RESET 2026-08-05. start=$118.85. CB inactive. floor=$17.83. budget=$101.02.
-[19:23 UTC] S3: No open positions. Unsettled proceeds from TLT now settled ($118.85 BP).
-[19:23 UTC] S4: Drawdown 0%. CB inactive.
-[19:23 UTC] S5: No positions to check.
-[20:14 UTC] S6 ScanA: PLTR +26% move FAIL, ZBRA +28% FAIL, AMGN opts >$1K/contract FAIL budget.
-[20:14 UTC] S6 ScanE: XLE -2.1% (Iran peace deal+weak ADP). XLE $56P 8/21 all gates PASS.
-[22:29 UTC] S6: BUY XLE $56P 8/21 1x limit $0.70 GFD placed (6a73b961). Cost ~$70.
+[13:30 UTC] XLE $56P 8/21 FILLED $0.50 (was $0.70 GFD). Cost $50. New day reset.
+[16:15 UTC] NEW DAY 2026-08-06. start=$117.81. CB inactive. floor=$17.67. budget=$51.14.
+[16:15 UTC] S5: XLE $56P P&L=-2% → HOLD (above -40% exit threshold).
+[16:15 UTC] S6 ScanA1: ALL+79%/MSI+17% opts $5-20+/contract FAIL budget. IFF PUTS spread 140%/delta FAIL.
+[16:15 UTC] S6 ScanD: TLT $83C 8/14 all gates PASS (IV=11%, delta=0.40, OI=6367, CoP=0.29).
+[16:15 UTC] S6 ScanD: TLT $83C 8/14 limit $0.40 GFD placed (6a74b30b). NFP 8/7 weak-ADP thesis.
