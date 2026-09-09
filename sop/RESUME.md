@@ -3,20 +3,20 @@
 ## Session
 - Date (UTC): 2026-09-09
 - session_start_value: $39.73
-- Circuit breaker: inactive (0% drawdown)
-- Last updated: 2026-09-09 13:36 UTC
+- Circuit breaker: inactive (5.18% drawdown)
+- Last updated: 2026-09-09 13:58 UTC
 
 ## Account Snapshot
-- Total value: $39.73
-- Cash: $6.73 (TLT sell pending)
-- Options exposure: $33.00 (TLT $82.5C Sep 11 x1 mark=$0.33)
+- Total value: $37.67
+- Cash (buying power): $6.73 | Unsettled: $30.94 (settles 2026-09-10)
+- Options exposure: $0.00 (no open positions)
 - 15% cash floor: $5.96 (15% of $39.73)
-- Drawdown from session start: 0%
+- Drawdown from session start: 5.18%
 
 ## Open Positions
 | Ticker | C/P | Strike | Expiry | DTE | Qty | Cost | Mark | P&L% | IV | Tag |
 |--------|-----|--------|--------|-----|-----|------|------|------|----|-----|
-| TLT | C | $82.5 | 2026-09-11 | 2 | 1 | $0.25 | $0.33 | +32% | 0.164 | SWING |
+| — | — | — | — | — | — | — | — | — | — | — |
 
 ## Post-Earnings Watchlist
 | Ticker | C/P | Dir | Beat% | ReportDate | Added |
@@ -31,20 +31,20 @@
 ## Pending Orders
 | Ticker | C/P | Strike | Expiry | Limit$ | QueuedUTC | OrderID |
 |--------|-----|--------|--------|--------|-----------|---------|
-| TLT | C | $82.5 | 2026-09-11 | $0.30 | 13:36 UTC | 6aa160ca-9c6a-48f0-9d68-db6a37975213 |
+| — | — | — | — | — | — | — |
 
 ## Carry-Forward
-1. TLT $82.5C 9/11 DTE=2 sell $0.30 GTC (6aa160ca) pending; mark=$0.33 P&L=+32%
-2. Post-TLT fill: cash ~$36.73 floor=$5.96 max_cost~$30.77 — budget opens next tick
-3. Post-earn watchlist: SIG/ASO/SUNB/KFY/CNM/SAIL CALLS — run gates+move≤15% at UTC≥14:00
-4. LEN Sep 16 PM G2=1/4 PUTS G3=PUTS DTE=7 SWING-EARN — run full gates post-TLT fill
-5. FDX Sep 21 PM (unverified) — run G2/G3; AZO Sep 22 AM DTR=13 check G2/G3
-6. TCOM Sep 15 PM G2/G3 conflict — skip
-7. Sep10 reporters CPRT/ORCL/ADBE/RH: DTE=1 at report → skip
-8. CPI Sep 11, FOMC Sep 15-16 — macro backdrop for any macro scan
+1. TLT $82.5C 9/11 FILLED $0.31 (+24% P&L). Closed. Proceeds $31 unsettled (settles 9/10).
+2. Budget locked: buying_power=$6.73 floor=$5.96 max_cost=$0.77. Unlocks 9/10 post-settlement.
+3. Post-earn watchlist: SIG/ASO/SUNB/KFY/CNM/SAIL → attempt gates at UTC≥14:00, remove after.
+4. LEN Sep 16 PM SWING-EARN: G2=1/4 PUTS G3=PUTS DTE=7 — run full gates 9/10 when budget opens.
+5. CPI Sep 11 8:30AM ET; FOMC Sep 15-16 — macro backdrop. TLT/QQQ/SPY macro scan ready 9/10.
+6. AZO Sep 22 AM DTR=13 — check G2/G3 when budget opens.
 
 ## Session Log
 [13:00 UTC] NEW DAY 2026-09-09. Reset start=$39.73, CB=inactive, floor=$5.96
-[13:36 UTC] S5: TLT DTE=2 exit trigger(c). Sell limit $0.30 GTC placed (6aa160ca). P&L=+32%
-[13:36 UTC] S6: budget $0.77 < $5 min cost. NO TRADE — all scans blocked.
+[13:36 UTC] S5: TLT DTE=2 exit trigger(c). Sell limit $0.30 GTC placed (6aa160ca). Mark=$0.33 P&L=+32%
+[13:36 UTC] S6: max_cost=$0.77. NO TRADE — all scans blocked.
 [13:36 UTC] ScanA1 POST: SIG+26.6%/ASO+11.1%/SUNB+15.7%/KFY+5.1%/CNM+16%/SAIL+12.5% → watchlist
+[13:58 UTC] S3: TLT 6aa160ca FILLED $0.31 (+24% P&L $6). Position closed. Unsettled $30.94 settles 9/10.
+[13:58 UTC] S6: buying_power=$6.73 floor=$5.96 max_cost=$0.77. NO TRADE — budget too small.
