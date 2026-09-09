@@ -4,7 +4,7 @@
 - Date (UTC): 2026-09-09
 - session_start_value: $39.73
 - Circuit breaker: inactive (5.18% drawdown)
-- Last updated: 2026-09-09 13:58 UTC
+- Last updated: 2026-09-09 19:03 UTC
 
 ## Account Snapshot
 - Total value: $37.67
@@ -21,12 +21,7 @@
 ## Post-Earnings Watchlist
 | Ticker | C/P | Dir | Beat% | ReportDate | Added |
 |--------|-----|-----|-------|------------|-------|
-| SIG | C | CALLS | +26.6% | 2026-09-09 AM | 13:36 UTC |
-| ASO | C | CALLS | +11.1% | 2026-09-09 AM | 13:36 UTC |
-| SUNB | C | CALLS | +15.7% | 2026-09-09 AM | 13:36 UTC |
-| KFY | C | CALLS | +5.1% | 2026-09-09 AM | 13:36 UTC |
-| CNM | C | CALLS | +16.0% | 2026-09-09 AM | 13:36 UTC |
-| SAIL | C | CALLS | +12.5% | 2026-09-09 AM | 13:36 UTC |
+| — | — | — | — | — | — |
 
 ## Pending Orders
 | Ticker | C/P | Strike | Expiry | Limit$ | QueuedUTC | OrderID |
@@ -34,12 +29,11 @@
 | — | — | — | — | — | — | — |
 
 ## Carry-Forward
-1. TLT $82.5C 9/11 FILLED $0.31 (+24% P&L). Closed. Proceeds $31 unsettled (settles 9/10).
+1. TLT closed 9/9. Proceeds $30.94 unsettled, settles 9/10 → budget unlocks.
 2. Budget locked: buying_power=$6.73 floor=$5.96 max_cost=$0.77. Unlocks 9/10 post-settlement.
-3. Post-earn watchlist: SIG/ASO/SUNB/KFY/CNM/SAIL → attempt gates at UTC≥14:00, remove after.
-4. LEN Sep 16 PM SWING-EARN: G2=1/4 PUTS G3=PUTS DTE=7 — run full gates 9/10 when budget opens.
-5. CPI Sep 11 8:30AM ET; FOMC Sep 15-16 — macro backdrop. TLT/QQQ/SPY macro scan ready 9/10.
-6. AZO Sep 22 AM DTR=13 — check G2/G3 when budget opens.
+3. LEN Sep 16 PM SWING-EARN: G2=1/4 PUTS G3=PUTS DTE=7 — run full gates 9/10 when budget opens.
+4. CPI Sep 11 8:30AM ET; FOMC Sep 15-16 — macro backdrop. TLT/QQQ/SPY macro scan ready 9/10.
+5. AZO Sep 22 AM DTR=13 — check G2/G3 when budget opens.
 
 ## Session Log
 [13:00 UTC] NEW DAY 2026-09-09. Reset start=$39.73, CB=inactive, floor=$5.96
@@ -48,3 +42,5 @@
 [13:36 UTC] ScanA1 POST: SIG+26.6%/ASO+11.1%/SUNB+15.7%/KFY+5.1%/CNM+16%/SAIL+12.5% → watchlist
 [13:58 UTC] S3: TLT 6aa160ca FILLED $0.31 (+24% P&L $6). Position closed. Unsettled $30.94 settles 9/10.
 [13:58 UTC] S6: buying_power=$6.73 floor=$5.96 max_cost=$0.77. NO TRADE — budget too small.
+[19:03 UTC] S5: post-earn SIG/ASO/SUNB/KFY/CNM/SAIL → fail cost gate ($0.77<$1 min). All removed.
+[19:03 UTC] S6 DAILY MIN ScanF: movers checked → fail cost gate. No trade.
