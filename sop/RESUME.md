@@ -4,11 +4,11 @@
 - Date (UTC): 2026-09-10
 - session_start_value: $37.67
 - Circuit breaker: inactive (0.00% drawdown)
-- Last updated: 2026-09-10 17:46 UTC
+- Last updated: 2026-09-10 18:10 UTC
 
 ## Account Snapshot
 - Total value: $37.67
-- Cash (buying power): $37.67 | Unsettled: $0.00 (TLT proceeds settled 9/10)
+- Cash (buying power): $37.67 | Unsettled: $0.00
 - Options exposure: $0.00 (no open positions)
 - 15% cash floor: $5.65 (15% of $37.67)
 - Drawdown from session start: 0.00%
@@ -29,21 +29,24 @@
 | — | — | — | — | — | — | — |
 
 ## Carry-Forward
-1. CPI Sep 11 8:30AM CT → TLT/QQQ macro trade; TLT $80.50P cost=$33.50 needs ~$0.50 more TLT drop to fit budget ($32.02).
-2. LEN Sep 16 PM SWING-EARN: G2=1/4 PUTS G3=PUTS DTE=6 — 9/18 and 9/25 puts OI thin/spreads wide; recheck next tick.
-3. FOMC Sep 15-16 — macro backdrop; PPI +5.4% confirms bearish rate trajectory.
-4. AZO Sep 22 AM DTR=12 — budget insufficient for AZO options (~$2,888 underlying).
-5. BHVN FDA partial clinical hold active → DAILY MIN candidate: $12P 9/19 cost=$27.50 ✓ spread=$0.25 ✓ DTE=8 ✓ bid=$0.15 ✓.
-6. Budget: max_cost=$32.02. Best Scan D cand: TLT $80.50P @$33.50 (over by $1.48). Best Scan F DAILY MIN: BHVN $12P @$27.50.
+1. CPI Sep 11 8:30AM CT → TLT bearish macro; TLT puts ~$33.50 over $32.02 budget.
+2. FOMC Sep 15-16; PPI +5.4% bearish rate trajectory — macro backdrop.
+3. LEN Sep 16 PM G2=1/4 PUTS; OI thin Sep; check Oct expiry options next tick.
+4. GIS Sep 23 AM 3/4 beats→CALLS DTR=13; verify stock price/cost fit next tick.
+5. ORCL/ADBE/CPRT/RH report tonight PM → POST-EARN scan on next tick.
+6. BHVN IV>85% — fails ALL gates incl DAILY MIN (IV<0.85 not waived); eliminated.
+7. TEN $45C Sep18 spread=$0.25>$0.20 FAIL; $50C delta=0.06<0.20 FAIL; POST eliminated.
+8. DAILY MIN 18:30 UTC: scan ScanF movers >3% then ScanE sector ETFs; IV<0.85 req'd.
 
 ## Session Log
 [13:00 UTC] NEW DAY 2026-09-10. Reset start=$37.67, CB=inactive, floor=$5.65, max_cost=$32.02.
 [17:29 UTC] S1-S4: Cash=$37.67 settled. No open positions. No pending orders. CB=inactive.
-[17:30 UTC] S6 ScanA1 POST: AVAV spread=$0.50-$1.00>>$0.20 FAIL; ASO OI=3-74<100/spread wide FAIL. All removed.
-[17:34 UTC] S6 ScanA2 PRE-IV: LEN 9/18 and 9/25 puts OI<100/spreads $0.25-$0.50>>limit. ALL FAIL.
-[17:38 UTC] S6 ScanB: Stealth Bio PDUFA 9/26 → DISQUALIFIED (prior CRL history). No trade.
-[17:40 UTC] S6 ScanC: No confirmed 8-K breakthrough signals with options setup. No trade.
-[17:44 UTC] S6 ScanD: PPI +5.4% bearish TLT. TLT $80.50P cost=$33.50>$32.02 FAIL. TLT $80P CoP=0.198<0.25 FAIL. TLT $79.50P delta=-0.153<0.20 FAIL. ALL FAIL.
-[17:46 UTC] S6 ScanE: XBI/XLK options cost>>$32.02 budget. ALL FAIL.
-[17:46 UTC] S6 ScanF: BHVN $13P IV=89.9%>85% FAIL; $12P spread=$0.25/IV>85% (std gate). NAVN $20P cost=$65>>$32.02 FAIL; $17.50P bid=0.00 FAIL. ALL FAIL.
-[17:46 UTC] NO TRADE. DAILY MIN check pending at 18:30 UTC. BHVN $12P eligible under relaxed gates.
+[17:30 UTC] S6 ScanA1 POST: AVAV spread=$0.50-$1.00>>$0.20 FAIL; ASO OI<100/spread wide FAIL.
+[17:34 UTC] S6 ScanA2 PRE-IV: LEN 9/18+9/25 puts OI<100/spreads wide FAIL.
+[17:38 UTC] S6 ScanB: Stealth Bio PDUFA DISQUALIFIED (prior CRL). No trade.
+[17:40 UTC] S6 ScanC: No confirmed 8-K breakthrough signals. No trade.
+[17:44 UTC] S6 ScanD: TLT $80.50P cost=$33.50>$32.02 FAIL. TLT $80P CoP<0.25 FAIL. ALL FAIL.
+[17:46 UTC] S6 ScanE/F: XBI/XLK cost>>budget FAIL; BHVN $12P IV>85% FAIL; NAVN bid=0 FAIL.
+[18:03 UTC] S6 ScanA POST: M skip (down 4.5% on beat=sell-news). TEN $45C spread=$0.25 FAIL cost=$87.50 FAIL; $50C delta=0.06 FAIL. ALL FAIL.
+[18:03 UTC] S6 ScanA PRE-IV: KBH G2=2/4 SKIP. PAYX/CTAS cost FAIL ($114/$199 stocks). GIS 3/4 beats carry-fwd.
+[18:10 UTC] NO TRADE. DAILY MIN triggers 18:30 UTC.
